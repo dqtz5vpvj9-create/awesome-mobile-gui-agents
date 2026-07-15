@@ -402,12 +402,7 @@ def build_render_context() -> dict[str, Any]:
         rows.append(row)
 
     established = [row for row in rows if row["is_established"]]
-    established.sort(
-        key=lambda row: (-row["release_day"].toordinal(), row["name"].casefold())
-    )
-
     emerging = [row for row in rows if not row["is_established"]]
-    emerging.sort(key=lambda row: (-row["release_day"].toordinal(), row["name"].casefold()))
 
     return {
         "catalog": catalog,

@@ -87,10 +87,6 @@ Recovery is one field, not the catalog scope:
 
 These labels describe mechanisms, not comparable performance tiers. A reflection label does not imply successful state restoration, and UI navigation recovery does not imply rollback of irreversible external side effects.
 
-## Display order
-
-Established and Emerging entries are both sorted by release date, newest first. Names provide a deterministic alphabetical tie-breaker for entries released on the same day. Citation and star snapshots do not affect placement.
-
 ## Snapshot procedure
 
 The refresh command:

@@ -68,11 +68,14 @@ def test_readmes_are_deterministically_generated():
     catalog.check_generated()
 
 
-def test_agent_sections_are_newest_first():
+def test_agent_sections_preserve_catalog_source_order():
     context = catalog.build_render_context()
+    source_ids = [agent["id"] for agent in load_yaml("agents.yaml")["agents"]]
     for section in ("established", "emerging"):
-        dates = [row["release_day"] for row in context[section]]
-        assert dates == sorted(dates, reverse=True)
+        rendered_ids = [row["id"] for row in context[section]]
+        rendered_id_set = set(rendered_ids)
+        expected_ids = [agent_id for agent_id in source_ids if agent_id in rendered_id_set]
+        assert rendered_ids == expected_ids
 
 
 def test_readmes_do_not_publish_composite_scores():

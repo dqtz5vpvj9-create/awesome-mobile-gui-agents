@@ -33,26 +33,26 @@ Mobile GUI Agent 工作分散在研究原型、模型发布、自动化框架、
 
 ## Established Agents
 
-发布时间不晚于 **2025-07-15**，即快照时至少已发布 12 个月。以下 12 个条目按发布日期从新到旧列出。
+发布时间不晚于 **2025-07-15**，即快照时至少已发布 12 个月。
 
 | Agent | 发布时间 | 平台 | 快照指标 | 链接 |
 |---|:---:|---|---:|---|
-| **App Use** | 2025&#8209;05&#8209;16 | Android, iOS | 引用&nbsp;—<br>Stars&nbsp;69 | [代码](https://github.com/erickjtorres/app-use) · [iOS demos](https://github.com/erickjtorres/app-use#demos) · [Quick start](https://github.com/erickjtorres/app-use#quick-start) |
-| **Mobilerun** | 2025&#8209;04&#8209;12 | Android, iOS | 引用&nbsp;—<br>Stars&nbsp;8,769 | [代码](https://github.com/droidrun/mobilerun) · [Project benchmark](https://mobilerun.ai/benchmark) · [Quick start](https://github.com/droidrun/mobilerun#quickstart) |
-| **MobileUse**<br><sub>NeurIPS 2025</sub> | 2025&#8209;02&#8209;27 | Android | 引用&nbsp;0<br>Stars&nbsp;167 | [代码](https://github.com/MadeAgents/mobile-use) · [论文](https://arxiv.org/abs/2507.16853) · [AndroidWorld and AndroidLab](https://github.com/MadeAgents/mobile-use#benchmark) · [Python API](https://github.com/MadeAgents/mobile-use#use-in-python) |
-| **CHOP**<br><sub>arXiv 2025</sub> | 2025&#8209;02&#8209;12 | Android, HarmonyOS | 引用&nbsp;0<br>Stars&nbsp;8 | [代码](https://github.com/Yuqi-Zhou/CHOP) · [论文](https://arxiv.org/abs/2503.03743) · [CHOP demo usage](https://github.com/Yuqi-Zhou/CHOP#chop-demo-usage) · [CHOP-En and CHOP-ZH](https://github.com/Yuqi-Zhou/CHOP#chop-en--chop-zh) |
-| **Mobile-Agent-E**<br><sub>arXiv 2025</sub> | 2025&#8209;01&#8209;20 | Android | 引用&nbsp;3<br>Stars&nbsp;8,939<sup>family</sup> | [代码](https://github.com/X-PLUG/MobileAgent/tree/main/Mobile-Agent-E) · [论文](https://arxiv.org/abs/2501.11733) · [Mobile-Eval-E](https://github.com/X-PLUG/MobileAgent/tree/main/Mobile-Agent-E#mobile-eval-e-benchmark) · [Quick start](https://github.com/X-PLUG/MobileAgent/tree/main/Mobile-Agent-E#quick-start) |
-| **Midscene.js** | 2024&#8209;07&#8209;23 | Android, iOS, HarmonyOS | 引用&nbsp;—<br>Stars&nbsp;14,076 | [代码](https://github.com/web-infra-dev/midscene) · [Mobile showcases](https://midscenejs.com/showcases) · [Android guide](https://midscenejs.com/android-getting-started) · [iOS guide](https://midscenejs.com/ios-getting-started) |
-| **Mobile-Agent-v2**<br><sub>NeurIPS 2024</sub> | 2024&#8209;06&#8209;03 | Android | 引用&nbsp;12<br>Stars&nbsp;8,939<sup>family</sup> | [代码](https://github.com/X-PLUG/MobileAgent/tree/main/Mobile-Agent-v2) · [论文](https://arxiv.org/abs/2406.01014) · [Run guide](https://github.com/X-PLUG/MobileAgent/tree/main/Mobile-Agent-v2#run) · [Paper results](https://arxiv.org/abs/2406.01014) |
-| **M3A**<br><sub>ICLR 2025</sub> | 2024&#8209;05&#8209;23 | Android | 引用&nbsp;1<br>Stars&nbsp;821 | [代码](https://github.com/google-research/android_world/tree/main/android_world/agents) · [论文](https://arxiv.org/abs/2405.14573) · [AndroidWorld](https://google-research.github.io/android_world/) · [Minimal M3A runner](https://github.com/google-research/android_world#quickstart) |
 | **Mobile-Agent**<br><sub>ICLR 2024 Workshop; CCL 2024 demo</sub> | 2024&#8209;01&#8209;29 | Android | 引用&nbsp;13<br>Stars&nbsp;8,939<sup>family</sup> | [代码](https://github.com/X-PLUG/MobileAgent/tree/main/Mobile-Agent-v1) · [论文](https://arxiv.org/abs/2401.16158) · [Mobile-Eval](https://github.com/X-PLUG/MobileAgent/tree/main/Mobile-Agent-v1#mobile-eval) · [Quick start](https://github.com/X-PLUG/MobileAgent/tree/main/Mobile-Agent-v1#quick_start) |
 | **AppAgent**<br><sub>CHI 2025</sub> | 2023&#8209;12&#8209;21 | Android | 引用&nbsp;47<br>Stars&nbsp;6,812 | [代码](https://github.com/TencentQQGYLab/AppAgent) · [论文](https://arxiv.org/abs/2312.13771) · [Deployment demo](https://github.com/TencentQQGYLab/AppAgent#demo) · [Evaluation tasks](https://github.com/TencentQQGYLab/AppAgent/blob/main/assets/testset.md) |
-| **MobileGPT**<br><sub>MobiCom 2024</sub> | 2023&#8209;12&#8209;04 | Android | 引用&nbsp;17<br>Stars&nbsp;26 | [代码](https://github.com/mobilegptsys/MobileGPT) · [论文](https://arxiv.org/abs/2312.03003) · [Server and client run guide](https://github.com/mobilegptsys/MobileGPT#run) · [Benchmark dataset](https://github.com/mobilegptsys/MobileGPT#benchmark-dataset) |
+| **Mobile-Agent-v2**<br><sub>NeurIPS 2024</sub> | 2024&#8209;06&#8209;03 | Android | 引用&nbsp;12<br>Stars&nbsp;8,939<sup>family</sup> | [代码](https://github.com/X-PLUG/MobileAgent/tree/main/Mobile-Agent-v2) · [论文](https://arxiv.org/abs/2406.01014) · [Run guide](https://github.com/X-PLUG/MobileAgent/tree/main/Mobile-Agent-v2#run) · [Paper results](https://arxiv.org/abs/2406.01014) |
 | **AutoDroid**<br><sub>MobiCom 2024</sub> | 2023&#8209;08&#8209;29 | Android | 引用&nbsp;88<br>Stars&nbsp;480 | [代码](https://github.com/MobileLLM/AutoDroid) · [论文](https://arxiv.org/abs/2308.15272) · [Installation](https://github.com/MobileLLM/AutoDroid#how-to-install) · [Paper evaluation](https://doi.org/10.1145/3636534.3649379) |
+| **Mobile-Agent-E**<br><sub>arXiv 2025</sub> | 2025&#8209;01&#8209;20 | Android | 引用&nbsp;3<br>Stars&nbsp;8,939<sup>family</sup> | [代码](https://github.com/X-PLUG/MobileAgent/tree/main/Mobile-Agent-E) · [论文](https://arxiv.org/abs/2501.11733) · [Mobile-Eval-E](https://github.com/X-PLUG/MobileAgent/tree/main/Mobile-Agent-E#mobile-eval-e-benchmark) · [Quick start](https://github.com/X-PLUG/MobileAgent/tree/main/Mobile-Agent-E#quick-start) |
+| **Midscene.js** | 2024&#8209;07&#8209;23 | Android, iOS, HarmonyOS | 引用&nbsp;—<br>Stars&nbsp;14,076 | [代码](https://github.com/web-infra-dev/midscene) · [Mobile showcases](https://midscenejs.com/showcases) · [Android guide](https://midscenejs.com/android-getting-started) · [iOS guide](https://midscenejs.com/ios-getting-started) |
+| **M3A**<br><sub>ICLR 2025</sub> | 2024&#8209;05&#8209;23 | Android | 引用&nbsp;1<br>Stars&nbsp;821 | [代码](https://github.com/google-research/android_world/tree/main/android_world/agents) · [论文](https://arxiv.org/abs/2405.14573) · [AndroidWorld](https://google-research.github.io/android_world/) · [Minimal M3A runner](https://github.com/google-research/android_world#quickstart) |
+| **MobileGPT**<br><sub>MobiCom 2024</sub> | 2023&#8209;12&#8209;04 | Android | 引用&nbsp;17<br>Stars&nbsp;26 | [代码](https://github.com/mobilegptsys/MobileGPT) · [论文](https://arxiv.org/abs/2312.03003) · [Server and client run guide](https://github.com/mobilegptsys/MobileGPT#run) · [Benchmark dataset](https://github.com/mobilegptsys/MobileGPT#benchmark-dataset) |
+| **Mobilerun** | 2025&#8209;04&#8209;12 | Android, iOS | 引用&nbsp;—<br>Stars&nbsp;8,769 | [代码](https://github.com/droidrun/mobilerun) · [Project benchmark](https://mobilerun.ai/benchmark) · [Quick start](https://github.com/droidrun/mobilerun#quickstart) |
+| **MobileUse**<br><sub>NeurIPS 2025</sub> | 2025&#8209;02&#8209;27 | Android | 引用&nbsp;0<br>Stars&nbsp;167 | [代码](https://github.com/MadeAgents/mobile-use) · [论文](https://arxiv.org/abs/2507.16853) · [AndroidWorld and AndroidLab](https://github.com/MadeAgents/mobile-use#benchmark) · [Python API](https://github.com/MadeAgents/mobile-use#use-in-python) |
+| **App Use** | 2025&#8209;05&#8209;16 | Android, iOS | 引用&nbsp;—<br>Stars&nbsp;69 | [代码](https://github.com/erickjtorres/app-use) · [iOS demos](https://github.com/erickjtorres/app-use#demos) · [Quick start](https://github.com/erickjtorres/app-use#quick-start) |
+| **CHOP**<br><sub>arXiv 2025</sub> | 2025&#8209;02&#8209;12 | Android, HarmonyOS | 引用&nbsp;0<br>Stars&nbsp;8 | [代码](https://github.com/Yuqi-Zhou/CHOP) · [论文](https://arxiv.org/abs/2503.03743) · [CHOP demo usage](https://github.com/Yuqi-Zhou/CHOP#chop-demo-usage) · [CHOP-En and CHOP-ZH](https://github.com/Yuqi-Zhou/CHOP#chop-en--chop-zh) |
 
 ## Emerging Agents
 
-发布时间晚于 **2025-07-15**。以下 8 个条目按发布日期从新到旧列出。引用数与 star 数只是带日期的快照元数据。
+发布时间晚于 **2025-07-15**。引用数与 star 数只是带日期的快照元数据。
 
 | Agent | 发布时间 | 平台 | 快照指标 | 链接 |
 |---|:---:|---|---:|---|
@@ -70,51 +70,51 @@ Mobile GUI Agent 工作分散在研究原型、模型发布、自动化框架、
 ## Agent 详情
 
 <details>
-<summary><strong>App Use</strong> — 基于 Appium、用于控制真实 Android 与 iOS 应用的紧凑 Agent API。</summary>
+<summary><strong>Mobile-Agent</strong> — 结合 OCR、图标检测与多模态推理的纯视觉 Android Agent。</summary>
 
-- **感知：**Appium UI tree, screenshots, app state
-- **动作：**Appium tap, swipe, text input, mobile gestures
-- **主要能力：**general Agent API, Android and iOS examples, CLI setup and doctor, optional memory
-- **恢复机制：**<code>retry</code>
-- **运行入口：**[entrypoint](https://github.com/erickjtorres/app-use/blob/main/examples/android_app_example.py) · [MIT 许可证](https://github.com/erickjtorres/app-use/blob/main/LICENSE)
-- **审计：**links-verified，2026-07-15 · 仓库最近更新 2026-07-10
-- **主要局限：**它没有论文或标准 benchmark，可靠性受 Appium 与模型能力制约。
-
-</details>
-<details>
-<summary><strong>Mobilerun</strong> — 为 LLM Agent 提供原生 Android/iOS 感知与控制工具的高采用度本地框架。</summary>
-
-- **感知：**accessibility tree, screenshots, device state
-- **动作：**Android portal actions, iOS portal actions, text and gestures, app launch
-- **主要能力：**CLI, Python API, reasoning mode, skills, app cards, custom tools, Docker
-- **恢复机制：**<code>replanning</code>
-- **运行入口：**[entrypoint](https://github.com/droidrun/mobilerun/blob/main/mobilerun/cli/main.py) · [MIT 许可证](https://github.com/droidrun/mobilerun/blob/main/LICENSE)
-- **审计：**links-verified，2026-07-15 · 仓库最近更新 2026-07-06
-- **主要局限：**benchmark 结果由项目方维护，恢复也主要依赖迭代推理而非经过审计的状态还原。
+- **感知：**screenshots, OCR, icon detection, visual grounding
+- **动作：**ADB tap, swipe, text input, back, home
+- **主要能力：**screen-only operation, single-agent planning, cross-app tasks
+- **恢复机制：**<code>none-documented</code>
+- **运行入口：**[entrypoint](https://github.com/X-PLUG/MobileAgent/blob/main/Mobile-Agent-v1/run.py) · [MIT 许可证](https://github.com/X-PLUG/MobileAgent/blob/main/LICENSE)
+- **审计：**links-verified，2026-07-15 · 仓库最近更新 2026-07-07
+- **主要局限：**依赖多个外部模型，且没有独立的错误恢复模块。
 
 </details>
 <details>
-<summary><strong>MobileUse</strong> — 集成分层反思、主动探索与 benchmark 运行器的完整 Android Agent。</summary>
+<summary><strong>AppAgent</strong> — 先学习应用交互知识、再复用于任务执行的 Android Agent。</summary>
 
-- **感知：**screenshots, multimodal model observations, repeated-state signals
-- **动作：**ADB tap, swipe, text input, app launch, navigation keys
-- **主要能力：**multi-agent planning, hierarchical reflection, proactive exploration, memory, WebUI, Python API
-- **恢复机制：**<code>replanning</code>
-- **运行入口：**[entrypoint](https://github.com/MadeAgents/mobile-use/blob/master/pyproject.toml) · [MIT 许可证](https://github.com/MadeAgents/mobile-use/blob/master/LICENSE)
-- **审计：**links-verified，2026-07-15 · 仓库最近更新 2026-07-10
-- **主要局限：**较强结果依赖大型外部 VLM，且没有采用统一的专用恢复 benchmark。
+- **感知：**screenshots, OCR, visual element descriptions
+- **动作：**ADB tap, swipe, text input, back, home
+- **主要能力：**autonomous app exploration, human-demonstration learning, app knowledge base, task execution
+- **恢复机制：**<code>none-documented</code>
+- **运行入口：**[entrypoint](https://github.com/TencentQQGYLab/AppAgent/blob/main/run.py) · [MIT 许可证](https://github.com/TencentQQGYLab/AppAgent/blob/main/LICENSE)
+- **审计：**links-verified，2026-07-15 · 仓库最近更新 2025-03-19
+- **主要局限：**公开仓库中可辨识的是原版 AppAgent，无法单独确认 AppAgent v2 实现。
 
 </details>
 <details>
-<summary><strong>CHOP</strong> — 围绕可复用高频子任务约束规划的真机移动助手。</summary>
+<summary><strong>Mobile-Agent-v2</strong> — 将规划、决策、反思与焦点记忆分离的多 Agent Android 系统。</summary>
 
-- **感知：**screenshots, Aria-UI grounding, task context
-- **动作：**ADB tap, swipe, text input, navigation keys
-- **主要能力：**basis subtasks, constrained subtask planning, bilingual tasks, real-device demo
-- **恢复机制：**<code>replanning</code>
-- **运行入口：**[entrypoint](https://github.com/Yuqi-Zhou/CHOP/blob/main/src/run.py) · [MIT 许可证](https://github.com/Yuqi-Zhou/CHOP/blob/main/LICENSE)
-- **审计：**links-verified，2026-07-15 · 仓库最近更新 2025-03-08
-- **主要局限：**评测规模较小，部分中文任务数据未发布，仓库也已较少维护。
+- **感知：**screenshots, OCR, visual grounding
+- **动作：**ADB tap, swipe, text input, back, home
+- **主要能力：**planning agent, decision agent, reflection agent, focus memory
+- **恢复机制：**<code>reflection</code>
+- **运行入口：**[entrypoint](https://github.com/X-PLUG/MobileAgent/blob/main/Mobile-Agent-v2/run.py) · [MIT 许可证](https://github.com/X-PLUG/MobileAgent/blob/main/LICENSE)
+- **审计：**links-verified，2026-07-15 · 仓库最近更新 2026-07-07
+- **主要局限：**反思可能陷入循环，部署仍依赖多个模型服务。
+
+</details>
+<details>
+<summary><strong>AutoDroid</strong> — 基于 DroidBot，将自动探索与应用专属 LLM 记忆结合的 Android 任务 Agent。</summary>
+
+- **感知：**UI hierarchy, screenshots, dynamic app exploration
+- **动作：**ADB and DroidBot UI events
+- **主要能力：**functionality-aware UI representation, app memory, query optimization, task automation
+- **恢复机制：**<code>none-documented</code>
+- **运行入口：**[entrypoint](https://github.com/MobileLLM/AutoDroid/blob/main/batch_testing.py) · [MIT 许可证](https://github.com/MobileLLM/AutoDroid/blob/main/LICENSE)
+- **审计：**links-verified，2026-07-15 · 仓库最近更新 2024-03-22
+- **主要局限：**仓库近期活跃度较低，且依赖主机侧 ADB，不能独立运行在端侧。
 
 </details>
 <details>
@@ -142,18 +142,6 @@ Mobile GUI Agent 工作分散在研究原型、模型发布、自动化框架、
 
 </details>
 <details>
-<summary><strong>Mobile-Agent-v2</strong> — 将规划、决策、反思与焦点记忆分离的多 Agent Android 系统。</summary>
-
-- **感知：**screenshots, OCR, visual grounding
-- **动作：**ADB tap, swipe, text input, back, home
-- **主要能力：**planning agent, decision agent, reflection agent, focus memory
-- **恢复机制：**<code>reflection</code>
-- **运行入口：**[entrypoint](https://github.com/X-PLUG/MobileAgent/blob/main/Mobile-Agent-v2/run.py) · [MIT 许可证](https://github.com/X-PLUG/MobileAgent/blob/main/LICENSE)
-- **审计：**links-verified，2026-07-15 · 仓库最近更新 2026-07-07
-- **主要局限：**反思可能陷入循环，部署仍依赖多个模型服务。
-
-</details>
-<details>
 <summary><strong>M3A</strong> — 随 AndroidWorld 动态 benchmark 发布的可运行多模态默认 Agent。</summary>
 
 - **感知：**screenshots, accessibility tree
@@ -163,30 +151,6 @@ Mobile GUI Agent 工作分散在研究原型、模型发布、自动化框架、
 - **运行入口：**[entrypoint](https://github.com/google-research/android_world/blob/main/minimal_task_runner.py) · [Apache-2.0 许可证](https://github.com/google-research/android_world/blob/main/LICENSE)
 - **审计：**links-verified，2026-07-15 · 仓库最近更新 2026-07-10
 - **主要局限：**它主要是研究基线，默认配置模型较旧且依赖 API。
-
-</details>
-<details>
-<summary><strong>Mobile-Agent</strong> — 结合 OCR、图标检测与多模态推理的纯视觉 Android Agent。</summary>
-
-- **感知：**screenshots, OCR, icon detection, visual grounding
-- **动作：**ADB tap, swipe, text input, back, home
-- **主要能力：**screen-only operation, single-agent planning, cross-app tasks
-- **恢复机制：**<code>none-documented</code>
-- **运行入口：**[entrypoint](https://github.com/X-PLUG/MobileAgent/blob/main/Mobile-Agent-v1/run.py) · [MIT 许可证](https://github.com/X-PLUG/MobileAgent/blob/main/LICENSE)
-- **审计：**links-verified，2026-07-15 · 仓库最近更新 2026-07-07
-- **主要局限：**依赖多个外部模型，且没有独立的错误恢复模块。
-
-</details>
-<details>
-<summary><strong>AppAgent</strong> — 先学习应用交互知识、再复用于任务执行的 Android Agent。</summary>
-
-- **感知：**screenshots, OCR, visual element descriptions
-- **动作：**ADB tap, swipe, text input, back, home
-- **主要能力：**autonomous app exploration, human-demonstration learning, app knowledge base, task execution
-- **恢复机制：**<code>none-documented</code>
-- **运行入口：**[entrypoint](https://github.com/TencentQQGYLab/AppAgent/blob/main/run.py) · [MIT 许可证](https://github.com/TencentQQGYLab/AppAgent/blob/main/LICENSE)
-- **审计：**links-verified，2026-07-15 · 仓库最近更新 2025-03-19
-- **主要局限：**公开仓库中可辨识的是原版 AppAgent，无法单独确认 AppAgent v2 实现。
 
 </details>
 <details>
@@ -202,15 +166,51 @@ Mobile GUI Agent 工作分散在研究原型、模型发布、自动化框架、
 
 </details>
 <details>
-<summary><strong>AutoDroid</strong> — 基于 DroidBot，将自动探索与应用专属 LLM 记忆结合的 Android 任务 Agent。</summary>
+<summary><strong>Mobilerun</strong> — 为 LLM Agent 提供原生 Android/iOS 感知与控制工具的高采用度本地框架。</summary>
 
-- **感知：**UI hierarchy, screenshots, dynamic app exploration
-- **动作：**ADB and DroidBot UI events
-- **主要能力：**functionality-aware UI representation, app memory, query optimization, task automation
-- **恢复机制：**<code>none-documented</code>
-- **运行入口：**[entrypoint](https://github.com/MobileLLM/AutoDroid/blob/main/batch_testing.py) · [MIT 许可证](https://github.com/MobileLLM/AutoDroid/blob/main/LICENSE)
-- **审计：**links-verified，2026-07-15 · 仓库最近更新 2024-03-22
-- **主要局限：**仓库近期活跃度较低，且依赖主机侧 ADB，不能独立运行在端侧。
+- **感知：**accessibility tree, screenshots, device state
+- **动作：**Android portal actions, iOS portal actions, text and gestures, app launch
+- **主要能力：**CLI, Python API, reasoning mode, skills, app cards, custom tools, Docker
+- **恢复机制：**<code>replanning</code>
+- **运行入口：**[entrypoint](https://github.com/droidrun/mobilerun/blob/main/mobilerun/cli/main.py) · [MIT 许可证](https://github.com/droidrun/mobilerun/blob/main/LICENSE)
+- **审计：**links-verified，2026-07-15 · 仓库最近更新 2026-07-06
+- **主要局限：**benchmark 结果由项目方维护，恢复也主要依赖迭代推理而非经过审计的状态还原。
+
+</details>
+<details>
+<summary><strong>MobileUse</strong> — 集成分层反思、主动探索与 benchmark 运行器的完整 Android Agent。</summary>
+
+- **感知：**screenshots, multimodal model observations, repeated-state signals
+- **动作：**ADB tap, swipe, text input, app launch, navigation keys
+- **主要能力：**multi-agent planning, hierarchical reflection, proactive exploration, memory, WebUI, Python API
+- **恢复机制：**<code>replanning</code>
+- **运行入口：**[entrypoint](https://github.com/MadeAgents/mobile-use/blob/master/pyproject.toml) · [MIT 许可证](https://github.com/MadeAgents/mobile-use/blob/master/LICENSE)
+- **审计：**links-verified，2026-07-15 · 仓库最近更新 2026-07-10
+- **主要局限：**较强结果依赖大型外部 VLM，且没有采用统一的专用恢复 benchmark。
+
+</details>
+<details>
+<summary><strong>App Use</strong> — 基于 Appium、用于控制真实 Android 与 iOS 应用的紧凑 Agent API。</summary>
+
+- **感知：**Appium UI tree, screenshots, app state
+- **动作：**Appium tap, swipe, text input, mobile gestures
+- **主要能力：**general Agent API, Android and iOS examples, CLI setup and doctor, optional memory
+- **恢复机制：**<code>retry</code>
+- **运行入口：**[entrypoint](https://github.com/erickjtorres/app-use/blob/main/examples/android_app_example.py) · [MIT 许可证](https://github.com/erickjtorres/app-use/blob/main/LICENSE)
+- **审计：**links-verified，2026-07-15 · 仓库最近更新 2026-07-10
+- **主要局限：**它没有论文或标准 benchmark，可靠性受 Appium 与模型能力制约。
+
+</details>
+<details>
+<summary><strong>CHOP</strong> — 围绕可复用高频子任务约束规划的真机移动助手。</summary>
+
+- **感知：**screenshots, Aria-UI grounding, task context
+- **动作：**ADB tap, swipe, text input, navigation keys
+- **主要能力：**basis subtasks, constrained subtask planning, bilingual tasks, real-device demo
+- **恢复机制：**<code>replanning</code>
+- **运行入口：**[entrypoint](https://github.com/Yuqi-Zhou/CHOP/blob/main/src/run.py) · [MIT 许可证](https://github.com/Yuqi-Zhou/CHOP/blob/main/LICENSE)
+- **审计：**links-verified，2026-07-15 · 仓库最近更新 2025-03-08
+- **主要局限：**评测规模较小，部分中文任务数据未发布，仓库也已较少维护。
 
 </details>
 <details>

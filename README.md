@@ -33,26 +33,26 @@ See [METHODOLOGY.md](METHODOLOGY.md) for exclusions, audit levels, paper dedupli
 
 ## Established agents
 
-Released on or before **2025-07-15** (at least 12 months old at the snapshot). These 12 entries are listed by release date, newest first.
+Released on or before **2025-07-15** (at least 12 months old at the snapshot).
 
 | Agent | Released | Platform | Snapshot | Links |
 |---|:---:|---|---:|---|
-| **App Use** | 2025&#8209;05&#8209;16 | Android, iOS | Citations&nbsp;—<br>Stars&nbsp;69 | [Code](https://github.com/erickjtorres/app-use) · [iOS demos](https://github.com/erickjtorres/app-use#demos) · [Quick start](https://github.com/erickjtorres/app-use#quick-start) |
-| **Mobilerun** | 2025&#8209;04&#8209;12 | Android, iOS | Citations&nbsp;—<br>Stars&nbsp;8,769 | [Code](https://github.com/droidrun/mobilerun) · [Project benchmark](https://mobilerun.ai/benchmark) · [Quick start](https://github.com/droidrun/mobilerun#quickstart) |
-| **MobileUse**<br><sub>NeurIPS 2025</sub> | 2025&#8209;02&#8209;27 | Android | Citations&nbsp;0<br>Stars&nbsp;167 | [Code](https://github.com/MadeAgents/mobile-use) · [Paper](https://arxiv.org/abs/2507.16853) · [AndroidWorld and AndroidLab](https://github.com/MadeAgents/mobile-use#benchmark) · [Python API](https://github.com/MadeAgents/mobile-use#use-in-python) |
-| **CHOP**<br><sub>arXiv 2025</sub> | 2025&#8209;02&#8209;12 | Android, HarmonyOS | Citations&nbsp;0<br>Stars&nbsp;8 | [Code](https://github.com/Yuqi-Zhou/CHOP) · [Paper](https://arxiv.org/abs/2503.03743) · [CHOP demo usage](https://github.com/Yuqi-Zhou/CHOP#chop-demo-usage) · [CHOP-En and CHOP-ZH](https://github.com/Yuqi-Zhou/CHOP#chop-en--chop-zh) |
-| **Mobile-Agent-E**<br><sub>arXiv 2025</sub> | 2025&#8209;01&#8209;20 | Android | Citations&nbsp;3<br>Stars&nbsp;8,939<sup>family</sup> | [Code](https://github.com/X-PLUG/MobileAgent/tree/main/Mobile-Agent-E) · [Paper](https://arxiv.org/abs/2501.11733) · [Mobile-Eval-E](https://github.com/X-PLUG/MobileAgent/tree/main/Mobile-Agent-E#mobile-eval-e-benchmark) · [Quick start](https://github.com/X-PLUG/MobileAgent/tree/main/Mobile-Agent-E#quick-start) |
-| **Midscene.js** | 2024&#8209;07&#8209;23 | Android, iOS, HarmonyOS | Citations&nbsp;—<br>Stars&nbsp;14,076 | [Code](https://github.com/web-infra-dev/midscene) · [Mobile showcases](https://midscenejs.com/showcases) · [Android guide](https://midscenejs.com/android-getting-started) · [iOS guide](https://midscenejs.com/ios-getting-started) |
-| **Mobile-Agent-v2**<br><sub>NeurIPS 2024</sub> | 2024&#8209;06&#8209;03 | Android | Citations&nbsp;12<br>Stars&nbsp;8,939<sup>family</sup> | [Code](https://github.com/X-PLUG/MobileAgent/tree/main/Mobile-Agent-v2) · [Paper](https://arxiv.org/abs/2406.01014) · [Run guide](https://github.com/X-PLUG/MobileAgent/tree/main/Mobile-Agent-v2#run) · [Paper results](https://arxiv.org/abs/2406.01014) |
-| **M3A**<br><sub>ICLR 2025</sub> | 2024&#8209;05&#8209;23 | Android | Citations&nbsp;1<br>Stars&nbsp;821 | [Code](https://github.com/google-research/android_world/tree/main/android_world/agents) · [Paper](https://arxiv.org/abs/2405.14573) · [AndroidWorld](https://google-research.github.io/android_world/) · [Minimal M3A runner](https://github.com/google-research/android_world#quickstart) |
 | **Mobile-Agent**<br><sub>ICLR 2024 Workshop; CCL 2024 demo</sub> | 2024&#8209;01&#8209;29 | Android | Citations&nbsp;13<br>Stars&nbsp;8,939<sup>family</sup> | [Code](https://github.com/X-PLUG/MobileAgent/tree/main/Mobile-Agent-v1) · [Paper](https://arxiv.org/abs/2401.16158) · [Mobile-Eval](https://github.com/X-PLUG/MobileAgent/tree/main/Mobile-Agent-v1#mobile-eval) · [Quick start](https://github.com/X-PLUG/MobileAgent/tree/main/Mobile-Agent-v1#quick_start) |
 | **AppAgent**<br><sub>CHI 2025</sub> | 2023&#8209;12&#8209;21 | Android | Citations&nbsp;47<br>Stars&nbsp;6,812 | [Code](https://github.com/TencentQQGYLab/AppAgent) · [Paper](https://arxiv.org/abs/2312.13771) · [Deployment demo](https://github.com/TencentQQGYLab/AppAgent#demo) · [Evaluation tasks](https://github.com/TencentQQGYLab/AppAgent/blob/main/assets/testset.md) |
-| **MobileGPT**<br><sub>MobiCom 2024</sub> | 2023&#8209;12&#8209;04 | Android | Citations&nbsp;17<br>Stars&nbsp;26 | [Code](https://github.com/mobilegptsys/MobileGPT) · [Paper](https://arxiv.org/abs/2312.03003) · [Server and client run guide](https://github.com/mobilegptsys/MobileGPT#run) · [Benchmark dataset](https://github.com/mobilegptsys/MobileGPT#benchmark-dataset) |
+| **Mobile-Agent-v2**<br><sub>NeurIPS 2024</sub> | 2024&#8209;06&#8209;03 | Android | Citations&nbsp;12<br>Stars&nbsp;8,939<sup>family</sup> | [Code](https://github.com/X-PLUG/MobileAgent/tree/main/Mobile-Agent-v2) · [Paper](https://arxiv.org/abs/2406.01014) · [Run guide](https://github.com/X-PLUG/MobileAgent/tree/main/Mobile-Agent-v2#run) · [Paper results](https://arxiv.org/abs/2406.01014) |
 | **AutoDroid**<br><sub>MobiCom 2024</sub> | 2023&#8209;08&#8209;29 | Android | Citations&nbsp;88<br>Stars&nbsp;480 | [Code](https://github.com/MobileLLM/AutoDroid) · [Paper](https://arxiv.org/abs/2308.15272) · [Installation](https://github.com/MobileLLM/AutoDroid#how-to-install) · [Paper evaluation](https://doi.org/10.1145/3636534.3649379) |
+| **Mobile-Agent-E**<br><sub>arXiv 2025</sub> | 2025&#8209;01&#8209;20 | Android | Citations&nbsp;3<br>Stars&nbsp;8,939<sup>family</sup> | [Code](https://github.com/X-PLUG/MobileAgent/tree/main/Mobile-Agent-E) · [Paper](https://arxiv.org/abs/2501.11733) · [Mobile-Eval-E](https://github.com/X-PLUG/MobileAgent/tree/main/Mobile-Agent-E#mobile-eval-e-benchmark) · [Quick start](https://github.com/X-PLUG/MobileAgent/tree/main/Mobile-Agent-E#quick-start) |
+| **Midscene.js** | 2024&#8209;07&#8209;23 | Android, iOS, HarmonyOS | Citations&nbsp;—<br>Stars&nbsp;14,076 | [Code](https://github.com/web-infra-dev/midscene) · [Mobile showcases](https://midscenejs.com/showcases) · [Android guide](https://midscenejs.com/android-getting-started) · [iOS guide](https://midscenejs.com/ios-getting-started) |
+| **M3A**<br><sub>ICLR 2025</sub> | 2024&#8209;05&#8209;23 | Android | Citations&nbsp;1<br>Stars&nbsp;821 | [Code](https://github.com/google-research/android_world/tree/main/android_world/agents) · [Paper](https://arxiv.org/abs/2405.14573) · [AndroidWorld](https://google-research.github.io/android_world/) · [Minimal M3A runner](https://github.com/google-research/android_world#quickstart) |
+| **MobileGPT**<br><sub>MobiCom 2024</sub> | 2023&#8209;12&#8209;04 | Android | Citations&nbsp;17<br>Stars&nbsp;26 | [Code](https://github.com/mobilegptsys/MobileGPT) · [Paper](https://arxiv.org/abs/2312.03003) · [Server and client run guide](https://github.com/mobilegptsys/MobileGPT#run) · [Benchmark dataset](https://github.com/mobilegptsys/MobileGPT#benchmark-dataset) |
+| **Mobilerun** | 2025&#8209;04&#8209;12 | Android, iOS | Citations&nbsp;—<br>Stars&nbsp;8,769 | [Code](https://github.com/droidrun/mobilerun) · [Project benchmark](https://mobilerun.ai/benchmark) · [Quick start](https://github.com/droidrun/mobilerun#quickstart) |
+| **MobileUse**<br><sub>NeurIPS 2025</sub> | 2025&#8209;02&#8209;27 | Android | Citations&nbsp;0<br>Stars&nbsp;167 | [Code](https://github.com/MadeAgents/mobile-use) · [Paper](https://arxiv.org/abs/2507.16853) · [AndroidWorld and AndroidLab](https://github.com/MadeAgents/mobile-use#benchmark) · [Python API](https://github.com/MadeAgents/mobile-use#use-in-python) |
+| **App Use** | 2025&#8209;05&#8209;16 | Android, iOS | Citations&nbsp;—<br>Stars&nbsp;69 | [Code](https://github.com/erickjtorres/app-use) · [iOS demos](https://github.com/erickjtorres/app-use#demos) · [Quick start](https://github.com/erickjtorres/app-use#quick-start) |
+| **CHOP**<br><sub>arXiv 2025</sub> | 2025&#8209;02&#8209;12 | Android, HarmonyOS | Citations&nbsp;0<br>Stars&nbsp;8 | [Code](https://github.com/Yuqi-Zhou/CHOP) · [Paper](https://arxiv.org/abs/2503.03743) · [CHOP demo usage](https://github.com/Yuqi-Zhou/CHOP#chop-demo-usage) · [CHOP-En and CHOP-ZH](https://github.com/Yuqi-Zhou/CHOP#chop-en--chop-zh) |
 
 ## Emerging agents
 
-Released after **2025-07-15**. These 8 entries are listed by release date, newest first. Citation and star counts are dated snapshot metadata.
+Released after **2025-07-15**. Citation and star counts are dated snapshot metadata.
 
 | Agent | Released | Platform | Snapshot | Links |
 |---|:---:|---|---:|---|
@@ -70,51 +70,51 @@ Released after **2025-07-15**. These 8 entries are listed by release date, newes
 ## Agent details
 
 <details>
-<summary><strong>App Use</strong> — A compact Appium-backed Agent API for controlling real Android and iOS applications.</summary>
+<summary><strong>Mobile-Agent</strong> — A screen-only Android agent combining OCR, icon detection, and multimodal reasoning.</summary>
 
-- **Perception:** Appium UI tree, screenshots, app state
-- **Actions:** Appium tap, swipe, text input, mobile gestures
-- **Capabilities:** general Agent API, Android and iOS examples, CLI setup and doctor, optional memory
-- **Recovery:** <code>retry</code> — The agent loop can act again from refreshed Appium state and records execution history, but no explicit backtracking mechanism is documented.
-- **Runtime:** [entrypoint](https://github.com/erickjtorres/app-use/blob/main/examples/android_app_example.py) · [MIT license](https://github.com/erickjtorres/app-use/blob/main/LICENSE)
-- **Audit:** links-verified on 2026-07-15 · repository updated 2026-07-10
-- **Main limitation:** It has no paper or standardized benchmark, and reliability inherits Appium and model constraints.
-
-</details>
-<details>
-<summary><strong>Mobilerun</strong> — A widely adopted local framework giving LLM agents native Android and iOS inspection and control tools.</summary>
-
-- **Perception:** accessibility tree, screenshots, device state
-- **Actions:** Android portal actions, iOS portal actions, text and gestures, app launch
-- **Capabilities:** CLI, Python API, reasoning mode, skills, app cards, custom tools, Docker
-- **Recovery:** <code>replanning</code> — Reasoning mode repeatedly inspects updated UI state and can revise multi-step workflows; explicit rollback semantics are not documented.
-- **Runtime:** [entrypoint](https://github.com/droidrun/mobilerun/blob/main/mobilerun/cli/main.py) · [MIT license](https://github.com/droidrun/mobilerun/blob/main/LICENSE)
-- **Audit:** links-verified on 2026-07-15 · repository updated 2026-07-06
-- **Main limitation:** Published benchmark results are maintained by the project, and recovery is implemented as iterative reasoning rather than audited state restoration.
+- **Perception:** screenshots, OCR, icon detection, visual grounding
+- **Actions:** ADB tap, swipe, text input, back, home
+- **Capabilities:** screen-only operation, single-agent planning, cross-app tasks
+- **Recovery:** <code>none-documented</code> — The public v1 workflow executes iteratively but does not document a dedicated outcome verifier or recovery controller.
+- **Runtime:** [entrypoint](https://github.com/X-PLUG/MobileAgent/blob/main/Mobile-Agent-v1/run.py) · [MIT license](https://github.com/X-PLUG/MobileAgent/blob/main/LICENSE)
+- **Audit:** links-verified on 2026-07-15 · repository updated 2026-07-07
+- **Main limitation:** Requires several external models and exposes no dedicated error-recovery module.
 
 </details>
 <details>
-<summary><strong>MobileUse</strong> — A complete Android agent with hierarchical reflection, proactive exploration, and benchmark integrations.</summary>
+<summary><strong>AppAgent</strong> — An Android agent that first learns app-specific interaction knowledge, then reuses it for task execution.</summary>
 
-- **Perception:** screenshots, multimodal model observations, repeated-state signals
-- **Actions:** ADB tap, swipe, text input, app launch, navigation keys
-- **Capabilities:** multi-agent planning, hierarchical reflection, proactive exploration, memory, WebUI, Python API
-- **Recovery:** <code>replanning</code> — Action, trajectory, and global reflection operate at different temporal scales, with retries and revised execution after detected failures.
-- **Runtime:** [entrypoint](https://github.com/MadeAgents/mobile-use/blob/master/pyproject.toml) · [MIT license](https://github.com/MadeAgents/mobile-use/blob/master/LICENSE)
-- **Audit:** links-verified on 2026-07-15 · repository updated 2026-07-10
-- **Main limitation:** Strong reported results use large external VLMs, and no common dedicated recovery benchmark is used.
+- **Perception:** screenshots, OCR, visual element descriptions
+- **Actions:** ADB tap, swipe, text input, back, home
+- **Capabilities:** autonomous app exploration, human-demonstration learning, app knowledge base, task execution
+- **Recovery:** <code>none-documented</code> — The public implementation reuses learned app documentation but does not expose a dedicated outcome-verification or recovery controller.
+- **Runtime:** [entrypoint](https://github.com/TencentQQGYLab/AppAgent/blob/main/run.py) · [MIT license](https://github.com/TencentQQGYLab/AppAgent/blob/main/LICENSE)
+- **Audit:** links-verified on 2026-07-15 · repository updated 2025-03-19
+- **Main limitation:** The public repository contains the original AppAgent implementation; AppAgent v2 code is not separately identifiable.
 
 </details>
 <details>
-<summary><strong>CHOP</strong> — A real-device mobile assistant that constrains planning around reusable high-frequency subtasks.</summary>
+<summary><strong>Mobile-Agent-v2</strong> — A multi-agent Android system separating planning, decision, reflection, and focus memory.</summary>
 
-- **Perception:** screenshots, Aria-UI grounding, task context
-- **Actions:** ADB tap, swipe, text input, navigation keys
-- **Capabilities:** basis subtasks, constrained subtask planning, bilingual tasks, real-device demo
-- **Recovery:** <code>replanning</code> — Constrained subtask planning can revise execution at subtask boundaries, but the paper does not present explicit state rollback.
-- **Runtime:** [entrypoint](https://github.com/Yuqi-Zhou/CHOP/blob/main/src/run.py) · [MIT license](https://github.com/Yuqi-Zhou/CHOP/blob/main/LICENSE)
-- **Audit:** links-verified on 2026-07-15 · repository updated 2025-03-08
-- **Main limitation:** Evaluation is small, some Chinese task data is unreleased, and the repository is no longer active.
+- **Perception:** screenshots, OCR, visual grounding
+- **Actions:** ADB tap, swipe, text input, back, home
+- **Capabilities:** planning agent, decision agent, reflection agent, focus memory
+- **Recovery:** <code>reflection</code> — The Reflection Agent observes each action outcome and can request correction when an operation is judged unsuccessful.
+- **Runtime:** [entrypoint](https://github.com/X-PLUG/MobileAgent/blob/main/Mobile-Agent-v2/run.py) · [MIT license](https://github.com/X-PLUG/MobileAgent/blob/main/LICENSE)
+- **Audit:** links-verified on 2026-07-15 · repository updated 2026-07-07
+- **Main limitation:** Reflection can enter loops, and deployment still depends on several model services.
+
+</details>
+<details>
+<summary><strong>AutoDroid</strong> — A DroidBot-based Android task agent that combines automated exploration with app-specific LLM memory.</summary>
+
+- **Perception:** UI hierarchy, screenshots, dynamic app exploration
+- **Actions:** ADB and DroidBot UI events
+- **Capabilities:** functionality-aware UI representation, app memory, query optimization, task automation
+- **Recovery:** <code>none-documented</code> — The implementation emphasizes exploration memory and task generation, with no dedicated execution-error recovery module documented.
+- **Runtime:** [entrypoint](https://github.com/MobileLLM/AutoDroid/blob/main/batch_testing.py) · [MIT license](https://github.com/MobileLLM/AutoDroid/blob/main/LICENSE)
+- **Audit:** links-verified on 2026-07-15 · repository updated 2024-03-22
+- **Main limitation:** The repository has seen little recent activity and requires host-side ADB rather than an on-device deployment.
 
 </details>
 <details>
@@ -142,18 +142,6 @@ Released after **2025-07-15**. These 8 entries are listed by release date, newes
 
 </details>
 <details>
-<summary><strong>Mobile-Agent-v2</strong> — A multi-agent Android system separating planning, decision, reflection, and focus memory.</summary>
-
-- **Perception:** screenshots, OCR, visual grounding
-- **Actions:** ADB tap, swipe, text input, back, home
-- **Capabilities:** planning agent, decision agent, reflection agent, focus memory
-- **Recovery:** <code>reflection</code> — The Reflection Agent observes each action outcome and can request correction when an operation is judged unsuccessful.
-- **Runtime:** [entrypoint](https://github.com/X-PLUG/MobileAgent/blob/main/Mobile-Agent-v2/run.py) · [MIT license](https://github.com/X-PLUG/MobileAgent/blob/main/LICENSE)
-- **Audit:** links-verified on 2026-07-15 · repository updated 2026-07-07
-- **Main limitation:** Reflection can enter loops, and deployment still depends on several model services.
-
-</details>
-<details>
 <summary><strong>M3A</strong> — The runnable multimodal default agent shipped with the AndroidWorld live benchmark.</summary>
 
 - **Perception:** screenshots, accessibility tree
@@ -163,30 +151,6 @@ Released after **2025-07-15**. These 8 entries are listed by release date, newes
 - **Runtime:** [entrypoint](https://github.com/google-research/android_world/blob/main/minimal_task_runner.py) · [Apache-2.0 license](https://github.com/google-research/android_world/blob/main/LICENSE)
 - **Audit:** links-verified on 2026-07-15 · repository updated 2026-07-10
 - **Main limitation:** It is primarily a research baseline and the default configured model is legacy and API-dependent.
-
-</details>
-<details>
-<summary><strong>Mobile-Agent</strong> — A screen-only Android agent combining OCR, icon detection, and multimodal reasoning.</summary>
-
-- **Perception:** screenshots, OCR, icon detection, visual grounding
-- **Actions:** ADB tap, swipe, text input, back, home
-- **Capabilities:** screen-only operation, single-agent planning, cross-app tasks
-- **Recovery:** <code>none-documented</code> — The public v1 workflow executes iteratively but does not document a dedicated outcome verifier or recovery controller.
-- **Runtime:** [entrypoint](https://github.com/X-PLUG/MobileAgent/blob/main/Mobile-Agent-v1/run.py) · [MIT license](https://github.com/X-PLUG/MobileAgent/blob/main/LICENSE)
-- **Audit:** links-verified on 2026-07-15 · repository updated 2026-07-07
-- **Main limitation:** Requires several external models and exposes no dedicated error-recovery module.
-
-</details>
-<details>
-<summary><strong>AppAgent</strong> — An Android agent that first learns app-specific interaction knowledge, then reuses it for task execution.</summary>
-
-- **Perception:** screenshots, OCR, visual element descriptions
-- **Actions:** ADB tap, swipe, text input, back, home
-- **Capabilities:** autonomous app exploration, human-demonstration learning, app knowledge base, task execution
-- **Recovery:** <code>none-documented</code> — The public implementation reuses learned app documentation but does not expose a dedicated outcome-verification or recovery controller.
-- **Runtime:** [entrypoint](https://github.com/TencentQQGYLab/AppAgent/blob/main/run.py) · [MIT license](https://github.com/TencentQQGYLab/AppAgent/blob/main/LICENSE)
-- **Audit:** links-verified on 2026-07-15 · repository updated 2025-03-19
-- **Main limitation:** The public repository contains the original AppAgent implementation; AppAgent v2 code is not separately identifiable.
 
 </details>
 <details>
@@ -202,15 +166,51 @@ Released after **2025-07-15**. These 8 entries are listed by release date, newes
 
 </details>
 <details>
-<summary><strong>AutoDroid</strong> — A DroidBot-based Android task agent that combines automated exploration with app-specific LLM memory.</summary>
+<summary><strong>Mobilerun</strong> — A widely adopted local framework giving LLM agents native Android and iOS inspection and control tools.</summary>
 
-- **Perception:** UI hierarchy, screenshots, dynamic app exploration
-- **Actions:** ADB and DroidBot UI events
-- **Capabilities:** functionality-aware UI representation, app memory, query optimization, task automation
-- **Recovery:** <code>none-documented</code> — The implementation emphasizes exploration memory and task generation, with no dedicated execution-error recovery module documented.
-- **Runtime:** [entrypoint](https://github.com/MobileLLM/AutoDroid/blob/main/batch_testing.py) · [MIT license](https://github.com/MobileLLM/AutoDroid/blob/main/LICENSE)
-- **Audit:** links-verified on 2026-07-15 · repository updated 2024-03-22
-- **Main limitation:** The repository has seen little recent activity and requires host-side ADB rather than an on-device deployment.
+- **Perception:** accessibility tree, screenshots, device state
+- **Actions:** Android portal actions, iOS portal actions, text and gestures, app launch
+- **Capabilities:** CLI, Python API, reasoning mode, skills, app cards, custom tools, Docker
+- **Recovery:** <code>replanning</code> — Reasoning mode repeatedly inspects updated UI state and can revise multi-step workflows; explicit rollback semantics are not documented.
+- **Runtime:** [entrypoint](https://github.com/droidrun/mobilerun/blob/main/mobilerun/cli/main.py) · [MIT license](https://github.com/droidrun/mobilerun/blob/main/LICENSE)
+- **Audit:** links-verified on 2026-07-15 · repository updated 2026-07-06
+- **Main limitation:** Published benchmark results are maintained by the project, and recovery is implemented as iterative reasoning rather than audited state restoration.
+
+</details>
+<details>
+<summary><strong>MobileUse</strong> — A complete Android agent with hierarchical reflection, proactive exploration, and benchmark integrations.</summary>
+
+- **Perception:** screenshots, multimodal model observations, repeated-state signals
+- **Actions:** ADB tap, swipe, text input, app launch, navigation keys
+- **Capabilities:** multi-agent planning, hierarchical reflection, proactive exploration, memory, WebUI, Python API
+- **Recovery:** <code>replanning</code> — Action, trajectory, and global reflection operate at different temporal scales, with retries and revised execution after detected failures.
+- **Runtime:** [entrypoint](https://github.com/MadeAgents/mobile-use/blob/master/pyproject.toml) · [MIT license](https://github.com/MadeAgents/mobile-use/blob/master/LICENSE)
+- **Audit:** links-verified on 2026-07-15 · repository updated 2026-07-10
+- **Main limitation:** Strong reported results use large external VLMs, and no common dedicated recovery benchmark is used.
+
+</details>
+<details>
+<summary><strong>App Use</strong> — A compact Appium-backed Agent API for controlling real Android and iOS applications.</summary>
+
+- **Perception:** Appium UI tree, screenshots, app state
+- **Actions:** Appium tap, swipe, text input, mobile gestures
+- **Capabilities:** general Agent API, Android and iOS examples, CLI setup and doctor, optional memory
+- **Recovery:** <code>retry</code> — The agent loop can act again from refreshed Appium state and records execution history, but no explicit backtracking mechanism is documented.
+- **Runtime:** [entrypoint](https://github.com/erickjtorres/app-use/blob/main/examples/android_app_example.py) · [MIT license](https://github.com/erickjtorres/app-use/blob/main/LICENSE)
+- **Audit:** links-verified on 2026-07-15 · repository updated 2026-07-10
+- **Main limitation:** It has no paper or standardized benchmark, and reliability inherits Appium and model constraints.
+
+</details>
+<details>
+<summary><strong>CHOP</strong> — A real-device mobile assistant that constrains planning around reusable high-frequency subtasks.</summary>
+
+- **Perception:** screenshots, Aria-UI grounding, task context
+- **Actions:** ADB tap, swipe, text input, navigation keys
+- **Capabilities:** basis subtasks, constrained subtask planning, bilingual tasks, real-device demo
+- **Recovery:** <code>replanning</code> — Constrained subtask planning can revise execution at subtask boundaries, but the paper does not present explicit state rollback.
+- **Runtime:** [entrypoint](https://github.com/Yuqi-Zhou/CHOP/blob/main/src/run.py) · [MIT license](https://github.com/Yuqi-Zhou/CHOP/blob/main/LICENSE)
+- **Audit:** links-verified on 2026-07-15 · repository updated 2025-03-08
+- **Main limitation:** Evaluation is small, some Chinese task data is unreleased, and the repository is no longer active.
 
 </details>
 <details>
