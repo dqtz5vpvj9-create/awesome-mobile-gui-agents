@@ -16,7 +16,7 @@ Verified papers, official implementations, benchmark evidence, and transparent p
 
 Mobile GUI Agent work is split across research prototypes, model releases, automation frameworks, benchmarks, and product repositories. Large general GUI-agent lists are useful for discovery, but they do not consistently answer three practical questions: Is the implementation official and open-source? Can it operate a real or emulated mobile GUI? When were its paper citations and repository stars measured?
 
-This catalog answers those questions with manually reviewed entries and reproducible snapshots. **It is not a recovery-only list.** Error detection and recovery are recorded as one capability dimension alongside planning, memory, platform coverage, perception, action interfaces, packaging, and evaluation.
+This catalog answers those questions with manually reviewed entries and reproducible snapshots. Each entry documents platform coverage, perception, action interfaces, planning, memory, recovery behavior, packaging, and evaluation evidence.
 
 ## Inclusion bar
 
