@@ -2,6 +2,8 @@
 
 This document defines the catalog boundary, evidence requirements, audit vocabulary, and metric snapshot procedure. The goal is a small, defensible list rather than exhaustive paper coverage.
 
+Mobile GUI Agent work is distributed across research prototypes, model releases, automation frameworks, benchmarks, and product repositories. This catalog focuses on a narrower practical unit: official open-source implementations that can run a mobile GUI control loop, accompanied by verifiable execution evidence and dated project metadata.
+
 ## Unit of inclusion
 
 The main unit is a named, meaningfully runnable Mobile GUI Agent. An entry may be:
@@ -23,7 +25,7 @@ The following are not main entries by themselves:
 - source-available projects whose terms are not an open-source software license;
 - repositories that promise code but do not contain the implementation.
 
-Those resources can appear in the associated-resource or pending sections.
+Those resources can appear in the associated-resource catalog or [pending review](PENDING.md).
 
 ## Main-list requirements
 
@@ -48,7 +50,7 @@ The catalog records one of three bases:
 - code-repository-created: official repository creation date when no earlier agent release is verifiable;
 - official-release: a dated release announcement or tag.
 
-The date determines Established versus Emerging placement. Established means at least 12 months old at the metric snapshot.
+Release dates are recorded as provenance metadata.
 
 ## Papers and citation identity
 
@@ -97,7 +99,7 @@ The refresh command:
 4. fetches curated OpenAlex work records;
 5. computes union-deduplicated citations;
 6. writes a dated immutable JSON snapshot;
-7. renders English and Chinese READMEs from that snapshot.
+7. renders the English and Chinese catalog and pending-review pages from that snapshot.
 
 The scheduled workflow opens a pull request once per month. A human checks unexpected license, path, identity, or metric changes before merging. Historical snapshots are never rewritten in normal operation.
 

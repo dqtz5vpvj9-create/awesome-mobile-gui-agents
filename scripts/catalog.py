@@ -29,9 +29,11 @@ RESOURCES_FILE = ROOT / "data" / "resources.yaml"
 SCHEMA_FILE = ROOT / "schema" / "agents.schema.json"
 SNAPSHOT_DIR = ROOT / "snapshots"
 TEMPLATE_DIR = ROOT / "templates"
-README_TARGETS = {
+GENERATED_TARGETS = {
     "README.md.j2": ROOT / "README.md",
     "README.zh-CN.md.j2": ROOT / "README.zh-CN.md",
+    "PENDING.md.j2": ROOT / "PENDING.md",
+    "PENDING.zh-CN.md.j2": ROOT / "PENDING.zh-CN.md",
 }
 MINIMUM_MAIN_ENTRIES = 20
 ALLOWED_AUDIT_STATUSES = {
@@ -362,13 +364,6 @@ def latest_snapshot() -> dict[str, Any]:
     return snapshot
 
 
-def year_ago(day: date) -> date:
-    try:
-        return day.replace(year=day.year - 1)
-    except ValueError:
-        return day.replace(year=day.year - 1, day=28)
-
-
 def markdown_text(value: Any) -> str:
     return str(value).replace("|", r"\|").replace("\n", " ")
 
@@ -383,8 +378,6 @@ def build_render_context() -> dict[str, Any]:
     notable = load_yaml(NOTABLE_FILE)
     resources = load_yaml(RESOURCES_FILE)
     snapshot = latest_snapshot()
-    snapshot_day = date.fromisoformat(snapshot["snapshot_date"])
-    established_cutoff = year_ago(snapshot_day)
 
     rows = []
     for agent in catalog["agents"]:
@@ -394,30 +387,21 @@ def build_render_context() -> dict[str, Any]:
         row["stars"] = repo_metrics["stars"]
         row["citations"] = citation_metrics["count"] if citation_metrics else None
         row["repo_pushed_at"] = repo_metrics["pushed_at"]
-        row["release_day"] = date.fromisoformat(agent["release"]["date"])
-        row["is_established"] = row["release_day"] <= established_cutoff
         row["evidence_links"] = " · ".join(
             f"[{item['label']}]({item['url']})" for item in agent["evidence"]
         )
         rows.append(row)
-
-    established = [row for row in rows if row["is_established"]]
-    emerging = [row for row in rows if not row["is_established"]]
 
     return {
         "catalog": catalog,
         "snapshot": snapshot,
         "snapshot_date": snapshot["snapshot_date"],
         "retrieved_at": snapshot["retrieved_at"],
-        "established_cutoff": established_cutoff.isoformat(),
-        "established": established,
-        "emerging": emerging,
+        "agents": rows,
         "notable": notable["notable"],
         "qualification_pending": notable["qualification_pending"],
         "resources": resources["resources"],
         "main_count": len(rows),
-        "established_count": len(established),
-        "emerging_count": len(emerging),
     }
 
 
@@ -434,7 +418,7 @@ def render_outputs(write: bool) -> dict[Path, str]:
     environment.filters["md"] = markdown_text
     environment.filters["intfmt"] = format_integer
     outputs = {}
-    for template_name, target in README_TARGETS.items():
+    for template_name, target in GENERATED_TARGETS.items():
         rendered = environment.get_template(template_name).render(**context)
         if not rendered.endswith("\n"):
             rendered += "\n"
@@ -499,10 +483,10 @@ def parser() -> argparse.ArgumentParser:
     )
     refresh_parser.set_defaults(handler=command_refresh)
 
-    render_parser = subparsers.add_parser("render", help="render both README files")
+    render_parser = subparsers.add_parser("render", help="render catalog documents")
     render_parser.set_defaults(handler=command_render)
 
-    check_parser = subparsers.add_parser("check", help="check generated README files")
+    check_parser = subparsers.add_parser("check", help="check generated catalog documents")
     check_parser.set_defaults(handler=command_check)
     return result
 

@@ -12,42 +12,22 @@ Verified papers, official implementations, benchmark evidence, and transparent p
 
 > Metrics snapshot: **{{ snapshot_date }}** (retrieved {{ retrieved_at }}). Main catalog: **{{ main_count }} agents**. This file is generated from [data/agents.yaml](data/agents.yaml); do not edit the tables by hand.
 
-## Why this list exists
+## Contents
 
-Mobile GUI Agent work is split across research prototypes, model releases, automation frameworks, benchmarks, and product repositories. Large general GUI-agent lists are useful for discovery, but they do not consistently answer three practical questions: Is the implementation official and open-source? Can it operate a real or emulated mobile GUI? When were its paper citations and repository stars measured?
+- [Mobile GUI Agents](#mobile-gui-agents)
+- [Agent details](#agent-details)
+- [Associated resources](#associated-resources)
+- [Pending review](PENDING.md)
+- [Methodology](METHODOLOGY.md)
+- [Contributing](#contributing)
 
-This catalog answers those questions with manually reviewed entries and reproducible snapshots. Each entry documents platform coverage, perception, action interfaces, planning, memory, recovery behavior, packaging, and evaluation evidence.
+## Mobile GUI Agents
 
-## Inclusion bar
-
-A main-list entry must satisfy all of the following:
-
-1. It is a complete agent or a meaningfully runnable agent loop, not only a model, dataset, training recipe, or benchmark.
-2. It operates Android, iOS, or HarmonyOS through the graphical interface on a real device, emulator, simulator, or a faithful live environment.
-3. Its official source repository is public and carries an explicit open-source software license.
-4. It has a documented installation or execution path.
-5. It provides mobile benchmark evidence or a concrete real-device demo.
-6. Its links, runnable path, license, and metadata have an audit date.
-
-See [METHODOLOGY.md](METHODOLOGY.md) for exclusions, audit levels, paper deduplication, and metric semantics.
-
-## Established agents
-
-Released on or before **{{ established_cutoff }}** (at least 12 months old at the snapshot).
+Every entry links an official open-source implementation, a runnable mobile path, supporting evidence, and dated metadata. See [METHODOLOGY.md](METHODOLOGY.md) for the full catalog boundary and [PENDING.md](PENDING.md) for candidates still under review.
 
 | Agent | Released | Platform | Snapshot | Links |
 |---|:---:|---|---:|---|
-{% for row in established -%}
-| **{{ row.name|md }}**{% if row.paper %}<br><sub>{{ row.paper.venue|md }}</sub>{% endif %} | {{ row.release.date|replace("-", "&#8209;") }} | {{ row.platforms|join(", ") }} | Citations&nbsp;{% if row.citations is none %}—{% else %}{{ row.citations|intfmt }}{% endif %}<br>Stars&nbsp;{{ row.stars|intfmt }}{% if row.code.stars_scope == "family-level" %}<sup>family</sup>{% endif %} | [Code]({{ row.code.url }}){% if row.paper %} · [Paper]({{ row.paper.url }}){% endif %} · {{ row.evidence_links }} |
-{% endfor %}
-
-## Emerging agents
-
-Released after **{{ established_cutoff }}**. Citation and star counts are dated snapshot metadata.
-
-| Agent | Released | Platform | Snapshot | Links |
-|---|:---:|---|---:|---|
-{% for row in emerging -%}
+{% for row in agents -%}
 | **{{ row.name|md }}**{% if row.paper %}<br><sub>{{ row.paper.venue|md }}</sub>{% endif %} | {{ row.release.date|replace("-", "&#8209;") }} | {{ row.platforms|join(", ") }} | Citations&nbsp;{% if row.citations is none %}—{% else %}{{ row.citations|intfmt }}{% endif %}<br>Stars&nbsp;{{ row.stars|intfmt }}{% if row.code.stars_scope == "family-level" %}<sup>family</sup>{% endif %} | [Code]({{ row.code.url }}){% if row.paper %} · [Paper]({{ row.paper.url }}){% endif %} · {{ row.evidence_links }} |
 {% endfor %}
 
@@ -55,7 +35,7 @@ Released after **{{ established_cutoff }}**. Citation and star counts are dated 
 
 ## Agent details
 
-{% for row in established + emerging %}
+{% for row in agents %}
 <details>
 <summary><strong>{{ row.name|md }}</strong> — {{ row.summary.en|md }}</summary>
 
@@ -68,26 +48,6 @@ Released after **{{ established_cutoff }}**. Citation and star counts are dated 
 - **Main limitation:** {{ row.limitations.en|md }}
 
 </details>
-{% endfor %}
-
-## Notable / code pending
-
-These papers are directly relevant and high quality, but are not ranked or counted as open-source agents until an official implementation is publicly verifiable.
-
-| Work | Venue | Status | Why it is pending |
-|---|---|---|---|
-{% for item in notable -%}
-| [{{ item.name }}]({{ item.paper_url }}) | {{ item.venue }} | {{ item.status }} | {{ item.reason_en|md }} |
-{% endfor %}
-
-## Public repositories pending qualification
-
-Public code alone is not enough. These projects remain outside the main list until licensing, implementation identity, or runtime completeness is resolved.
-
-| Project | Status | Reason |
-|---|---|---|
-{% for item in qualification_pending -%}
-| [{{ item.name }}]({{ item.code_url }}) | {{ item.status }} | {{ item.reason_en|md }} |
 {% endfor %}
 
 ## Associated resources
@@ -121,7 +81,7 @@ python scripts/catalog.py validate
 python scripts/catalog.py check
 ~~~
 
-To capture a new live snapshot and regenerate both languages:
+To capture a new live snapshot and regenerate all catalog pages:
 
 ~~~bash
 GITHUB_TOKEN=... python scripts/catalog.py refresh --date YYYY-MM-DD
@@ -145,4 +105,4 @@ New-agent suggestions start as an issue, not an unsolicited catalog pull request
 
 ## Licenses
 
-Catalog data, documentation, and generated READMEs are licensed under [CC BY 4.0](LICENSES/CC-BY-4.0.txt). Scripts and tests are licensed under [MIT](LICENSES/MIT.txt). Upstream projects retain their own licenses.
+Catalog data, documentation, and generated catalog pages are licensed under [CC BY 4.0](LICENSES/CC-BY-4.0.txt). Scripts and tests are licensed under [MIT](LICENSES/MIT.txt). Upstream projects retain their own licenses.

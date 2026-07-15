@@ -1,0 +1,23 @@
+# Pending Review
+
+[Back to the main catalog](README.md) · [简体中文](PENDING.zh-CN.md)
+
+These candidates are not counted in the main catalog. Each remains here until its official implementation and all required qualification evidence can be verified.
+
+## Papers awaiting official code
+
+| Work | Venue | Status | Open question |
+|---|---|---|---|
+{% for item in notable -%}
+| [{{ item.name }}]({{ item.paper_url }}) | {{ item.venue }} | `{{ item.status }}` | {{ item.reason_en|md }} |
+{% endfor %}
+
+## Repositories awaiting qualification
+
+| Project | Status | Open question |
+|---|---|---|
+{% for item in qualification_pending -%}
+| [{{ item.name }}]({{ item.code_url }}) | `{{ item.status }}` | {{ item.reason_en|md }} |
+{% endfor %}
+
+See [METHODOLOGY.md](METHODOLOGY.md) for the main-list requirements and [CONTRIBUTING.md](CONTRIBUTING.md) for proposing or updating an entry.

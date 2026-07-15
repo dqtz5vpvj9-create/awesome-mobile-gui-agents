@@ -5,765 +5,6 @@ catalog:
   scope: Complete or meaningfully runnable agents that perceive and operate Android, iOS, or HarmonyOS graphical interfaces.
 
 agents:
-  - id: mobile-agent-v1
-    name: Mobile-Agent
-    family: Mobile-Agent
-    release:
-      date: "2024-01-29"
-      basis: paper-first-public
-    code:
-      repo: X-PLUG/MobileAgent
-      url: https://github.com/X-PLUG/MobileAgent/tree/main/Mobile-Agent-v1
-      stars_scope: family-level
-    paper:
-      title: "Mobile-Agent: Autonomous Multi-Modal Mobile Device Agent with Visual Perception"
-      url: https://arxiv.org/abs/2401.16158
-      venue: ICLR 2024 Workshop; CCL 2024 demo
-      openalex_ids: [W4391376827]
-    platforms: [Android]
-    perception: [screenshots, OCR, icon detection, visual grounding]
-    actions: [ADB tap, swipe, text input, back, home]
-    capabilities: [screen-only operation, single-agent planning, cross-app tasks]
-    recovery:
-      level: none-documented
-      evidence: The public v1 workflow executes iteratively but does not document a dedicated outcome verifier or recovery controller.
-    evidence:
-      - kind: benchmark
-        label: Mobile-Eval
-        url: https://github.com/X-PLUG/MobileAgent/tree/main/Mobile-Agent-v1#mobile-eval
-      - kind: documentation
-        label: Quick start
-        url: https://github.com/X-PLUG/MobileAgent/tree/main/Mobile-Agent-v1#quick_start
-    license:
-      spdx: MIT
-      status: open-source
-      url: https://github.com/X-PLUG/MobileAgent/blob/main/LICENSE
-    runnable:
-      entrypoint_path: Mobile-Agent-v1/run.py
-      entrypoint_url: https://github.com/X-PLUG/MobileAgent/blob/main/Mobile-Agent-v1/run.py
-      install: Python requirements, ADB, a grounding model, and a multimodal-model endpoint.
-    audit:
-      status: links-verified
-      date: "2026-07-15"
-      install_smoke_tested: false
-      notes: Official code path, installation instructions, benchmark, license, and paper identity were verified.
-    summary:
-      en: A screen-only Android agent combining OCR, icon detection, and multimodal reasoning.
-      zh: 结合 OCR、图标检测与多模态推理的纯视觉 Android Agent。
-    why_included:
-      en: A foundational, runnable visual mobile-agent implementation with a public mobile benchmark.
-      zh: 奠基性的可运行视觉 Mobile Agent，并公开了移动端评测。
-    limitations:
-      en: Requires several external models and exposes no dedicated error-recovery module.
-      zh: 依赖多个外部模型，且没有独立的错误恢复模块。
-
-  - id: appagent
-    name: AppAgent
-    family: AppAgent
-    release:
-      date: "2023-12-21"
-      basis: paper-first-public
-    code:
-      repo: TencentQQGYLab/AppAgent
-      url: https://github.com/TencentQQGYLab/AppAgent
-      stars_scope: repository-level
-    paper:
-      title: "AppAgent: Multimodal Agents as Smartphone Users"
-      url: https://arxiv.org/abs/2312.13771
-      venue: CHI 2025
-      openalex_ids: [W4409767398, W4390136788]
-    platforms: [Android]
-    perception: [screenshots, OCR, visual element descriptions]
-    actions: [ADB tap, swipe, text input, back, home]
-    capabilities: [autonomous app exploration, human-demonstration learning, app knowledge base, task execution]
-    recovery:
-      level: none-documented
-      evidence: The public implementation reuses learned app documentation but does not expose a dedicated outcome-verification or recovery controller.
-    evidence:
-      - kind: demo
-        label: Deployment demo
-        url: https://github.com/TencentQQGYLab/AppAgent#demo
-      - kind: benchmark
-        label: Evaluation tasks
-        url: https://github.com/TencentQQGYLab/AppAgent/blob/main/assets/testset.md
-    license:
-      spdx: MIT
-      status: open-source
-      url: https://github.com/TencentQQGYLab/AppAgent/blob/main/LICENSE
-    runnable:
-      entrypoint_path: run.py
-      entrypoint_url: https://github.com/TencentQQGYLab/AppAgent/blob/main/run.py
-      install: Python requirements, ADB, an Android device or emulator, and a configured multimodal model.
-    audit:
-      status: links-verified
-      date: "2026-07-15"
-      install_smoke_tested: false
-      notes: Learning and deployment entrypoints, benchmark tasks, formal and preprint paper identities, and MIT license were verified.
-    summary:
-      en: An Android agent that first learns app-specific interaction knowledge, then reuses it for task execution.
-      zh: 先学习应用交互知识、再复用于任务执行的 Android Agent。
-    why_included:
-      en: It provides a complete exploration or demonstration phase plus an executable deployment phase.
-      zh: 它同时提供完整的探索或示教阶段以及可执行部署阶段。
-    limitations:
-      en: The public repository contains the original AppAgent implementation; AppAgent v2 code is not separately identifiable.
-      zh: 公开仓库中可辨识的是原版 AppAgent，无法单独确认 AppAgent v2 实现。
-
-  - id: mobile-agent-v2
-    name: Mobile-Agent-v2
-    family: Mobile-Agent
-    release:
-      date: "2024-06-03"
-      basis: paper-first-public
-    code:
-      repo: X-PLUG/MobileAgent
-      url: https://github.com/X-PLUG/MobileAgent/tree/main/Mobile-Agent-v2
-      stars_scope: family-level
-    paper:
-      title: "Mobile-Agent-v2: Mobile Device Operation Assistant with Effective Navigation via Multi-Agent Collaboration"
-      url: https://arxiv.org/abs/2406.01014
-      venue: NeurIPS 2024
-      openalex_ids: [W4415799029, W4399400219]
-    platforms: [Android]
-    perception: [screenshots, OCR, visual grounding]
-    actions: [ADB tap, swipe, text input, back, home]
-    capabilities: [planning agent, decision agent, reflection agent, focus memory]
-    recovery:
-      level: reflection
-      evidence: The Reflection Agent observes each action outcome and can request correction when an operation is judged unsuccessful.
-    evidence:
-      - kind: documentation
-        label: Run guide
-        url: https://github.com/X-PLUG/MobileAgent/tree/main/Mobile-Agent-v2#run
-      - kind: benchmark
-        label: Paper results
-        url: https://arxiv.org/abs/2406.01014
-    license:
-      spdx: MIT
-      status: open-source
-      url: https://github.com/X-PLUG/MobileAgent/blob/main/LICENSE
-    runnable:
-      entrypoint_path: Mobile-Agent-v2/run.py
-      entrypoint_url: https://github.com/X-PLUG/MobileAgent/blob/main/Mobile-Agent-v2/run.py
-      install: Python requirements, ADB Keyboard, and configured planning, decision, grounding, and reflection models.
-    audit:
-      status: links-verified
-      date: "2026-07-15"
-      install_smoke_tested: false
-      notes: Official v2 entrypoint, switches for reflection and memory, paper aliases, and license were verified.
-    summary:
-      en: A multi-agent Android system separating planning, decision, reflection, and focus memory.
-      zh: 将规划、决策、反思与焦点记忆分离的多 Agent Android 系统。
-    why_included:
-      en: It is a runnable and influential transition from single-agent action selection to outcome-aware collaboration.
-      zh: 它是从单 Agent 动作选择走向结果感知协作的重要可运行实现。
-    limitations:
-      en: Reflection can enter loops, and deployment still depends on several model services.
-      zh: 反思可能陷入循环，部署仍依赖多个模型服务。
-
-  - id: autodroid
-    name: AutoDroid
-    family: AutoDroid
-    release:
-      date: "2023-08-29"
-      basis: paper-first-public
-    code:
-      repo: MobileLLM/AutoDroid
-      url: https://github.com/MobileLLM/AutoDroid
-      stars_scope: repository-level
-    paper:
-      title: "AutoDroid: LLM-powered Task Automation in Android"
-      url: https://arxiv.org/abs/2308.15272
-      venue: MobiCom 2024
-      openalex_ids: [W4399121418, W4386302825]
-    platforms: [Android]
-    perception: [UI hierarchy, screenshots, dynamic app exploration]
-    actions: [ADB and DroidBot UI events]
-    capabilities: [functionality-aware UI representation, app memory, query optimization, task automation]
-    recovery:
-      level: none-documented
-      evidence: The implementation emphasizes exploration memory and task generation, with no dedicated execution-error recovery module documented.
-    evidence:
-      - kind: documentation
-        label: Installation
-        url: https://github.com/MobileLLM/AutoDroid#how-to-install
-      - kind: benchmark
-        label: Paper evaluation
-        url: https://doi.org/10.1145/3636534.3649379
-    license:
-      spdx: MIT
-      status: open-source
-      url: https://github.com/MobileLLM/AutoDroid/blob/main/LICENSE
-    runnable:
-      entrypoint_path: batch_testing.py
-      entrypoint_url: https://github.com/MobileLLM/AutoDroid/blob/main/batch_testing.py
-      install: Editable Python package installation, an APK, and an ADB-connected Android device or emulator.
-    audit:
-      status: links-verified
-      date: "2026-07-15"
-      install_smoke_tested: false
-      notes: Package installation, DroidBot runtime files, paper aliases, benchmark artifact link, and license were verified.
-    summary:
-      en: A DroidBot-based Android task agent that combines automated exploration with app-specific LLM memory.
-      zh: 基于 DroidBot，将自动探索与应用专属 LLM 记忆结合的 Android 任务 Agent。
-    why_included:
-      en: It is a peer-reviewed, runnable system with a real Android automation stack rather than offline trajectory inference only.
-      zh: 它是经过同行评审、具备真实 Android 自动化栈的可运行系统，而非仅做离线轨迹推理。
-    limitations:
-      en: The repository has seen little recent activity and requires host-side ADB rather than an on-device deployment.
-      zh: 仓库近期活跃度较低，且依赖主机侧 ADB，不能独立运行在端侧。
-
-  - id: mobile-agent-e
-    name: Mobile-Agent-E
-    family: Mobile-Agent
-    release:
-      date: "2025-01-20"
-      basis: paper-first-public
-    code:
-      repo: X-PLUG/MobileAgent
-      url: https://github.com/X-PLUG/MobileAgent/tree/main/Mobile-Agent-E
-      stars_scope: family-level
-    paper:
-      title: "Mobile-Agent-E: Self-Evolving Mobile Assistant for Complex Tasks"
-      url: https://arxiv.org/abs/2501.11733
-      venue: arXiv 2025
-      openalex_ids: [W4406733262]
-    platforms: [Android]
-    perception: [screenshots, OCR, visual grounding, action outcomes]
-    actions: [ADB tap, swipe, text input, back, home]
-    capabilities: [action reflection, self-evolution, tips memory, shortcut memory]
-    recovery:
-      level: reflection
-      evidence: Its Action Reflector checks outcomes and updates reusable Tips and Shortcuts, while the runner supports sequential self-evolution.
-    evidence:
-      - kind: benchmark
-        label: Mobile-Eval-E
-        url: https://github.com/X-PLUG/MobileAgent/tree/main/Mobile-Agent-E#mobile-eval-e-benchmark
-      - kind: documentation
-        label: Quick start
-        url: https://github.com/X-PLUG/MobileAgent/tree/main/Mobile-Agent-E#quick-start
-    license:
-      spdx: MIT
-      status: open-source
-      url: https://github.com/X-PLUG/MobileAgent/blob/main/LICENSE
-    runnable:
-      entrypoint_path: Mobile-Agent-E/scripts/run_task.sh
-      entrypoint_url: https://github.com/X-PLUG/MobileAgent/blob/main/Mobile-Agent-E/scripts/run_task.sh
-      install: Python requirements, ADB Keyboard, environment variables for model endpoints, and an Android device.
-    audit:
-      status: links-verified
-      date: "2026-07-15"
-      install_smoke_tested: false
-      notes: Individual and evolution runners, Mobile-Eval-E, paper identity, and shared MIT license were verified.
-    summary:
-      en: A self-evolving Android assistant that converts outcome reflection into reusable task experience.
-      zh: 将动作结果反思转化为可复用任务经验的自进化 Android 助手。
-    why_included:
-      en: It supplies a complete public loop for action reflection, memory updates, and repeated mobile tasks.
-      zh: 它公开了动作反思、记忆更新与连续移动任务的完整循环。
-    limitations:
-      en: Its reflection is high-level guidance rather than explicit state rollback or guaranteed recovery.
-      zh: 其反思主要提供高层指导，并非显式状态回滚或有保证的恢复。
-
-  - id: midscene
-    name: Midscene.js
-    family: Midscene
-    release:
-      date: "2024-07-23"
-      basis: code-repository-created
-    code:
-      repo: web-infra-dev/midscene
-      url: https://github.com/web-infra-dev/midscene
-      stars_scope: repository-level
-    paper: null
-    platforms: [Android, iOS, HarmonyOS]
-    perception: [screenshots, optional DOM, multimodal visual grounding]
-    actions: [ADB Android actions, WebDriverAgent iOS actions, HarmonyOS actions]
-    capabilities: [natural-language action, querying, assertion, JavaScript SDK, YAML workflows, agent skills]
-    recovery:
-      level: replanning
-      evidence: The action loop feeds execution errors and updated screenshots back into bounded planning; no transactional device rollback is documented.
-    evidence:
-      - kind: demo
-        label: Mobile showcases
-        url: https://midscenejs.com/showcases
-      - kind: documentation
-        label: Android guide
-        url: https://midscenejs.com/android-getting-started
-      - kind: documentation
-        label: iOS guide
-        url: https://midscenejs.com/ios-getting-started
-    license:
-      spdx: MIT
-      status: open-source
-      url: https://github.com/web-infra-dev/midscene/blob/main/LICENSE
-    runnable:
-      entrypoint_path: packages/android/src/cli.ts
-      entrypoint_url: https://github.com/web-infra-dev/midscene/blob/main/packages/android/src/cli.ts
-      install: Node.js package installation, a supported multimodal model, and the platform-specific Android or iOS bridge.
-    audit:
-      status: links-verified
-      date: "2026-07-15"
-      install_smoke_tested: false
-      notes: Android and iOS guides, mobile demos, Android agent CLI path, package metadata, and MIT license were verified.
-    summary:
-      en: A production-oriented visual automation agent spanning Android, iOS, HarmonyOS, web, and desktop.
-      zh: 覆盖 Android、iOS、HarmonyOS、Web 与桌面的工程化视觉自动化 Agent。
-    why_included:
-      en: It is a mature, actively maintained mobile runtime with concrete SDK, CLI, workflow, and showcase surfaces.
-      zh: 它是成熟且活跃维护的移动运行时，提供明确的 SDK、CLI、工作流和演示。
-    limitations:
-      en: It is also a testing and automation platform, so agent behavior depends strongly on the selected multimodal model.
-      zh: 它同时是测试与自动化平台，Agent 行为高度取决于所选多模态模型。
-
-  - id: androidworld-m3a
-    name: M3A
-    family: AndroidWorld
-    release:
-      date: "2024-05-23"
-      basis: paper-first-public
-    code:
-      repo: google-research/android_world
-      url: https://github.com/google-research/android_world/tree/main/android_world/agents
-      stars_scope: repository-level
-    paper:
-      title: "AndroidWorld: A Dynamic Benchmarking Environment for Autonomous Agents"
-      url: https://arxiv.org/abs/2405.14573
-      venue: ICLR 2025
-      openalex_ids: [W4398836283]
-    platforms: [Android]
-    perception: [screenshots, accessibility tree]
-    actions: [AndroidEnv tap, swipe, text input, navigation and app actions]
-    capabilities: [multimodal reasoning, dynamic task execution, reproducible benchmark runner]
-    recovery:
-      level: retry
-      evidence: M3A observes the live state after every action and can issue a revised next action, but has no explicit backtracking controller.
-    evidence:
-      - kind: benchmark
-        label: AndroidWorld
-        url: https://google-research.github.io/android_world/
-      - kind: documentation
-        label: Minimal M3A runner
-        url: https://github.com/google-research/android_world#quickstart
-    license:
-      spdx: Apache-2.0
-      status: open-source
-      url: https://github.com/google-research/android_world/blob/main/LICENSE
-    runnable:
-      entrypoint_path: minimal_task_runner.py
-      entrypoint_url: https://github.com/google-research/android_world/blob/main/minimal_task_runner.py
-      install: AndroidWorld environment and apps, Python dependencies, an Android emulator, and a supported model API.
-    audit:
-      status: links-verified
-      date: "2026-07-15"
-      install_smoke_tested: false
-      notes: The default agent runner, live benchmark setup, paper identity, Docker option, and Apache license were verified.
-    summary:
-      en: The runnable multimodal default agent shipped with the AndroidWorld live benchmark.
-      zh: 随 AndroidWorld 动态 benchmark 发布的可运行多模态默认 Agent。
-    why_included:
-      en: Unlike a benchmark-only entry, M3A has a concrete agent implementation and one-command minimal task runner.
-      zh: M3A 不只是 benchmark 条目，它有明确的 Agent 实现与单命令最小运行器。
-    limitations:
-      en: It is primarily a research baseline and the default configured model is legacy and API-dependent.
-      zh: 它主要是研究基线，默认配置模型较旧且依赖 API。
-
-  - id: mobilegpt
-    name: MobileGPT
-    family: MobileGPT
-    release:
-      date: "2023-12-04"
-      basis: paper-first-public
-    code:
-      repo: mobilegptsys/MobileGPT
-      url: https://github.com/mobilegptsys/MobileGPT
-      stars_scope: repository-level
-    paper:
-      title: "MobileGPT: Augmenting LLM with Human-like App Memory for Mobile Task Automation"
-      url: https://arxiv.org/abs/2312.03003
-      venue: MobiCom 2024
-      openalex_ids: [W4405014122, W4389470790]
-    platforms: [Android]
-    perception: [Android accessibility tree, app exploration state]
-    actions: [Android accessibility actions]
-    capabilities: [explore-select-derive-recall memory, reusable subtasks, on-device client, Python server]
-    recovery:
-      level: none-documented
-      evidence: Human-like app memory improves reuse, but the public system does not document a dedicated runtime recovery controller.
-    evidence:
-      - kind: demo
-        label: Server and client run guide
-        url: https://github.com/mobilegptsys/MobileGPT#run
-      - kind: benchmark
-        label: Benchmark dataset
-        url: https://github.com/mobilegptsys/MobileGPT#benchmark-dataset
-    license:
-      spdx: Apache-2.0
-      status: open-source
-      url: https://github.com/mobilegptsys/MobileGPT/blob/main/LICENSE
-    runnable:
-      entrypoint_path: Server/main.py
-      entrypoint_url: https://github.com/mobilegptsys/MobileGPT/blob/main/Server/main.py
-      install: Python server dependencies plus a built Android accessibility client configured with the server address.
-    audit:
-      status: links-verified
-      date: "2026-07-15"
-      install_smoke_tested: false
-      notes: Server entrypoint, Android client setup, benchmark, published and preprint identities, and license were verified.
-    summary:
-      en: A server-plus-Android-client agent that learns reusable app procedures with human-like memory.
-      zh: 通过服务端与 Android 客户端协作、学习可复用应用流程的记忆型 Agent。
-    why_included:
-      en: It releases the full accessibility client and server path used for mobile task execution.
-      zh: 它公开了用于移动任务执行的完整无障碍客户端与服务端路径。
-    limitations:
-      en: Setup is multi-component, the code is aging, and newly installed apps require memory reinitialization.
-      zh: 配置涉及多个组件、代码较旧，安装新应用后还需重新初始化记忆。
-
-  - id: mobilerun
-    name: Mobilerun
-    family: Mobilerun
-    release:
-      date: "2025-04-12"
-      basis: code-repository-created
-    code:
-      repo: droidrun/mobilerun
-      url: https://github.com/droidrun/mobilerun
-      stars_scope: repository-level
-    paper: null
-    platforms: [Android, iOS]
-    perception: [accessibility tree, screenshots, device state]
-    actions: [Android portal actions, iOS portal actions, text and gestures, app launch]
-    capabilities: [CLI, Python API, reasoning mode, skills, app cards, custom tools, Docker]
-    recovery:
-      level: replanning
-      evidence: Reasoning mode repeatedly inspects updated UI state and can revise multi-step workflows; explicit rollback semantics are not documented.
-    evidence:
-      - kind: benchmark
-        label: Project benchmark
-        url: https://mobilerun.ai/benchmark
-      - kind: documentation
-        label: Quick start
-        url: https://github.com/droidrun/mobilerun#quickstart
-    license:
-      spdx: MIT
-      status: open-source
-      url: https://github.com/droidrun/mobilerun/blob/main/LICENSE
-    runnable:
-      entrypoint_path: mobilerun/cli/main.py
-      entrypoint_url: https://github.com/droidrun/mobilerun/blob/main/mobilerun/cli/main.py
-      install: Python package installation, the Android or iOS portal, a connected device, and model credentials.
-    audit:
-      status: links-verified
-      date: "2026-07-15"
-      install_smoke_tested: false
-      notes: CLI, Python package, portal setup, Android and iOS claims, benchmark page, and MIT license were verified.
-    summary:
-      en: A widely adopted local framework giving LLM agents native Android and iOS inspection and control tools.
-      zh: 为 LLM Agent 提供原生 Android/iOS 感知与控制工具的高采用度本地框架。
-    why_included:
-      en: It is among the strongest open software implementations by adoption, packaging quality, and cross-platform runtime coverage.
-      zh: 按采用度、工程封装和跨平台运行时覆盖衡量，它是最强的开源软件实现之一。
-    limitations:
-      en: Published benchmark results are maintained by the project, and recovery is implemented as iterative reasoning rather than audited state restoration.
-      zh: benchmark 结果由项目方维护，恢复也主要依赖迭代推理而非经过审计的状态还原。
-
-  - id: mobileuse-madeagents
-    name: MobileUse
-    family: MobileUse
-    release:
-      date: "2025-02-27"
-      basis: code-repository-created
-    code:
-      repo: MadeAgents/mobile-use
-      url: https://github.com/MadeAgents/mobile-use
-      stars_scope: repository-level
-    paper:
-      title: "MobileUse: A Hierarchical Reflection-Driven GUI Agent for Autonomous Mobile Operation"
-      url: https://arxiv.org/abs/2507.16853
-      venue: NeurIPS 2025
-      openalex_ids: [W4414877003]
-    platforms: [Android]
-    perception: [screenshots, multimodal model observations, repeated-state signals]
-    actions: [ADB tap, swipe, text input, app launch, navigation keys]
-    capabilities: [multi-agent planning, hierarchical reflection, proactive exploration, memory, WebUI, Python API]
-    recovery:
-      level: replanning
-      evidence: Action, trajectory, and global reflection operate at different temporal scales, with retries and revised execution after detected failures.
-    evidence:
-      - kind: benchmark
-        label: AndroidWorld and AndroidLab
-        url: https://github.com/MadeAgents/mobile-use#benchmark
-      - kind: demo
-        label: Python API
-        url: https://github.com/MadeAgents/mobile-use#use-in-python
-    license:
-      spdx: MIT
-      status: open-source
-      url: https://github.com/MadeAgents/mobile-use/blob/master/LICENSE
-    runnable:
-      entrypoint_path: pyproject.toml
-      entrypoint_url: https://github.com/MadeAgents/mobile-use/blob/master/pyproject.toml
-      install: Python package installation, ADB and ADB Keyboard, an Android device, and a configured VLM endpoint.
-    audit:
-      status: links-verified
-      date: "2026-07-15"
-      install_smoke_tested: false
-      notes: Package metadata, Python API, WebUI, benchmark runners, paper identity, and license were verified.
-    summary:
-      en: A complete Android agent with hierarchical reflection, proactive exploration, and benchmark integrations.
-      zh: 集成分层反思、主动探索与 benchmark 运行器的完整 Android Agent。
-    why_included:
-      en: It is one of the clearest open implementations of runtime error detection and correction in a mobile agent.
-      zh: 它是移动 Agent 运行时错误检测与纠正最清晰的开源实现之一。
-    limitations:
-      en: Strong reported results use large external VLMs, and no common dedicated recovery benchmark is used.
-      zh: 较强结果依赖大型外部 VLM，且没有采用统一的专用恢复 benchmark。
-
-  - id: app-use
-    name: App Use
-    family: App Use
-    release:
-      date: "2025-05-16"
-      basis: code-repository-created
-    code:
-      repo: erickjtorres/app-use
-      url: https://github.com/erickjtorres/app-use
-      stars_scope: repository-level
-    paper: null
-    platforms: [Android, iOS]
-    perception: [Appium UI tree, screenshots, app state]
-    actions: [Appium tap, swipe, text input, mobile gestures]
-    capabilities: [general Agent API, Android and iOS examples, CLI setup and doctor, optional memory]
-    recovery:
-      level: retry
-      evidence: The agent loop can act again from refreshed Appium state and records execution history, but no explicit backtracking mechanism is documented.
-    evidence:
-      - kind: demo
-        label: iOS demos
-        url: https://github.com/erickjtorres/app-use#demos
-      - kind: documentation
-        label: Quick start
-        url: https://github.com/erickjtorres/app-use#quick-start
-    license:
-      spdx: MIT
-      status: open-source
-      url: https://github.com/erickjtorres/app-use/blob/main/LICENSE
-    runnable:
-      entrypoint_path: examples/android_app_example.py
-      entrypoint_url: https://github.com/erickjtorres/app-use/blob/main/examples/android_app_example.py
-      install: Python package with CLI extras, Appium and platform drivers, a target app and device, and model credentials.
-    audit:
-      status: links-verified
-      date: "2026-07-15"
-      install_smoke_tested: false
-      notes: Agent API, Android and iOS examples, CLI diagnostics, package metadata, and MIT license were verified.
-    summary:
-      en: A compact Appium-backed Agent API for controlling real Android and iOS applications.
-      zh: 基于 Appium、用于控制真实 Android 与 iOS 应用的紧凑 Agent API。
-    why_included:
-      en: It supplies a complete general agent loop and examples for both major mobile platforms with straightforward packaging.
-      zh: 它以直接的工程封装提供了完整通用 Agent 循环和两大移动平台示例。
-    limitations:
-      en: It has no paper or standardized benchmark, and reliability inherits Appium and model constraints.
-      zh: 它没有论文或标准 benchmark，可靠性受 Appium 与模型能力制约。
-
-  - id: chop
-    name: CHOP
-    family: CHOP
-    release:
-      date: "2025-02-12"
-      basis: code-repository-created
-    code:
-      repo: Yuqi-Zhou/CHOP
-      url: https://github.com/Yuqi-Zhou/CHOP
-      stars_scope: repository-level
-    paper:
-      title: "CHOP: Mobile Operating Assistant with Constrained High-frequency Optimized Subtask Planning"
-      url: https://arxiv.org/abs/2503.03743
-      venue: arXiv 2025
-      openalex_ids: [W4416085946]
-    platforms: [Android, HarmonyOS]
-    perception: [screenshots, Aria-UI grounding, task context]
-    actions: [ADB tap, swipe, text input, navigation keys]
-    capabilities: [basis subtasks, constrained subtask planning, bilingual tasks, real-device demo]
-    recovery:
-      level: replanning
-      evidence: Constrained subtask planning can revise execution at subtask boundaries, but the paper does not present explicit state rollback.
-    evidence:
-      - kind: demo
-        label: CHOP demo usage
-        url: https://github.com/Yuqi-Zhou/CHOP#chop-demo-usage
-      - kind: benchmark
-        label: CHOP-En and CHOP-ZH
-        url: https://github.com/Yuqi-Zhou/CHOP#chop-en--chop-zh
-    license:
-      spdx: MIT
-      status: open-source
-      url: https://github.com/Yuqi-Zhou/CHOP/blob/main/LICENSE
-    runnable:
-      entrypoint_path: src/run.py
-      entrypoint_url: https://github.com/Yuqi-Zhou/CHOP/blob/main/src/run.py
-      install: ADB, an Android or compatible HarmonyOS device, Aria-UI grounding, and a configured multimodal model API.
-    audit:
-      status: links-verified
-      date: "2026-07-15"
-      install_smoke_tested: false
-      notes: Real-device runner, grounding setup, bilingual task data, OpenAlex paper identity, and MIT license were verified.
-    summary:
-      en: A real-device mobile assistant that constrains planning around reusable high-frequency subtasks.
-      zh: 围绕可复用高频子任务约束规划的真机移动助手。
-    why_included:
-      en: It publishes executable Android and HarmonyOS demo code, not only the CHOP datasets or an offline planner.
-      zh: 它公开了可执行的 Android/HarmonyOS 演示代码，而不只是数据集或离线规划器。
-    limitations:
-      en: Evaluation is small, some Chinese task data is unreleased, and the repository is no longer active.
-      zh: 评测规模较小，部分中文任务数据未发布，仓库也已较少维护。
-
-  - id: topoclaw
-    name: TopoClaw
-    family: TopoClaw
-    release:
-      date: "2026-04-23"
-      basis: official-release
-    code:
-      repo: MadeAgents/TopoClaw
-      url: https://github.com/MadeAgents/TopoClaw
-      stars_scope: repository-level
-    paper: null
-    platforms: [Android]
-    perception: [mobile screenshots, desktop observations, proactive sensor events]
-    actions: [Android client GUI actions, cross-device tools, desktop tools]
-    capabilities: [cross-device agent, mobile client, skills, proactive sensing, multi-user collaboration, self-hosting]
-    recovery:
-      level: replanning
-      evidence: The core agent loop and skills can re-evaluate tasks across devices, but no dedicated mobile recovery benchmark or rollback contract is documented.
-    evidence:
-      - kind: demo
-        label: Project demos
-        url: https://github.com/MadeAgents/TopoClaw#-demo
-      - kind: documentation
-        label: Developer build
-        url: https://github.com/MadeAgents/TopoClaw#developer-build--run-commands
-    license:
-      spdx: Apache-2.0
-      status: open-source
-      url: https://github.com/MadeAgents/TopoClaw/blob/main/LICENSE
-    runnable:
-      entrypoint_path: TopoClaw/topoclaw/service/runtime.py
-      entrypoint_url: https://github.com/MadeAgents/TopoClaw/blob/main/TopoClaw/topoclaw/service/runtime.py
-      install: Core Python agent, Android Studio mobile client, Windows desktop client, and either self-hosted or provided communication service.
-    audit:
-      status: links-verified
-      date: "2026-07-15"
-      install_smoke_tested: false
-      notes: Core runtime, Android client, build instructions, demos, self-hosting path, and Apache license were verified.
-    summary:
-      en: A newly open-sourced cross-device personal agent with an Android client, skills, and proactive execution.
-      zh: 新近开源、具备 Android 客户端、skills 与主动执行能力的跨设备个人 Agent。
-    why_included:
-      en: It releases the core agent, mobile client, desktop client, and backend instead of only a demo application.
-      zh: 它同时发布核心 Agent、移动客户端、桌面客户端和后端，而不只是演示应用。
-    limitations:
-      en: Deployment is multi-component, iOS is only planned, and no standardized mobile benchmark is reported.
-      zh: 部署组件较多，iOS 尚在规划中，也未报告标准化移动 benchmark。
-
-  - id: ghost-android-agent
-    name: Ghost in the Droid
-    family: Ghost in the Droid
-    release:
-      date: "2026-04-08"
-      basis: code-repository-created
-    code:
-      repo: ghost-in-the-droid/android-agent
-      url: https://github.com/ghost-in-the-droid/android-agent
-      stars_scope: repository-level
-    paper: null
-    platforms: [Android]
-    perception: [screenshots, ADB UI hierarchy, live device stream]
-    actions: [ADB tap, swipe, text input, app launch, device controls]
-    capabilities: [agent chat, reusable app skills, MCP server, phone-farm jobs, dashboard, local-model support]
-    recovery:
-      level: retry
-      evidence: Skills and agent chat can retry device actions and re-read state, while no general semantic backtracking controller is documented.
-    evidence:
-      - kind: demo
-        label: Quick start
-        url: https://github.com/ghost-in-the-droid/android-agent#quick-start
-      - kind: documentation
-        label: MCP tools
-        url: https://github.com/ghost-in-the-droid/android-agent#mcp-server--give-any-ai-agent-an-android-body
-    license:
-      spdx: MIT
-      status: open-source
-      url: https://github.com/ghost-in-the-droid/android-agent/blob/main/LICENSE
-    runnable:
-      entrypoint_path: run.py
-      entrypoint_url: https://github.com/ghost-in-the-droid/android-agent/blob/main/run.py
-      install: Editable Python package, ADB, a connected Android device, and optional model credentials or Ollama.
-    audit:
-      status: links-verified
-      date: "2026-07-15"
-      install_smoke_tested: false
-      notes: Backend runner, package, dashboard, MCP server, device integration tests, and MIT license were verified.
-    summary:
-      en: An Android automation framework combining an LLM phone agent, reusable skills, MCP tools, and fleet operations.
-      zh: 融合 LLM Phone Agent、可复用 skills、MCP 工具与设备集群操作的 Android 框架。
-    why_included:
-      en: It exposes substantial real-device infrastructure and agent surfaces, with both package and source installation paths.
-      zh: 它公开了较完整的真机基础设施和 Agent 接口，同时支持包安装与源码安装。
-    limitations:
-      en: Many workflows are skill-driven automation, and general-agent quality is not backed by an academic mobile benchmark.
-      zh: 许多流程以 skill 驱动，通用 Agent 能力尚无学术移动 benchmark 支撑。
-
-  - id: appclaw
-    name: AppClaw
-    family: AppClaw
-    release:
-      date: "2026-03-23"
-      basis: code-repository-created
-    code:
-      repo: appclawhq/AppClaw
-      url: https://github.com/appclawhq/AppClaw
-      stars_scope: repository-level
-    paper: null
-    platforms: [Android, iOS]
-    perception: [screenshots, device UI observations]
-    actions: [tap, type, swipe, mobile test actions]
-    capabilities: [natural-language agent mode, reusable flows, test runner, CLI, GitHub Action]
-    recovery:
-      level: retry
-      evidence: The runtime can continue from updated observations after action failures, but no explicit backtracking mechanism is documented.
-    evidence:
-      - kind: demo
-        label: Demo and quick start
-        url: https://github.com/appclawhq/AppClaw#quickstart
-      - kind: documentation
-        label: Agent package
-        url: https://github.com/appclawhq/AppClaw/tree/main/packages/agent
-    license:
-      spdx: Apache-2.0
-      status: open-source
-      url: https://github.com/appclawhq/AppClaw/blob/main/LICENSE
-    runnable:
-      entrypoint_path: packages/agent/src/cli.ts
-      entrypoint_url: https://github.com/appclawhq/AppClaw/blob/main/packages/agent/src/cli.ts
-      install: Global npm CLI installation, a configured device provider, and an LLM key for agent mode.
-    audit:
-      status: links-verified
-      date: "2026-07-15"
-      install_smoke_tested: false
-      notes: Agent CLI package, quick start, Android and iOS scope, repository activity, and Apache license were verified.
-    summary:
-      en: An emerging TypeScript mobile agent and test runner with Android and iOS support.
-      zh: 支持 Android 与 iOS 的新兴 TypeScript 移动 Agent 与测试运行器。
-    why_included:
-      en: It offers a concise install path and real agent mode in a fully open, actively developed monorepo.
-      zh: 它在完整开源、活跃开发的 monorepo 中提供了简洁安装路径与真实 Agent 模式。
-    limitations:
-      en: The project is young, has no scholarly paper, and lacks independent benchmark evidence.
-      zh: 项目较新、没有学术论文，也缺少独立 benchmark 证据。
-
   - id: mobile-agent-v3-5
     name: Mobile-Agent-v3.5
     family: Mobile-Agent
@@ -868,53 +109,109 @@ agents:
       en: The current code repository appeared well after the paper and strongest operation quality depends on model availability.
       zh: 当前代码仓库晚于论文发布，最强操作质量也依赖模型可用性。
 
-  - id: agenticx-guiagent
-    name: AgenticX-GUIAgent
-    family: AgenticX-GUIAgent
+  - id: mobile-use-minitap
+    name: mobile-use
+    family: Minitap mobile-use
     release:
-      date: "2025-09-16"
+      date: "2025-08-16"
       basis: code-repository-created
     code:
-      repo: DemonDamon/AgenticX-GUIAgent
-      url: https://github.com/DemonDamon/AgenticX-GUIAgent
+      repo: minitap-ai/mobile-use
+      url: https://github.com/minitap-ai/mobile-use
       stars_scope: repository-level
-    paper: null
-    platforms: [Android]
-    perception: [screenshots, UI state, multimodal model observations]
-    actions: [ADB basic actions, smart GUI tools]
-    capabilities: [manager agent, executor agent, action reflector, notetaker, knowledge flywheel, evaluation framework]
+    paper:
+      title: "Do Multi-Agents Dream of Electric Screens? Achieving Perfect Accuracy on AndroidWorld Through Task Decomposition"
+      url: https://arxiv.org/abs/2602.07787
+      venue: arXiv 2026
+      openalex_ids: [W7128514075]
+    platforms: [Android, iOS]
+    perception: [screenshots, accessibility metadata, agent observations]
+    actions: [ADB Android actions, iOS IDB actions]
+    capabilities: [multi-agent decomposition, local SDK, CLI, skills, Android and iOS control]
     recovery:
-      level: reflection
-      evidence: A dedicated ActionReflectorAgent evaluates execution outcomes and coordinates revised actions through the multi-agent workflow.
+      level: replanning
+      evidence: The framework decomposes goals among agents and can revise the next subtask from updated device observations; it does not claim state rollback.
     evidence:
-      - kind: demo
-        label: Run guide
-        url: https://github.com/DemonDamon/AgenticX-GUIAgent#run
+      - kind: benchmark
+        label: AndroidWorld report
+        url: https://minitap.ai/benchmark
       - kind: documentation
-        label: Architecture
-        url: https://github.com/DemonDamon/AgenticX-GUIAgent#system-architecture
+        label: Local quick start
+        url: https://github.com/minitap-ai/mobile-use#local-quick-start
     license:
-      spdx: MIT
+      spdx: Apache-2.0
       status: open-source
-      url: https://github.com/DemonDamon/AgenticX-GUIAgent/blob/main/LICENSE
+      url: https://github.com/minitap-ai/mobile-use/blob/main/LICENSE
     runnable:
-      entrypoint_path: main.py
-      entrypoint_url: https://github.com/DemonDamon/AgenticX-GUIAgent/blob/main/main.py
-      install: Conda or manual Python setup, AgenticX, ADB, an Android device, and configured model credentials.
+      entrypoint_path: minitap/mobile_use/main.py
+      entrypoint_url: https://github.com/minitap-ai/mobile-use/blob/main/minitap/mobile_use/main.py
+      install: Python package or Docker setup, an Android or iOS bridge, a device, and model credentials.
     audit:
       status: links-verified
       date: "2026-07-15"
       install_smoke_tested: false
-      notes: Main runner, ADB checker, agent modules, tests, evaluation folder, setup script, and MIT license were verified.
+      notes: SDK and CLI paths, Android and iOS setup, benchmark page, paper identity, and Apache license were verified.
     summary:
-      en: An Android multi-agent implementation with explicit manager, executor, reflector, and notetaker roles.
-      zh: 显式划分 Manager、Executor、Reflector 与 Notetaker 的 Android 多 Agent 实现。
+      en: A local Android and iOS agent framework centered on task decomposition and reusable skills.
+      zh: 以任务分解和可复用 skills 为核心的本地 Android/iOS Agent 框架。
     why_included:
-      en: Despite modest adoption, it provides an unusually inspectable open reflection architecture and runnable device path.
-      zh: 尽管采用度不高，它提供了少见的可检查开源反思架构和可运行设备路径。
+      en: It offers a substantial, actively maintained cross-platform runtime rather than only benchmark outputs.
+      zh: 它提供了规模较大、持续维护的跨平台运行时，而不只是 benchmark 结果。
     limitations:
-      en: It is a small emerging project without a paper, independent benchmark, or long maintenance history.
-      zh: 它是小型新兴项目，缺少论文、独立 benchmark 和长期维护记录。
+      en: The 100 percent AndroidWorld claim is self-reported on the project benchmark page and is not an independent recovery evaluation.
+      zh: AndroidWorld 100% 是项目方自报结果，也不是独立的错误恢复评测。
+
+  - id: mobileuse-madeagents
+    name: MobileUse
+    family: MobileUse
+    release:
+      date: "2025-02-27"
+      basis: code-repository-created
+    code:
+      repo: MadeAgents/mobile-use
+      url: https://github.com/MadeAgents/mobile-use
+      stars_scope: repository-level
+    paper:
+      title: "MobileUse: A Hierarchical Reflection-Driven GUI Agent for Autonomous Mobile Operation"
+      url: https://arxiv.org/abs/2507.16853
+      venue: NeurIPS 2025
+      openalex_ids: [W4414877003]
+    platforms: [Android]
+    perception: [screenshots, multimodal model observations, repeated-state signals]
+    actions: [ADB tap, swipe, text input, app launch, navigation keys]
+    capabilities: [multi-agent planning, hierarchical reflection, proactive exploration, memory, WebUI, Python API]
+    recovery:
+      level: replanning
+      evidence: Action, trajectory, and global reflection operate at different temporal scales, with retries and revised execution after detected failures.
+    evidence:
+      - kind: benchmark
+        label: AndroidWorld and AndroidLab
+        url: https://github.com/MadeAgents/mobile-use#benchmark
+      - kind: demo
+        label: Python API
+        url: https://github.com/MadeAgents/mobile-use#use-in-python
+    license:
+      spdx: MIT
+      status: open-source
+      url: https://github.com/MadeAgents/mobile-use/blob/master/LICENSE
+    runnable:
+      entrypoint_path: pyproject.toml
+      entrypoint_url: https://github.com/MadeAgents/mobile-use/blob/master/pyproject.toml
+      install: Python package installation, ADB and ADB Keyboard, an Android device, and a configured VLM endpoint.
+    audit:
+      status: links-verified
+      date: "2026-07-15"
+      install_smoke_tested: false
+      notes: Package metadata, Python API, WebUI, benchmark runners, paper identity, and license were verified.
+    summary:
+      en: A complete Android agent with hierarchical reflection, proactive exploration, and benchmark integrations.
+      zh: 集成分层反思、主动探索与 benchmark 运行器的完整 Android Agent。
+    why_included:
+      en: It is one of the clearest open implementations of runtime error detection and correction in a mobile agent.
+      zh: 它是移动 Agent 运行时错误检测与纠正最清晰的开源实现之一。
+    limitations:
+      en: Strong reported results use large external VLMs, and no common dedicated recovery benchmark is used.
+      zh: 较强结果依赖大型外部 VLM，且没有采用统一的专用恢复 benchmark。
 
   - id: mobile-agent-v3
     name: Mobile-Agent-v3
@@ -968,54 +265,757 @@ agents:
       en: Running the strongest configurations requires large GUI-Owl models and substantial serving infrastructure.
       zh: 运行最强配置需要大型 GUI-Owl 模型与较重的推理基础设施。
 
-  - id: mobile-use-minitap
-    name: mobile-use
-    family: Minitap mobile-use
+  - id: mobilerun
+    name: Mobilerun
+    family: Mobilerun
     release:
-      date: "2025-08-16"
+      date: "2025-04-12"
       basis: code-repository-created
     code:
-      repo: minitap-ai/mobile-use
-      url: https://github.com/minitap-ai/mobile-use
+      repo: droidrun/mobilerun
+      url: https://github.com/droidrun/mobilerun
       stars_scope: repository-level
-    paper:
-      title: "Do Multi-Agents Dream of Electric Screens? Achieving Perfect Accuracy on AndroidWorld Through Task Decomposition"
-      url: https://arxiv.org/abs/2602.07787
-      venue: arXiv 2026
-      openalex_ids: [W7128514075]
+    paper: null
     platforms: [Android, iOS]
-    perception: [screenshots, accessibility metadata, agent observations]
-    actions: [ADB Android actions, iOS IDB actions]
-    capabilities: [multi-agent decomposition, local SDK, CLI, skills, Android and iOS control]
+    perception: [accessibility tree, screenshots, device state]
+    actions: [Android portal actions, iOS portal actions, text and gestures, app launch]
+    capabilities: [CLI, Python API, reasoning mode, skills, app cards, custom tools, Docker]
     recovery:
       level: replanning
-      evidence: The framework decomposes goals among agents and can revise the next subtask from updated device observations; it does not claim state rollback.
+      evidence: Reasoning mode repeatedly inspects updated UI state and can revise multi-step workflows; explicit rollback semantics are not documented.
     evidence:
       - kind: benchmark
-        label: AndroidWorld report
-        url: https://minitap.ai/benchmark
+        label: Project benchmark
+        url: https://mobilerun.ai/benchmark
       - kind: documentation
-        label: Local quick start
-        url: https://github.com/minitap-ai/mobile-use#local-quick-start
+        label: Quick start
+        url: https://github.com/droidrun/mobilerun#quickstart
     license:
-      spdx: Apache-2.0
+      spdx: MIT
       status: open-source
-      url: https://github.com/minitap-ai/mobile-use/blob/main/LICENSE
+      url: https://github.com/droidrun/mobilerun/blob/main/LICENSE
     runnable:
-      entrypoint_path: minitap/mobile_use/main.py
-      entrypoint_url: https://github.com/minitap-ai/mobile-use/blob/main/minitap/mobile_use/main.py
-      install: Python package or Docker setup, an Android or iOS bridge, a device, and model credentials.
+      entrypoint_path: mobilerun/cli/main.py
+      entrypoint_url: https://github.com/droidrun/mobilerun/blob/main/mobilerun/cli/main.py
+      install: Python package installation, the Android or iOS portal, a connected device, and model credentials.
     audit:
       status: links-verified
       date: "2026-07-15"
       install_smoke_tested: false
-      notes: SDK and CLI paths, Android and iOS setup, benchmark page, paper identity, and Apache license were verified.
+      notes: CLI, Python package, portal setup, Android and iOS claims, benchmark page, and MIT license were verified.
     summary:
-      en: A local Android and iOS agent framework centered on task decomposition and reusable skills.
-      zh: 以任务分解和可复用 skills 为核心的本地 Android/iOS Agent 框架。
+      en: A widely adopted local framework giving LLM agents native Android and iOS inspection and control tools.
+      zh: 为 LLM Agent 提供原生 Android/iOS 感知与控制工具的高采用度本地框架。
     why_included:
-      en: It offers a substantial, actively maintained cross-platform runtime rather than only benchmark outputs.
-      zh: 它提供了规模较大、持续维护的跨平台运行时，而不只是 benchmark 结果。
+      en: It is among the strongest open software implementations by adoption, packaging quality, and cross-platform runtime coverage.
+      zh: 按采用度、工程封装和跨平台运行时覆盖衡量，它是最强的开源软件实现之一。
     limitations:
-      en: The 100 percent AndroidWorld claim is self-reported on the project benchmark page and is not an independent recovery evaluation.
-      zh: AndroidWorld 100% 是项目方自报结果，也不是独立的错误恢复评测。
+      en: Published benchmark results are maintained by the project, and recovery is implemented as iterative reasoning rather than audited state restoration.
+      zh: benchmark 结果由项目方维护，恢复也主要依赖迭代推理而非经过审计的状态还原。
+
+  - id: midscene
+    name: Midscene.js
+    family: Midscene
+    release:
+      date: "2024-07-23"
+      basis: code-repository-created
+    code:
+      repo: web-infra-dev/midscene
+      url: https://github.com/web-infra-dev/midscene
+      stars_scope: repository-level
+    paper: null
+    platforms: [Android, iOS, HarmonyOS]
+    perception: [screenshots, optional DOM, multimodal visual grounding]
+    actions: [ADB Android actions, WebDriverAgent iOS actions, HarmonyOS actions]
+    capabilities: [natural-language action, querying, assertion, JavaScript SDK, YAML workflows, agent skills]
+    recovery:
+      level: replanning
+      evidence: The action loop feeds execution errors and updated screenshots back into bounded planning; no transactional device rollback is documented.
+    evidence:
+      - kind: demo
+        label: Mobile showcases
+        url: https://midscenejs.com/showcases
+      - kind: documentation
+        label: Android guide
+        url: https://midscenejs.com/android-getting-started
+      - kind: documentation
+        label: iOS guide
+        url: https://midscenejs.com/ios-getting-started
+    license:
+      spdx: MIT
+      status: open-source
+      url: https://github.com/web-infra-dev/midscene/blob/main/LICENSE
+    runnable:
+      entrypoint_path: packages/android/src/cli.ts
+      entrypoint_url: https://github.com/web-infra-dev/midscene/blob/main/packages/android/src/cli.ts
+      install: Node.js package installation, a supported multimodal model, and the platform-specific Android or iOS bridge.
+    audit:
+      status: links-verified
+      date: "2026-07-15"
+      install_smoke_tested: false
+      notes: Android and iOS guides, mobile demos, Android agent CLI path, package metadata, and MIT license were verified.
+    summary:
+      en: A production-oriented visual automation agent spanning Android, iOS, HarmonyOS, web, and desktop.
+      zh: 覆盖 Android、iOS、HarmonyOS、Web 与桌面的工程化视觉自动化 Agent。
+    why_included:
+      en: It is a mature, actively maintained mobile runtime with concrete SDK, CLI, workflow, and showcase surfaces.
+      zh: 它是成熟且活跃维护的移动运行时，提供明确的 SDK、CLI、工作流和演示。
+    limitations:
+      en: It is also a testing and automation platform, so agent behavior depends strongly on the selected multimodal model.
+      zh: 它同时是测试与自动化平台，Agent 行为高度取决于所选多模态模型。
+
+  - id: mobile-agent-e
+    name: Mobile-Agent-E
+    family: Mobile-Agent
+    release:
+      date: "2025-01-20"
+      basis: paper-first-public
+    code:
+      repo: X-PLUG/MobileAgent
+      url: https://github.com/X-PLUG/MobileAgent/tree/main/Mobile-Agent-E
+      stars_scope: family-level
+    paper:
+      title: "Mobile-Agent-E: Self-Evolving Mobile Assistant for Complex Tasks"
+      url: https://arxiv.org/abs/2501.11733
+      venue: arXiv 2025
+      openalex_ids: [W4406733262]
+    platforms: [Android]
+    perception: [screenshots, OCR, visual grounding, action outcomes]
+    actions: [ADB tap, swipe, text input, back, home]
+    capabilities: [action reflection, self-evolution, tips memory, shortcut memory]
+    recovery:
+      level: reflection
+      evidence: Its Action Reflector checks outcomes and updates reusable Tips and Shortcuts, while the runner supports sequential self-evolution.
+    evidence:
+      - kind: benchmark
+        label: Mobile-Eval-E
+        url: https://github.com/X-PLUG/MobileAgent/tree/main/Mobile-Agent-E#mobile-eval-e-benchmark
+      - kind: documentation
+        label: Quick start
+        url: https://github.com/X-PLUG/MobileAgent/tree/main/Mobile-Agent-E#quick-start
+    license:
+      spdx: MIT
+      status: open-source
+      url: https://github.com/X-PLUG/MobileAgent/blob/main/LICENSE
+    runnable:
+      entrypoint_path: Mobile-Agent-E/scripts/run_task.sh
+      entrypoint_url: https://github.com/X-PLUG/MobileAgent/blob/main/Mobile-Agent-E/scripts/run_task.sh
+      install: Python requirements, ADB Keyboard, environment variables for model endpoints, and an Android device.
+    audit:
+      status: links-verified
+      date: "2026-07-15"
+      install_smoke_tested: false
+      notes: Individual and evolution runners, Mobile-Eval-E, paper identity, and shared MIT license were verified.
+    summary:
+      en: A self-evolving Android assistant that converts outcome reflection into reusable task experience.
+      zh: 将动作结果反思转化为可复用任务经验的自进化 Android 助手。
+    why_included:
+      en: It supplies a complete public loop for action reflection, memory updates, and repeated mobile tasks.
+      zh: 它公开了动作反思、记忆更新与连续移动任务的完整循环。
+    limitations:
+      en: Its reflection is high-level guidance rather than explicit state rollback or guaranteed recovery.
+      zh: 其反思主要提供高层指导，并非显式状态回滚或有保证的恢复。
+
+  - id: androidworld-m3a
+    name: M3A
+    family: AndroidWorld
+    release:
+      date: "2024-05-23"
+      basis: paper-first-public
+    code:
+      repo: google-research/android_world
+      url: https://github.com/google-research/android_world/tree/main/android_world/agents
+      stars_scope: repository-level
+    paper:
+      title: "AndroidWorld: A Dynamic Benchmarking Environment for Autonomous Agents"
+      url: https://arxiv.org/abs/2405.14573
+      venue: ICLR 2025
+      openalex_ids: [W4398836283]
+    platforms: [Android]
+    perception: [screenshots, accessibility tree]
+    actions: [AndroidEnv tap, swipe, text input, navigation and app actions]
+    capabilities: [multimodal reasoning, dynamic task execution, reproducible benchmark runner]
+    recovery:
+      level: retry
+      evidence: M3A observes the live state after every action and can issue a revised next action, but has no explicit backtracking controller.
+    evidence:
+      - kind: benchmark
+        label: AndroidWorld
+        url: https://google-research.github.io/android_world/
+      - kind: documentation
+        label: Minimal M3A runner
+        url: https://github.com/google-research/android_world#quickstart
+    license:
+      spdx: Apache-2.0
+      status: open-source
+      url: https://github.com/google-research/android_world/blob/main/LICENSE
+    runnable:
+      entrypoint_path: minimal_task_runner.py
+      entrypoint_url: https://github.com/google-research/android_world/blob/main/minimal_task_runner.py
+      install: AndroidWorld environment and apps, Python dependencies, an Android emulator, and a supported model API.
+    audit:
+      status: links-verified
+      date: "2026-07-15"
+      install_smoke_tested: false
+      notes: The default agent runner, live benchmark setup, paper identity, Docker option, and Apache license were verified.
+    summary:
+      en: The runnable multimodal default agent shipped with the AndroidWorld live benchmark.
+      zh: 随 AndroidWorld 动态 benchmark 发布的可运行多模态默认 Agent。
+    why_included:
+      en: Unlike a benchmark-only entry, M3A has a concrete agent implementation and one-command minimal task runner.
+      zh: M3A 不只是 benchmark 条目，它有明确的 Agent 实现与单命令最小运行器。
+    limitations:
+      en: It is primarily a research baseline and the default configured model is legacy and API-dependent.
+      zh: 它主要是研究基线，默认配置模型较旧且依赖 API。
+
+  - id: mobile-agent-v2
+    name: Mobile-Agent-v2
+    family: Mobile-Agent
+    release:
+      date: "2024-06-03"
+      basis: paper-first-public
+    code:
+      repo: X-PLUG/MobileAgent
+      url: https://github.com/X-PLUG/MobileAgent/tree/main/Mobile-Agent-v2
+      stars_scope: family-level
+    paper:
+      title: "Mobile-Agent-v2: Mobile Device Operation Assistant with Effective Navigation via Multi-Agent Collaboration"
+      url: https://arxiv.org/abs/2406.01014
+      venue: NeurIPS 2024
+      openalex_ids: [W4415799029, W4399400219]
+    platforms: [Android]
+    perception: [screenshots, OCR, visual grounding]
+    actions: [ADB tap, swipe, text input, back, home]
+    capabilities: [planning agent, decision agent, reflection agent, focus memory]
+    recovery:
+      level: reflection
+      evidence: The Reflection Agent observes each action outcome and can request correction when an operation is judged unsuccessful.
+    evidence:
+      - kind: documentation
+        label: Run guide
+        url: https://github.com/X-PLUG/MobileAgent/tree/main/Mobile-Agent-v2#run
+      - kind: benchmark
+        label: Paper results
+        url: https://arxiv.org/abs/2406.01014
+    license:
+      spdx: MIT
+      status: open-source
+      url: https://github.com/X-PLUG/MobileAgent/blob/main/LICENSE
+    runnable:
+      entrypoint_path: Mobile-Agent-v2/run.py
+      entrypoint_url: https://github.com/X-PLUG/MobileAgent/blob/main/Mobile-Agent-v2/run.py
+      install: Python requirements, ADB Keyboard, and configured planning, decision, grounding, and reflection models.
+    audit:
+      status: links-verified
+      date: "2026-07-15"
+      install_smoke_tested: false
+      notes: Official v2 entrypoint, switches for reflection and memory, paper aliases, and license were verified.
+    summary:
+      en: A multi-agent Android system separating planning, decision, reflection, and focus memory.
+      zh: 将规划、决策、反思与焦点记忆分离的多 Agent Android 系统。
+    why_included:
+      en: It is a runnable and influential transition from single-agent action selection to outcome-aware collaboration.
+      zh: 它是从单 Agent 动作选择走向结果感知协作的重要可运行实现。
+    limitations:
+      en: Reflection can enter loops, and deployment still depends on several model services.
+      zh: 反思可能陷入循环，部署仍依赖多个模型服务。
+
+  - id: ghost-android-agent
+    name: Ghost in the Droid
+    family: Ghost in the Droid
+    release:
+      date: "2026-04-08"
+      basis: code-repository-created
+    code:
+      repo: ghost-in-the-droid/android-agent
+      url: https://github.com/ghost-in-the-droid/android-agent
+      stars_scope: repository-level
+    paper: null
+    platforms: [Android]
+    perception: [screenshots, ADB UI hierarchy, live device stream]
+    actions: [ADB tap, swipe, text input, app launch, device controls]
+    capabilities: [agent chat, reusable app skills, MCP server, phone-farm jobs, dashboard, local-model support]
+    recovery:
+      level: retry
+      evidence: Skills and agent chat can retry device actions and re-read state, while no general semantic backtracking controller is documented.
+    evidence:
+      - kind: demo
+        label: Quick start
+        url: https://github.com/ghost-in-the-droid/android-agent#quick-start
+      - kind: documentation
+        label: MCP tools
+        url: https://github.com/ghost-in-the-droid/android-agent#mcp-server--give-any-ai-agent-an-android-body
+    license:
+      spdx: MIT
+      status: open-source
+      url: https://github.com/ghost-in-the-droid/android-agent/blob/main/LICENSE
+    runnable:
+      entrypoint_path: run.py
+      entrypoint_url: https://github.com/ghost-in-the-droid/android-agent/blob/main/run.py
+      install: Editable Python package, ADB, a connected Android device, and optional model credentials or Ollama.
+    audit:
+      status: links-verified
+      date: "2026-07-15"
+      install_smoke_tested: false
+      notes: Backend runner, package, dashboard, MCP server, device integration tests, and MIT license were verified.
+    summary:
+      en: An Android automation framework combining an LLM phone agent, reusable skills, MCP tools, and fleet operations.
+      zh: 融合 LLM Phone Agent、可复用 skills、MCP 工具与设备集群操作的 Android 框架。
+    why_included:
+      en: It exposes substantial real-device infrastructure and agent surfaces, with both package and source installation paths.
+      zh: 它公开了较完整的真机基础设施和 Agent 接口，同时支持包安装与源码安装。
+    limitations:
+      en: Many workflows are skill-driven automation, and general-agent quality is not backed by an academic mobile benchmark.
+      zh: 许多流程以 skill 驱动，通用 Agent 能力尚无学术移动 benchmark 支撑。
+
+  - id: topoclaw
+    name: TopoClaw
+    family: TopoClaw
+    release:
+      date: "2026-04-23"
+      basis: official-release
+    code:
+      repo: MadeAgents/TopoClaw
+      url: https://github.com/MadeAgents/TopoClaw
+      stars_scope: repository-level
+    paper: null
+    platforms: [Android]
+    perception: [mobile screenshots, desktop observations, proactive sensor events]
+    actions: [Android client GUI actions, cross-device tools, desktop tools]
+    capabilities: [cross-device agent, mobile client, skills, proactive sensing, multi-user collaboration, self-hosting]
+    recovery:
+      level: replanning
+      evidence: The core agent loop and skills can re-evaluate tasks across devices, but no dedicated mobile recovery benchmark or rollback contract is documented.
+    evidence:
+      - kind: demo
+        label: Project demos
+        url: https://github.com/MadeAgents/TopoClaw#-demo
+      - kind: documentation
+        label: Developer build
+        url: https://github.com/MadeAgents/TopoClaw#developer-build--run-commands
+    license:
+      spdx: Apache-2.0
+      status: open-source
+      url: https://github.com/MadeAgents/TopoClaw/blob/main/LICENSE
+    runnable:
+      entrypoint_path: TopoClaw/topoclaw/service/runtime.py
+      entrypoint_url: https://github.com/MadeAgents/TopoClaw/blob/main/TopoClaw/topoclaw/service/runtime.py
+      install: Core Python agent, Android Studio mobile client, Windows desktop client, and either self-hosted or provided communication service.
+    audit:
+      status: links-verified
+      date: "2026-07-15"
+      install_smoke_tested: false
+      notes: Core runtime, Android client, build instructions, demos, self-hosting path, and Apache license were verified.
+    summary:
+      en: A newly open-sourced cross-device personal agent with an Android client, skills, and proactive execution.
+      zh: 新近开源、具备 Android 客户端、skills 与主动执行能力的跨设备个人 Agent。
+    why_included:
+      en: It releases the core agent, mobile client, desktop client, and backend instead of only a demo application.
+      zh: 它同时发布核心 Agent、移动客户端、桌面客户端和后端，而不只是演示应用。
+    limitations:
+      en: Deployment is multi-component, iOS is only planned, and no standardized mobile benchmark is reported.
+      zh: 部署组件较多，iOS 尚在规划中，也未报告标准化移动 benchmark。
+
+  - id: appagent
+    name: AppAgent
+    family: AppAgent
+    release:
+      date: "2023-12-21"
+      basis: paper-first-public
+    code:
+      repo: TencentQQGYLab/AppAgent
+      url: https://github.com/TencentQQGYLab/AppAgent
+      stars_scope: repository-level
+    paper:
+      title: "AppAgent: Multimodal Agents as Smartphone Users"
+      url: https://arxiv.org/abs/2312.13771
+      venue: CHI 2025
+      openalex_ids: [W4409767398, W4390136788]
+    platforms: [Android]
+    perception: [screenshots, OCR, visual element descriptions]
+    actions: [ADB tap, swipe, text input, back, home]
+    capabilities: [autonomous app exploration, human-demonstration learning, app knowledge base, task execution]
+    recovery:
+      level: none-documented
+      evidence: The public implementation reuses learned app documentation but does not expose a dedicated outcome-verification or recovery controller.
+    evidence:
+      - kind: demo
+        label: Deployment demo
+        url: https://github.com/TencentQQGYLab/AppAgent#demo
+      - kind: benchmark
+        label: Evaluation tasks
+        url: https://github.com/TencentQQGYLab/AppAgent/blob/main/assets/testset.md
+    license:
+      spdx: MIT
+      status: open-source
+      url: https://github.com/TencentQQGYLab/AppAgent/blob/main/LICENSE
+    runnable:
+      entrypoint_path: run.py
+      entrypoint_url: https://github.com/TencentQQGYLab/AppAgent/blob/main/run.py
+      install: Python requirements, ADB, an Android device or emulator, and a configured multimodal model.
+    audit:
+      status: links-verified
+      date: "2026-07-15"
+      install_smoke_tested: false
+      notes: Learning and deployment entrypoints, benchmark tasks, formal and preprint paper identities, and MIT license were verified.
+    summary:
+      en: An Android agent that first learns app-specific interaction knowledge, then reuses it for task execution.
+      zh: 先学习应用交互知识、再复用于任务执行的 Android Agent。
+    why_included:
+      en: It provides a complete exploration or demonstration phase plus an executable deployment phase.
+      zh: 它同时提供完整的探索或示教阶段以及可执行部署阶段。
+    limitations:
+      en: The public repository contains the original AppAgent implementation; AppAgent v2 code is not separately identifiable.
+      zh: 公开仓库中可辨识的是原版 AppAgent，无法单独确认 AppAgent v2 实现。
+
+  - id: appclaw
+    name: AppClaw
+    family: AppClaw
+    release:
+      date: "2026-03-23"
+      basis: code-repository-created
+    code:
+      repo: appclawhq/AppClaw
+      url: https://github.com/appclawhq/AppClaw
+      stars_scope: repository-level
+    paper: null
+    platforms: [Android, iOS]
+    perception: [screenshots, device UI observations]
+    actions: [tap, type, swipe, mobile test actions]
+    capabilities: [natural-language agent mode, reusable flows, test runner, CLI, GitHub Action]
+    recovery:
+      level: retry
+      evidence: The runtime can continue from updated observations after action failures, but no explicit backtracking mechanism is documented.
+    evidence:
+      - kind: demo
+        label: Demo and quick start
+        url: https://github.com/appclawhq/AppClaw#quickstart
+      - kind: documentation
+        label: Agent package
+        url: https://github.com/appclawhq/AppClaw/tree/main/packages/agent
+    license:
+      spdx: Apache-2.0
+      status: open-source
+      url: https://github.com/appclawhq/AppClaw/blob/main/LICENSE
+    runnable:
+      entrypoint_path: packages/agent/src/cli.ts
+      entrypoint_url: https://github.com/appclawhq/AppClaw/blob/main/packages/agent/src/cli.ts
+      install: Global npm CLI installation, a configured device provider, and an LLM key for agent mode.
+    audit:
+      status: links-verified
+      date: "2026-07-15"
+      install_smoke_tested: false
+      notes: Agent CLI package, quick start, Android and iOS scope, repository activity, and Apache license were verified.
+    summary:
+      en: An emerging TypeScript mobile agent and test runner with Android and iOS support.
+      zh: 支持 Android 与 iOS 的新兴 TypeScript 移动 Agent 与测试运行器。
+    why_included:
+      en: It offers a concise install path and real agent mode in a fully open, actively developed monorepo.
+      zh: 它在完整开源、活跃开发的 monorepo 中提供了简洁安装路径与真实 Agent 模式。
+    limitations:
+      en: The project is young, has no scholarly paper, and lacks independent benchmark evidence.
+      zh: 项目较新、没有学术论文，也缺少独立 benchmark 证据。
+
+  - id: autodroid
+    name: AutoDroid
+    family: AutoDroid
+    release:
+      date: "2023-08-29"
+      basis: paper-first-public
+    code:
+      repo: MobileLLM/AutoDroid
+      url: https://github.com/MobileLLM/AutoDroid
+      stars_scope: repository-level
+    paper:
+      title: "AutoDroid: LLM-powered Task Automation in Android"
+      url: https://arxiv.org/abs/2308.15272
+      venue: MobiCom 2024
+      openalex_ids: [W4399121418, W4386302825]
+    platforms: [Android]
+    perception: [UI hierarchy, screenshots, dynamic app exploration]
+    actions: [ADB and DroidBot UI events]
+    capabilities: [functionality-aware UI representation, app memory, query optimization, task automation]
+    recovery:
+      level: none-documented
+      evidence: The implementation emphasizes exploration memory and task generation, with no dedicated execution-error recovery module documented.
+    evidence:
+      - kind: documentation
+        label: Installation
+        url: https://github.com/MobileLLM/AutoDroid#how-to-install
+      - kind: benchmark
+        label: Paper evaluation
+        url: https://doi.org/10.1145/3636534.3649379
+    license:
+      spdx: MIT
+      status: open-source
+      url: https://github.com/MobileLLM/AutoDroid/blob/main/LICENSE
+    runnable:
+      entrypoint_path: batch_testing.py
+      entrypoint_url: https://github.com/MobileLLM/AutoDroid/blob/main/batch_testing.py
+      install: Editable Python package installation, an APK, and an ADB-connected Android device or emulator.
+    audit:
+      status: links-verified
+      date: "2026-07-15"
+      install_smoke_tested: false
+      notes: Package installation, DroidBot runtime files, paper aliases, benchmark artifact link, and license were verified.
+    summary:
+      en: A DroidBot-based Android task agent that combines automated exploration with app-specific LLM memory.
+      zh: 基于 DroidBot，将自动探索与应用专属 LLM 记忆结合的 Android 任务 Agent。
+    why_included:
+      en: It is a peer-reviewed, runnable system with a real Android automation stack rather than offline trajectory inference only.
+      zh: 它是经过同行评审、具备真实 Android 自动化栈的可运行系统，而非仅做离线轨迹推理。
+    limitations:
+      en: The repository has seen little recent activity and requires host-side ADB rather than an on-device deployment.
+      zh: 仓库近期活跃度较低，且依赖主机侧 ADB，不能独立运行在端侧。
+
+  - id: agenticx-guiagent
+    name: AgenticX-GUIAgent
+    family: AgenticX-GUIAgent
+    release:
+      date: "2025-09-16"
+      basis: code-repository-created
+    code:
+      repo: DemonDamon/AgenticX-GUIAgent
+      url: https://github.com/DemonDamon/AgenticX-GUIAgent
+      stars_scope: repository-level
+    paper: null
+    platforms: [Android]
+    perception: [screenshots, UI state, multimodal model observations]
+    actions: [ADB basic actions, smart GUI tools]
+    capabilities: [manager agent, executor agent, action reflector, notetaker, knowledge flywheel, evaluation framework]
+    recovery:
+      level: reflection
+      evidence: A dedicated ActionReflectorAgent evaluates execution outcomes and coordinates revised actions through the multi-agent workflow.
+    evidence:
+      - kind: demo
+        label: Run guide
+        url: https://github.com/DemonDamon/AgenticX-GUIAgent#run
+      - kind: documentation
+        label: Architecture
+        url: https://github.com/DemonDamon/AgenticX-GUIAgent#system-architecture
+    license:
+      spdx: MIT
+      status: open-source
+      url: https://github.com/DemonDamon/AgenticX-GUIAgent/blob/main/LICENSE
+    runnable:
+      entrypoint_path: main.py
+      entrypoint_url: https://github.com/DemonDamon/AgenticX-GUIAgent/blob/main/main.py
+      install: Conda or manual Python setup, AgenticX, ADB, an Android device, and configured model credentials.
+    audit:
+      status: links-verified
+      date: "2026-07-15"
+      install_smoke_tested: false
+      notes: Main runner, ADB checker, agent modules, tests, evaluation folder, setup script, and MIT license were verified.
+    summary:
+      en: An Android multi-agent implementation with explicit manager, executor, reflector, and notetaker roles.
+      zh: 显式划分 Manager、Executor、Reflector 与 Notetaker 的 Android 多 Agent 实现。
+    why_included:
+      en: Despite modest adoption, it provides an unusually inspectable open reflection architecture and runnable device path.
+      zh: 尽管采用度不高，它提供了少见的可检查开源反思架构和可运行设备路径。
+    limitations:
+      en: It is a small emerging project without a paper, independent benchmark, or long maintenance history.
+      zh: 它是小型新兴项目，缺少论文、独立 benchmark 和长期维护记录。
+
+  - id: app-use
+    name: App Use
+    family: App Use
+    release:
+      date: "2025-05-16"
+      basis: code-repository-created
+    code:
+      repo: erickjtorres/app-use
+      url: https://github.com/erickjtorres/app-use
+      stars_scope: repository-level
+    paper: null
+    platforms: [Android, iOS]
+    perception: [Appium UI tree, screenshots, app state]
+    actions: [Appium tap, swipe, text input, mobile gestures]
+    capabilities: [general Agent API, Android and iOS examples, CLI setup and doctor, optional memory]
+    recovery:
+      level: retry
+      evidence: The agent loop can act again from refreshed Appium state and records execution history, but no explicit backtracking mechanism is documented.
+    evidence:
+      - kind: demo
+        label: iOS demos
+        url: https://github.com/erickjtorres/app-use#demos
+      - kind: documentation
+        label: Quick start
+        url: https://github.com/erickjtorres/app-use#quick-start
+    license:
+      spdx: MIT
+      status: open-source
+      url: https://github.com/erickjtorres/app-use/blob/main/LICENSE
+    runnable:
+      entrypoint_path: examples/android_app_example.py
+      entrypoint_url: https://github.com/erickjtorres/app-use/blob/main/examples/android_app_example.py
+      install: Python package with CLI extras, Appium and platform drivers, a target app and device, and model credentials.
+    audit:
+      status: links-verified
+      date: "2026-07-15"
+      install_smoke_tested: false
+      notes: Agent API, Android and iOS examples, CLI diagnostics, package metadata, and MIT license were verified.
+    summary:
+      en: A compact Appium-backed Agent API for controlling real Android and iOS applications.
+      zh: 基于 Appium、用于控制真实 Android 与 iOS 应用的紧凑 Agent API。
+    why_included:
+      en: It supplies a complete general agent loop and examples for both major mobile platforms with straightforward packaging.
+      zh: 它以直接的工程封装提供了完整通用 Agent 循环和两大移动平台示例。
+    limitations:
+      en: It has no paper or standardized benchmark, and reliability inherits Appium and model constraints.
+      zh: 它没有论文或标准 benchmark，可靠性受 Appium 与模型能力制约。
+
+  - id: chop
+    name: CHOP
+    family: CHOP
+    release:
+      date: "2025-02-12"
+      basis: code-repository-created
+    code:
+      repo: Yuqi-Zhou/CHOP
+      url: https://github.com/Yuqi-Zhou/CHOP
+      stars_scope: repository-level
+    paper:
+      title: "CHOP: Mobile Operating Assistant with Constrained High-frequency Optimized Subtask Planning"
+      url: https://arxiv.org/abs/2503.03743
+      venue: arXiv 2025
+      openalex_ids: [W4416085946]
+    platforms: [Android, HarmonyOS]
+    perception: [screenshots, Aria-UI grounding, task context]
+    actions: [ADB tap, swipe, text input, navigation keys]
+    capabilities: [basis subtasks, constrained subtask planning, bilingual tasks, real-device demo]
+    recovery:
+      level: replanning
+      evidence: Constrained subtask planning can revise execution at subtask boundaries, but the paper does not present explicit state rollback.
+    evidence:
+      - kind: demo
+        label: CHOP demo usage
+        url: https://github.com/Yuqi-Zhou/CHOP#chop-demo-usage
+      - kind: benchmark
+        label: CHOP-En and CHOP-ZH
+        url: https://github.com/Yuqi-Zhou/CHOP#chop-en--chop-zh
+    license:
+      spdx: MIT
+      status: open-source
+      url: https://github.com/Yuqi-Zhou/CHOP/blob/main/LICENSE
+    runnable:
+      entrypoint_path: src/run.py
+      entrypoint_url: https://github.com/Yuqi-Zhou/CHOP/blob/main/src/run.py
+      install: ADB, an Android or compatible HarmonyOS device, Aria-UI grounding, and a configured multimodal model API.
+    audit:
+      status: links-verified
+      date: "2026-07-15"
+      install_smoke_tested: false
+      notes: Real-device runner, grounding setup, bilingual task data, OpenAlex paper identity, and MIT license were verified.
+    summary:
+      en: A real-device mobile assistant that constrains planning around reusable high-frequency subtasks.
+      zh: 围绕可复用高频子任务约束规划的真机移动助手。
+    why_included:
+      en: It publishes executable Android and HarmonyOS demo code, not only the CHOP datasets or an offline planner.
+      zh: 它公开了可执行的 Android/HarmonyOS 演示代码，而不只是数据集或离线规划器。
+    limitations:
+      en: Evaluation is small, some Chinese task data is unreleased, and the repository is no longer active.
+      zh: 评测规模较小，部分中文任务数据未发布，仓库也已较少维护。
+
+  - id: mobile-agent-v1
+    name: Mobile-Agent
+    family: Mobile-Agent
+    release:
+      date: "2024-01-29"
+      basis: paper-first-public
+    code:
+      repo: X-PLUG/MobileAgent
+      url: https://github.com/X-PLUG/MobileAgent/tree/main/Mobile-Agent-v1
+      stars_scope: family-level
+    paper:
+      title: "Mobile-Agent: Autonomous Multi-Modal Mobile Device Agent with Visual Perception"
+      url: https://arxiv.org/abs/2401.16158
+      venue: ICLR 2024 Workshop; CCL 2024 demo
+      openalex_ids: [W4391376827]
+    platforms: [Android]
+    perception: [screenshots, OCR, icon detection, visual grounding]
+    actions: [ADB tap, swipe, text input, back, home]
+    capabilities: [screen-only operation, single-agent planning, cross-app tasks]
+    recovery:
+      level: none-documented
+      evidence: The public v1 workflow executes iteratively but does not document a dedicated outcome verifier or recovery controller.
+    evidence:
+      - kind: benchmark
+        label: Mobile-Eval
+        url: https://github.com/X-PLUG/MobileAgent/tree/main/Mobile-Agent-v1#mobile-eval
+      - kind: documentation
+        label: Quick start
+        url: https://github.com/X-PLUG/MobileAgent/tree/main/Mobile-Agent-v1#quick_start
+    license:
+      spdx: MIT
+      status: open-source
+      url: https://github.com/X-PLUG/MobileAgent/blob/main/LICENSE
+    runnable:
+      entrypoint_path: Mobile-Agent-v1/run.py
+      entrypoint_url: https://github.com/X-PLUG/MobileAgent/blob/main/Mobile-Agent-v1/run.py
+      install: Python requirements, ADB, a grounding model, and a multimodal-model endpoint.
+    audit:
+      status: links-verified
+      date: "2026-07-15"
+      install_smoke_tested: false
+      notes: Official code path, installation instructions, benchmark, license, and paper identity were verified.
+    summary:
+      en: A screen-only Android agent combining OCR, icon detection, and multimodal reasoning.
+      zh: 结合 OCR、图标检测与多模态推理的纯视觉 Android Agent。
+    why_included:
+      en: A foundational, runnable visual mobile-agent implementation with a public mobile benchmark.
+      zh: 奠基性的可运行视觉 Mobile Agent，并公开了移动端评测。
+    limitations:
+      en: Requires several external models and exposes no dedicated error-recovery module.
+      zh: 依赖多个外部模型，且没有独立的错误恢复模块。
+
+  - id: mobilegpt
+    name: MobileGPT
+    family: MobileGPT
+    release:
+      date: "2023-12-04"
+      basis: paper-first-public
+    code:
+      repo: mobilegptsys/MobileGPT
+      url: https://github.com/mobilegptsys/MobileGPT
+      stars_scope: repository-level
+    paper:
+      title: "MobileGPT: Augmenting LLM with Human-like App Memory for Mobile Task Automation"
+      url: https://arxiv.org/abs/2312.03003
+      venue: MobiCom 2024
+      openalex_ids: [W4405014122, W4389470790]
+    platforms: [Android]
+    perception: [Android accessibility tree, app exploration state]
+    actions: [Android accessibility actions]
+    capabilities: [explore-select-derive-recall memory, reusable subtasks, on-device client, Python server]
+    recovery:
+      level: none-documented
+      evidence: Human-like app memory improves reuse, but the public system does not document a dedicated runtime recovery controller.
+    evidence:
+      - kind: demo
+        label: Server and client run guide
+        url: https://github.com/mobilegptsys/MobileGPT#run
+      - kind: benchmark
+        label: Benchmark dataset
+        url: https://github.com/mobilegptsys/MobileGPT#benchmark-dataset
+    license:
+      spdx: Apache-2.0
+      status: open-source
+      url: https://github.com/mobilegptsys/MobileGPT/blob/main/LICENSE
+    runnable:
+      entrypoint_path: Server/main.py
+      entrypoint_url: https://github.com/mobilegptsys/MobileGPT/blob/main/Server/main.py
+      install: Python server dependencies plus a built Android accessibility client configured with the server address.
+    audit:
+      status: links-verified
+      date: "2026-07-15"
+      install_smoke_tested: false
+      notes: Server entrypoint, Android client setup, benchmark, published and preprint identities, and license were verified.
+    summary:
+      en: A server-plus-Android-client agent that learns reusable app procedures with human-like memory.
+      zh: 通过服务端与 Android 客户端协作、学习可复用应用流程的记忆型 Agent。
+    why_included:
+      en: It releases the full accessibility client and server path used for mobile task execution.
+      zh: 它公开了用于移动任务执行的完整无障碍客户端与服务端路径。
+    limitations:
+      en: Setup is multi-component, the code is aging, and newly installed apps require memory reinitialization.
+      zh: 配置涉及多个组件、代码较旧，安装新应用后还需重新初始化记忆。

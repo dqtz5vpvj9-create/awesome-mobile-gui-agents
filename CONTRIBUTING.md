@@ -19,13 +19,13 @@ The issue must provide:
 - a concise reason the project is a complete agent rather than a model, dataset, training recipe, or environment;
 - known limitations.
 
-A maintainer will classify the proposal as main-list candidate, associated resource, qualification pending, code pending, or out of scope. Once the issue is accepted, a data pull request can be prepared.
+A maintainer will classify the proposal as a main-list candidate, associated resource, pending review, or out of scope. Candidates that still lack qualifying evidence are tracked in [PENDING.md](PENDING.md). Once an issue is accepted, a data pull request can be prepared.
 
 ## Corrections
 
 Corrections to an existing entry, schema, generator, tests, or documentation are welcome. Link the pull request to an issue when the change affects inclusion, license status, paper identity, audit level, or substantive capability claims.
 
-Do not manually edit generated README tables. Update structured data or templates and run:
+Do not manually edit generated catalog tables. Update structured data or templates and run:
 
 ~~~bash
 python scripts/catalog.py render
@@ -49,4 +49,4 @@ Routine GitHub and OpenAlex metric changes come through the scheduled refresh pu
 
 ## Review expectations
 
-Catalog changes require human review because automated checks can confirm structure and links but cannot decide whether an implementation is a complete Mobile GUI Agent. Maintainers may keep a project in a pending section until licensing, runtime completeness, or official ownership is unambiguous.
+Catalog changes require human review because automated checks can confirm structure and links but cannot decide whether an implementation is a complete Mobile GUI Agent. Maintainers may keep a project in [PENDING.md](PENDING.md) until licensing, runtime completeness, or official ownership is unambiguous.

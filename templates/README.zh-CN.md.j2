@@ -12,42 +12,22 @@
 
 > 指标快照：**{{ snapshot_date }}**（抓取时间 {{ retrieved_at }}）。主目录：**{{ main_count }} 个 Agent**。本文件由 [data/agents.yaml](data/agents.yaml) 生成，请勿手工修改表格。
 
-## 为什么要做这个列表
+## 目录
 
-Mobile GUI Agent 工作分散在研究原型、模型发布、自动化框架、benchmark 与产品仓库中。大型通用 GUI Agent 列表适合发现工作，但通常不能稳定回答三个实践问题：实现是否官方且真正开源？是否能操作真实或模拟的移动 GUI？论文引用数与仓库 star 是在什么时候测量的？
+- [Mobile GUI Agents](#mobile-gui-agents)
+- [Agent 详情](#agent-详情)
+- [相关资源](#相关资源)
+- [待审核条目](PENDING.zh-CN.md)
+- [方法与收录标准](METHODOLOGY.md)
+- [参与贡献](#贡献)
 
-本目录通过人工审核条目和可复现快照回答这些问题。每个条目记录平台覆盖、感知与动作接口、规划、记忆、错误恢复、工程封装和评测证据。
+## Mobile GUI Agents
 
-## 收录门槛
-
-主榜条目必须同时满足：
-
-1. 是完整 Agent 或具有实质可运行闭环的 Agent，而不只是模型、数据集、训练方案或 benchmark。
-2. 能在真机、模拟器或可信动态环境中，通过 GUI 操作 Android、iOS 或 HarmonyOS。
-3. 官方源码仓库公开，并带有明确的开源软件许可证。
-4. 有文档化的安装或执行路径。
-5. 提供移动 benchmark 证据或具体真机演示。
-6. 链接、可运行路径、许可证与元数据都有审计日期。
-
-排除规则、审计等级、论文去重和指标语义见 [METHODOLOGY.md](METHODOLOGY.md)。
-
-## Established Agents
-
-发布时间不晚于 **{{ established_cutoff }}**，即快照时至少已发布 12 个月。
+每个条目都链接官方开源实现、可运行的移动端路径、支持证据与带日期的元数据。完整的目录边界见 [METHODOLOGY.md](METHODOLOGY.md)，仍在审核的候选项目见 [PENDING.zh-CN.md](PENDING.zh-CN.md)。
 
 | Agent | 发布时间 | 平台 | 快照指标 | 链接 |
 |---|:---:|---|---:|---|
-{% for row in established -%}
-| **{{ row.name|md }}**{% if row.paper %}<br><sub>{{ row.paper.venue|md }}</sub>{% endif %} | {{ row.release.date|replace("-", "&#8209;") }} | {{ row.platforms|join(", ") }} | 引用&nbsp;{% if row.citations is none %}—{% else %}{{ row.citations|intfmt }}{% endif %}<br>Stars&nbsp;{{ row.stars|intfmt }}{% if row.code.stars_scope == "family-level" %}<sup>family</sup>{% endif %} | [代码]({{ row.code.url }}){% if row.paper %} · [论文]({{ row.paper.url }}){% endif %} · {{ row.evidence_links }} |
-{% endfor %}
-
-## Emerging Agents
-
-发布时间晚于 **{{ established_cutoff }}**。引用数与 star 数只是带日期的快照元数据。
-
-| Agent | 发布时间 | 平台 | 快照指标 | 链接 |
-|---|:---:|---|---:|---|
-{% for row in emerging -%}
+{% for row in agents -%}
 | **{{ row.name|md }}**{% if row.paper %}<br><sub>{{ row.paper.venue|md }}</sub>{% endif %} | {{ row.release.date|replace("-", "&#8209;") }} | {{ row.platforms|join(", ") }} | 引用&nbsp;{% if row.citations is none %}—{% else %}{{ row.citations|intfmt }}{% endif %}<br>Stars&nbsp;{{ row.stars|intfmt }}{% if row.code.stars_scope == "family-level" %}<sup>family</sup>{% endif %} | [代码]({{ row.code.url }}){% if row.paper %} · [论文]({{ row.paper.url }}){% endif %} · {{ row.evidence_links }} |
 {% endfor %}
 
@@ -55,7 +35,7 @@ Mobile GUI Agent 工作分散在研究原型、模型发布、自动化框架、
 
 ## Agent 详情
 
-{% for row in established + emerging %}
+{% for row in agents %}
 <details>
 <summary><strong>{{ row.name|md }}</strong> — {{ row.summary.zh|md }}</summary>
 
@@ -68,26 +48,6 @@ Mobile GUI Agent 工作分散在研究原型、模型发布、自动化框架、
 - **主要局限：**{{ row.limitations.zh|md }}
 
 </details>
-{% endfor %}
-
-## Notable / Code Pending
-
-这些论文相关性强、质量高，但只有在官方实现可公开核验后，才会进入开源 Agent 主榜；当前不排名、不计数。
-
-| 工作 | Venue | 状态 | 待定原因 |
-|---|---|---|---|
-{% for item in notable -%}
-| [{{ item.name }}]({{ item.paper_url }}) | {{ item.venue }} | {{ item.status }} | {{ item.reason_zh|md }} |
-{% endfor %}
-
-## 公开仓库待资格确认
-
-“代码公开”本身不等于满足主榜要求。下列项目需要解决许可证、实现身份或运行时完整性问题。
-
-| 项目 | 状态 | 原因 |
-|---|---|---|
-{% for item in qualification_pending -%}
-| [{{ item.name }}]({{ item.code_url }}) | {{ item.status }} | {{ item.reason_zh|md }} |
 {% endfor %}
 
 ## 相关资源
@@ -121,7 +81,7 @@ python scripts/catalog.py validate
 python scripts/catalog.py check
 ~~~
 
-抓取新的在线快照并重新生成中英文 README：
+抓取新的在线快照并重新生成全部目录页面：
 
 ~~~bash
 GITHUB_TOKEN=... python scripts/catalog.py refresh --date YYYY-MM-DD
@@ -145,4 +105,4 @@ pytest
 
 ## 许可证
 
-目录数据、文档与生成的 README 采用 [CC BY 4.0](LICENSES/CC-BY-4.0.txt)；脚本与测试采用 [MIT](LICENSES/MIT.txt)。上游项目保留各自许可证。
+目录数据、文档与生成的目录页面采用 [CC BY 4.0](LICENSES/CC-BY-4.0.txt)；脚本与测试采用 [MIT](LICENSES/MIT.txt)。上游项目保留各自许可证。

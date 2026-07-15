@@ -9,7 +9,7 @@ Link official repositories, licenses, papers, runnable paths, and benchmark or d
 ## Checks
 
 - [ ] Structured data validates
-- [ ] Both READMEs were regenerated
+- [ ] Generated catalog pages were regenerated
 - [ ] Generated-file check passes
 - [ ] Tests pass
 - [ ] No audit level was promoted without performing the required work

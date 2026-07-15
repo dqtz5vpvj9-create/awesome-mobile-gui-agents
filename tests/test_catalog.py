@@ -64,18 +64,16 @@ def test_resources_are_not_counted_as_main_agent_names():
     assert main_names.isdisjoint(resource_names)
 
 
-def test_readmes_are_deterministically_generated():
+def test_catalog_pages_are_deterministically_generated():
     catalog.check_generated()
 
 
-def test_agent_sections_preserve_catalog_source_order():
+def test_unified_agent_list_preserves_catalog_source_order():
     context = catalog.build_render_context()
     source_ids = [agent["id"] for agent in load_yaml("agents.yaml")["agents"]]
-    for section in ("established", "emerging"):
-        rendered_ids = [row["id"] for row in context[section]]
-        rendered_id_set = set(rendered_ids)
-        expected_ids = [agent_id for agent_id in source_ids if agent_id in rendered_id_set]
-        assert rendered_ids == expected_ids
+    assert [row["id"] for row in context["agents"]] == source_ids
+    assert "established" not in context
+    assert "emerging" not in context
 
 
 def test_readme_main_tables_use_compact_public_columns():
@@ -83,3 +81,26 @@ def test_readme_main_tables_use_compact_public_columns():
     chinese = (ROOT / "templates" / "README.zh-CN.md.j2").read_text(encoding="utf-8")
     assert "| Agent | Released | Platform | Snapshot | Links |" in english
     assert "| Agent | 发布时间 | 平台 | 快照指标 | 链接 |" in chinese
+    assert english.count("{% for row in agents") == 2
+    assert chinese.count("{% for row in agents") == 2
+
+
+def test_pending_candidates_are_generated_outside_the_readmes():
+    english_template = (ROOT / "templates" / "README.md.j2").read_text(
+        encoding="utf-8"
+    )
+    chinese_template = (ROOT / "templates" / "README.zh-CN.md.j2").read_text(
+        encoding="utf-8"
+    )
+    english_pending = (ROOT / "PENDING.md").read_text(encoding="utf-8")
+    chinese_pending = (ROOT / "PENDING.zh-CN.md").read_text(encoding="utf-8")
+    assert "{% for item in notable" not in english_template
+    assert "{% for item in notable" not in chinese_template
+    assert "{% for item in qualification_pending" not in english_template
+    assert "{% for item in qualification_pending" not in chinese_template
+    candidates = load_yaml("notable.yaml")
+    names = [item["name"] for item in candidates["notable"]]
+    names.extend(item["name"] for item in candidates["qualification_pending"])
+    for name in names:
+        assert name in english_pending
+        assert name in chinese_pending

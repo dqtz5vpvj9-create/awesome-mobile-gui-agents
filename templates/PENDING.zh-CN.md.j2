@@ -1,0 +1,23 @@
+# 待审核条目
+
+[返回主目录](README.zh-CN.md) · [English](PENDING.md)
+
+这些候选项目不计入主目录。只有在官方实现及所需资格证据均可核验后，条目才会移入主目录。
+
+## 等待官方代码的论文
+
+| 工作 | Venue | 状态 | 待核验问题 |
+|---|---|---|---|
+{% for item in notable -%}
+| [{{ item.name }}]({{ item.paper_url }}) | {{ item.venue }} | `{{ item.status }}` | {{ item.reason_zh|md }} |
+{% endfor %}
+
+## 等待资格确认的仓库
+
+| 项目 | 状态 | 待核验问题 |
+|---|---|---|
+{% for item in qualification_pending -%}
+| [{{ item.name }}]({{ item.code_url }}) | `{{ item.status }}` | {{ item.reason_zh|md }} |
+{% endfor %}
+
+主目录要求见 [METHODOLOGY.md](METHODOLOGY.md)，新增或更新条目的流程见 [CONTRIBUTING.md](CONTRIBUTING.md)。
