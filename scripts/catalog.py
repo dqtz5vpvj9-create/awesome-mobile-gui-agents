@@ -5,7 +5,6 @@ from __future__ import annotations
 
 import argparse
 import json
-import math
 import os
 import re
 import sys
@@ -363,21 +362,6 @@ def latest_snapshot() -> dict[str, Any]:
     return snapshot
 
 
-def percentile_ranks(values: list[float]) -> list[float]:
-    if not values:
-        return []
-    if len(values) == 1:
-        return [100.0]
-    ordered = sorted(values)
-    result = []
-    for value in values:
-        first = ordered.index(value)
-        last = len(ordered) - 1 - ordered[::-1].index(value)
-        average_rank = (first + last) / 2
-        result.append(100.0 * average_rank / (len(values) - 1))
-    return result
-
-
 def year_ago(day: date) -> date:
     try:
         return day.replace(year=day.year - 1)
@@ -418,15 +402,9 @@ def build_render_context() -> dict[str, Any]:
         rows.append(row)
 
     established = [row for row in rows if row["is_established"]]
-    star_values = [math.log1p(row["stars"]) for row in established]
-    citation_values = [math.log1p(row["citations"] or 0) for row in established]
-    star_percentiles = percentile_ranks(star_values)
-    citation_percentiles = percentile_ranks(citation_values)
-    for row, star_pct, citation_pct in zip(
-        established, star_percentiles, citation_percentiles, strict=True
-    ):
-        row["impact_score"] = (star_pct + citation_pct) / 2
-    established.sort(key=lambda row: (-row["impact_score"], row["name"].casefold()))
+    established.sort(
+        key=lambda row: (-row["release_day"].toordinal(), row["name"].casefold())
+    )
 
     emerging = [row for row in rows if not row["is_established"]]
     emerging.sort(key=lambda row: (-row["release_day"].toordinal(), row["name"].casefold()))

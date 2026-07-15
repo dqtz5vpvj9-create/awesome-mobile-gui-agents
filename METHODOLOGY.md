@@ -56,7 +56,7 @@ Papers are resolved to curated OpenAlex work IDs. A preprint and its published v
 
 This avoids double counting a citing paper that references both versions. It also preserves all component work metadata in the snapshot for inspection.
 
-Entries without a paper show no citation count. For the Established ordering formula only, their citation input is zero.
+Entries without a paper show no citation count.
 
 ## GitHub identity
 
@@ -87,17 +87,9 @@ Recovery is one field, not the catalog scope:
 
 These labels describe mechanisms, not comparable performance tiers. A reflection label does not imply successful state restoration, and UI navigation recovery does not imply rollback of irreversible external side effects.
 
-## Ordering
+## Display order
 
-Emerging entries are newest first and unranked.
-
-Established entries use a deterministic ordering score:
-
-1. transform citations and stars with log1p;
-2. compute within-table percentile ranks, using the average rank for ties;
-3. average citation and star percentiles with equal weight.
-
-The score is a reproducible display order, not a subjective quality score. Citation databases and GitHub popularity have different biases; both raw values remain visible.
+Established and Emerging entries are both sorted by release date, newest first. Names provide a deterministic alphabetical tie-breaker for entries released on the same day. Citation and star snapshots do not affect placement.
 
 ## Snapshot procedure
 

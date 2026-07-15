@@ -68,8 +68,18 @@ def test_readmes_are_deterministically_generated():
     catalog.check_generated()
 
 
-def test_emerging_entries_are_unranked_and_newest_first():
+def test_agent_sections_are_newest_first():
     context = catalog.build_render_context()
-    emerging_dates = [row["release_day"] for row in context["emerging"]]
-    assert emerging_dates == sorted(emerging_dates, reverse=True)
-    assert all("impact_score" not in row for row in context["emerging"])
+    for section in ("established", "emerging"):
+        dates = [row["release_day"] for row in context[section]]
+        assert dates == sorted(dates, reverse=True)
+
+
+def test_readmes_do_not_publish_composite_scores():
+    paths = [
+        ROOT / "templates" / "README.md.j2",
+        ROOT / "templates" / "README.zh-CN.md.j2",
+        ROOT / "METHODOLOGY.md",
+    ]
+    for path in paths:
+        assert "impact" not in path.read_text(encoding="utf-8").casefold()

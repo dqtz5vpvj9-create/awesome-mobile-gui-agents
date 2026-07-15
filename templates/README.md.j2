@@ -29,40 +29,46 @@ A main-list entry must satisfy all of the following:
 5. It provides mobile benchmark evidence or a concrete real-device demo.
 6. Its links, runnable path, license, and metadata have an audit date.
 
-See [METHODOLOGY.md](METHODOLOGY.md) for exclusions, audit levels, paper deduplication, and ordering.
+See [METHODOLOGY.md](METHODOLOGY.md) for exclusions, audit levels, paper deduplication, and metric semantics.
 
 ## Established agents
 
-Released on or before **{{ established_cutoff }}** (at least 12 months old at the snapshot). These {{ established_count }} entries are ordered by a deterministic impact score: the equal-weight mean of percentile ranks over <code>log1p(OpenAlex citations)</code> and <code>log1p(GitHub stars)</code>. The score orders the table; it is not a quality tier.
+Released on or before **{{ established_cutoff }}** (at least 12 months old at the snapshot). These {{ established_count }} entries are listed by release date, newest first.
 
-| Agent | Released | Platforms | What it provides | Evidence | Citations | GitHub stars | Impact | Audit |
-|---|---:|---|---|---|---:|---:|---:|---|
+| Agent | Released | Platform | Snapshot | Links |
+|---|:---:|---|---:|---|
 {% for row in established -%}
-| [{{ row.name|md }}]({{ row.code.url }}){% if row.paper %}<br><sub>[paper]({{ row.paper.url }}) · {{ row.paper.venue|md }}</sub>{% endif %} | {{ row.release.date }} | {{ row.platforms|join(", ") }} | {{ row.summary.en|md }} | {{ row.evidence_links }} | {% if row.citations is none %}—{% else %}{{ row.citations|intfmt }}{% endif %} | {{ row.stars|intfmt }}{% if row.code.stars_scope == "family-level" %}<sup>family</sup>{% endif %} | {{ "%.1f"|format(row.impact_score) }} | {{ row.audit.status }}<br><sub>{{ row.audit.date }}</sub> |
+| **{{ row.name|md }}**{% if row.paper %}<br><sub>{{ row.paper.venue|md }}</sub>{% endif %} | {{ row.release.date }} | {{ row.platforms|join(", ") }} | Citations&nbsp;{% if row.citations is none %}—{% else %}{{ row.citations|intfmt }}{% endif %}<br>Stars&nbsp;{{ row.stars|intfmt }}{% if row.code.stars_scope == "family-level" %}<sup>family</sup>{% endif %} | [Code]({{ row.code.url }}){% if row.paper %} · [Paper]({{ row.paper.url }}){% endif %} · {{ row.evidence_links }} |
 {% endfor %}
 
 ## Emerging agents
 
-Released after **{{ established_cutoff }}**. These {{ emerging_count }} entries are listed newest first and are intentionally **not ranked**. Citation and star counts remain visible without pretending that a young project has had the same time to accumulate them.
+Released after **{{ established_cutoff }}**. These {{ emerging_count }} entries are listed by release date, newest first. Citation and star counts are dated snapshot metadata.
 
-| Agent | Released | Platforms | What it provides | Evidence | Citations | GitHub stars | Audit |
-|---|---:|---|---|---|---:|---:|---|
+| Agent | Released | Platform | Snapshot | Links |
+|---|:---:|---|---:|---|
 {% for row in emerging -%}
-| [{{ row.name|md }}]({{ row.code.url }}){% if row.paper %}<br><sub>[paper]({{ row.paper.url }}) · {{ row.paper.venue|md }}</sub>{% endif %} | {{ row.release.date }} | {{ row.platforms|join(", ") }} | {{ row.summary.en|md }} | {{ row.evidence_links }} | {% if row.citations is none %}—{% else %}{{ row.citations|intfmt }}{% endif %} | {{ row.stars|intfmt }}{% if row.code.stars_scope == "family-level" %}<sup>family</sup>{% endif %} | {{ row.audit.status }}<br><sub>{{ row.audit.date }}</sub> |
+| **{{ row.name|md }}**{% if row.paper %}<br><sub>{{ row.paper.venue|md }}</sub>{% endif %} | {{ row.release.date }} | {{ row.platforms|join(", ") }} | Citations&nbsp;{% if row.citations is none %}—{% else %}{{ row.citations|intfmt }}{% endif %}<br>Stars&nbsp;{{ row.stars|intfmt }}{% if row.code.stars_scope == "family-level" %}<sup>family</sup>{% endif %} | [Code]({{ row.code.url }}){% if row.paper %} · [Paper]({{ row.paper.url }}){% endif %} · {{ row.evidence_links }} |
 {% endfor %}
 
 <sup>family</sup> The repository hosts multiple cataloged agent generations, so its GitHub star count is family-level and is not attributed to one generation.
 
-<details>
-<summary><strong>Audited runtime details and limitations</strong></summary>
+## Agent details
 
-| Agent | Perception | Actions | Recovery evidence | Runnable path | License | Last push | Main limitation |
-|---|---|---|---|---|---|---:|---|
-{% for row in established + emerging -%}
-| {{ row.name|md }} | {{ row.perception|join(", ")|md }} | {{ row.actions|join(", ")|md }} | **{{ row.recovery.level }}** — {{ row.recovery.evidence|md }} | [entrypoint]({{ row.runnable.entrypoint_url }}) | [{{ row.license.spdx }}]({{ row.license.url }}) | {{ row.repo_pushed_at[:10] }} | {{ row.limitations.en|md }} |
-{% endfor %}
+{% for row in established + emerging %}
+<details>
+<summary><strong>{{ row.name|md }}</strong> — {{ row.summary.en|md }}</summary>
+
+- **Perception:** {{ row.perception|join(", ")|md }}
+- **Actions:** {{ row.actions|join(", ")|md }}
+- **Capabilities:** {{ row.capabilities|join(", ")|md }}
+- **Recovery:** <code>{{ row.recovery.level }}</code> — {{ row.recovery.evidence|md }}
+- **Runtime:** [entrypoint]({{ row.runnable.entrypoint_url }}) · [{{ row.license.spdx }} license]({{ row.license.url }})
+- **Audit:** {{ row.audit.status }} on {{ row.audit.date }} · repository updated {{ row.repo_pushed_at[:10] }}
+- **Main limitation:** {{ row.limitations.en|md }}
 
 </details>
+{% endfor %}
 
 ## Notable / code pending
 
@@ -101,7 +107,7 @@ Useful models, training methods, datasets, and environments are kept visible but
 - **links-verified:** official repository, license, paper, evidence, and runnable paths were checked.
 - **code-inspected:** the above plus implementation-level inspection of the relevant agent loop.
 - **install-smoke-tested:** the documented installation and a minimal launch were executed successfully.
-- A missing paper is shown as an em dash and contributes zero citations only when computing the established-table ordering.
+- A missing paper is shown as an em dash.
 
 Every historical snapshot is preserved under [snapshots/](snapshots/).
 

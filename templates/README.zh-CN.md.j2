@@ -29,40 +29,46 @@ Mobile GUI Agent 工作分散在研究原型、模型发布、自动化框架、
 5. 提供移动 benchmark 证据或具体真机演示。
 6. 链接、可运行路径、许可证与元数据都有审计日期。
 
-排除规则、审计等级、论文去重和排序方法见 [METHODOLOGY.md](METHODOLOGY.md)。
+排除规则、审计等级、论文去重和指标语义见 [METHODOLOGY.md](METHODOLOGY.md)。
 
 ## Established Agents
 
-发布时间不晚于 **{{ established_cutoff }}**，即快照时至少已发布 12 个月。以下 {{ established_count }} 个条目按确定性的 impact score 排序：分别对 <code>log1p(OpenAlex citations)</code> 与 <code>log1p(GitHub stars)</code> 计算百分位秩，再等权平均。该分数只用于稳定排序，不是主观质量分级。
+发布时间不晚于 **{{ established_cutoff }}**，即快照时至少已发布 12 个月。以下 {{ established_count }} 个条目按发布日期从新到旧列出。
 
-| Agent | 发布时间 | 平台 | 主要能力 | 证据 | 引用数 | GitHub stars | Impact | 审计 |
-|---|---:|---|---|---|---:|---:|---:|---|
+| Agent | 发布时间 | 平台 | 快照指标 | 链接 |
+|---|:---:|---|---:|---|
 {% for row in established -%}
-| [{{ row.name|md }}]({{ row.code.url }}){% if row.paper %}<br><sub>[论文]({{ row.paper.url }}) · {{ row.paper.venue|md }}</sub>{% endif %} | {{ row.release.date }} | {{ row.platforms|join(", ") }} | {{ row.summary.zh|md }} | {{ row.evidence_links }} | {% if row.citations is none %}—{% else %}{{ row.citations|intfmt }}{% endif %} | {{ row.stars|intfmt }}{% if row.code.stars_scope == "family-level" %}<sup>family</sup>{% endif %} | {{ "%.1f"|format(row.impact_score) }} | {{ row.audit.status }}<br><sub>{{ row.audit.date }}</sub> |
+| **{{ row.name|md }}**{% if row.paper %}<br><sub>{{ row.paper.venue|md }}</sub>{% endif %} | {{ row.release.date }} | {{ row.platforms|join(", ") }} | 引用&nbsp;{% if row.citations is none %}—{% else %}{{ row.citations|intfmt }}{% endif %}<br>Stars&nbsp;{{ row.stars|intfmt }}{% if row.code.stars_scope == "family-level" %}<sup>family</sup>{% endif %} | [代码]({{ row.code.url }}){% if row.paper %} · [论文]({{ row.paper.url }}){% endif %} · {{ row.evidence_links }} |
 {% endfor %}
 
 ## Emerging Agents
 
-发布时间晚于 **{{ established_cutoff }}**。以下 {{ emerging_count }} 个条目只按发布时间从新到旧列出，**不做排名**。我们仍展示 citation 与 star，但不假装新项目拥有相同的指标积累时间。
+发布时间晚于 **{{ established_cutoff }}**。以下 {{ emerging_count }} 个条目按发布日期从新到旧列出。引用数与 star 数只是带日期的快照元数据。
 
-| Agent | 发布时间 | 平台 | 主要能力 | 证据 | 引用数 | GitHub stars | 审计 |
-|---|---:|---|---|---|---:|---:|---|
+| Agent | 发布时间 | 平台 | 快照指标 | 链接 |
+|---|:---:|---|---:|---|
 {% for row in emerging -%}
-| [{{ row.name|md }}]({{ row.code.url }}){% if row.paper %}<br><sub>[论文]({{ row.paper.url }}) · {{ row.paper.venue|md }}</sub>{% endif %} | {{ row.release.date }} | {{ row.platforms|join(", ") }} | {{ row.summary.zh|md }} | {{ row.evidence_links }} | {% if row.citations is none %}—{% else %}{{ row.citations|intfmt }}{% endif %} | {{ row.stars|intfmt }}{% if row.code.stars_scope == "family-level" %}<sup>family</sup>{% endif %} | {{ row.audit.status }}<br><sub>{{ row.audit.date }}</sub> |
+| **{{ row.name|md }}**{% if row.paper %}<br><sub>{{ row.paper.venue|md }}</sub>{% endif %} | {{ row.release.date }} | {{ row.platforms|join(", ") }} | 引用&nbsp;{% if row.citations is none %}—{% else %}{{ row.citations|intfmt }}{% endif %}<br>Stars&nbsp;{{ row.stars|intfmt }}{% if row.code.stars_scope == "family-level" %}<sup>family</sup>{% endif %} | [代码]({{ row.code.url }}){% if row.paper %} · [论文]({{ row.paper.url }}){% endif %} · {{ row.evidence_links }} |
 {% endfor %}
 
 <sup>family</sup> 同一仓库包含多个已收录 Agent 代际，因此 star 是 family-level 指标，不能归因于某一个版本。
 
-<details>
-<summary><strong>运行时审计细节与局限</strong></summary>
+## Agent 详情
 
-| Agent | 感知 | 动作 | 恢复类型 | 可运行路径 | 许可证 | 最近 push | 主要局限 |
-|---|---|---|---|---|---|---:|---|
-{% for row in established + emerging -%}
-| {{ row.name|md }} | {{ row.perception|join(", ")|md }} | {{ row.actions|join(", ")|md }} | **{{ row.recovery.level }}** | [entrypoint]({{ row.runnable.entrypoint_url }}) | [{{ row.license.spdx }}]({{ row.license.url }}) | {{ row.repo_pushed_at[:10] }} | {{ row.limitations.zh|md }} |
-{% endfor %}
+{% for row in established + emerging %}
+<details>
+<summary><strong>{{ row.name|md }}</strong> — {{ row.summary.zh|md }}</summary>
+
+- **感知：**{{ row.perception|join(", ")|md }}
+- **动作：**{{ row.actions|join(", ")|md }}
+- **主要能力：**{{ row.capabilities|join(", ")|md }}
+- **恢复机制：**<code>{{ row.recovery.level }}</code>
+- **运行入口：**[entrypoint]({{ row.runnable.entrypoint_url }}) · [{{ row.license.spdx }} 许可证]({{ row.license.url }})
+- **审计：**{{ row.audit.status }}，{{ row.audit.date }} · 仓库最近更新 {{ row.repo_pushed_at[:10] }}
+- **主要局限：**{{ row.limitations.zh|md }}
 
 </details>
+{% endfor %}
 
 ## Notable / Code Pending
 
@@ -101,7 +107,7 @@ Mobile GUI Agent 工作分散在研究原型、模型发布、自动化框架、
 - **links-verified：**已检查官方仓库、许可证、论文、证据和可运行路径。
 - **code-inspected：**在上述基础上进一步检查相关 Agent loop 的实现。
 - **install-smoke-tested：**实际执行文档化安装并成功完成最小启动。
-- 没有论文时显示破折号；仅在计算 Established 表排序时按零引用处理。
+- 没有论文时显示破折号。
 
 所有历史快照保存在 [snapshots/](snapshots/)。
 
