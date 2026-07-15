@@ -1,0 +1,67 @@
+name: Suggest an agent
+description: Propose a high-quality open-source Mobile GUI Agent for review.
+title: "[Agent suggestion] "
+labels: ["candidate"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Main-list suggestions start as issues. Please provide verifiable official sources; public code without an explicit open-source license cannot enter the main list.
+  - type: input
+    id: name
+    attributes:
+      label: Agent name
+    validations:
+      required: true
+  - type: input
+    id: code
+    attributes:
+      label: Official code repository
+      placeholder: https://github.com/owner/repo
+    validations:
+      required: true
+  - type: input
+    id: license
+    attributes:
+      label: Root software license
+      description: Provide SPDX identifier and license-file URL.
+    validations:
+      required: true
+  - type: input
+    id: release
+    attributes:
+      label: First release date and evidence
+    validations:
+      required: true
+  - type: textarea
+    id: runtime
+    attributes:
+      label: Runnable mobile-agent path
+      description: Link the exact entrypoint and installation instructions, and name supported mobile platforms.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Mobile evidence
+      description: Link an official benchmark artifact or a concrete real-device demo.
+    validations:
+      required: true
+  - type: input
+    id: paper
+    attributes:
+      label: Paper
+      description: Official paper or publisher URL, if applicable.
+  - type: textarea
+    id: scope
+    attributes:
+      label: Why this is a complete agent
+      description: Explain why it is not only a model, dataset, training recipe, or environment.
+    validations:
+      required: true
+  - type: textarea
+    id: limitations
+    attributes:
+      label: Known limitations
+    validations:
+      required: true

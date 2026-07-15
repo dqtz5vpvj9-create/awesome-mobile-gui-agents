@@ -1,0 +1,142 @@
+<div align="center">
+
+# Awesome Mobile GUI Agents
+
+**人工精选的高质量开源 Mobile GUI Agent 合集。**
+
+核验论文、官方实现、benchmark 证据与透明的项目元数据。
+
+[English](README.md) · [简体中文](README.zh-CN.md)
+
+</div>
+
+> 指标快照：**{{ snapshot_date }}**（抓取时间 {{ retrieved_at }}）。主目录：**{{ main_count }} 个 Agent**。本文件由 [data/agents.yaml](data/agents.yaml) 生成，请勿手工修改表格。
+
+## 为什么要做这个列表
+
+Mobile GUI Agent 工作分散在研究原型、模型发布、自动化框架、benchmark 与产品仓库中。大型通用 GUI Agent 列表适合发现工作，但通常不能稳定回答三个实践问题：实现是否官方且真正开源？是否能操作真实或模拟的移动 GUI？论文引用数与仓库 star 是在什么时候测量的？
+
+本目录通过人工审核条目和可复现快照回答这些问题。**它不是只关注错误恢复的列表。** 错误检测与恢复只是一个能力维度；我们同时记录规划、记忆、平台覆盖、感知与动作接口、工程封装和评测。
+
+## 收录门槛
+
+主榜条目必须同时满足：
+
+1. 是完整 Agent 或具有实质可运行闭环的 Agent，而不只是模型、数据集、训练方案或 benchmark。
+2. 能在真机、模拟器或可信动态环境中，通过 GUI 操作 Android、iOS 或 HarmonyOS。
+3. 官方源码仓库公开，并带有明确的开源软件许可证。
+4. 有文档化的安装或执行路径。
+5. 提供移动 benchmark 证据或具体真机演示。
+6. 链接、可运行路径、许可证与元数据都有审计日期。
+
+排除规则、审计等级、论文去重和排序方法见 [METHODOLOGY.md](METHODOLOGY.md)。
+
+## Established Agents
+
+发布时间不晚于 **{{ established_cutoff }}**，即快照时至少已发布 12 个月。以下 {{ established_count }} 个条目按确定性的 impact score 排序：分别对 <code>log1p(OpenAlex citations)</code> 与 <code>log1p(GitHub stars)</code> 计算百分位秩，再等权平均。该分数只用于稳定排序，不是主观质量分级。
+
+| Agent | 发布时间 | 平台 | 主要能力 | 证据 | 引用数 | GitHub stars | Impact | 审计 |
+|---|---:|---|---|---|---:|---:|---:|---|
+{% for row in established -%}
+| [{{ row.name|md }}]({{ row.code.url }}){% if row.paper %}<br><sub>[论文]({{ row.paper.url }}) · {{ row.paper.venue|md }}</sub>{% endif %} | {{ row.release.date }} | {{ row.platforms|join(", ") }} | {{ row.summary.zh|md }} | {{ row.evidence_links }} | {% if row.citations is none %}—{% else %}{{ row.citations|intfmt }}{% endif %} | {{ row.stars|intfmt }}{% if row.code.stars_scope == "family-level" %}<sup>family</sup>{% endif %} | {{ "%.1f"|format(row.impact_score) }} | {{ row.audit.status }}<br><sub>{{ row.audit.date }}</sub> |
+{% endfor %}
+
+## Emerging Agents
+
+发布时间晚于 **{{ established_cutoff }}**。以下 {{ emerging_count }} 个条目只按发布时间从新到旧列出，**不做排名**。我们仍展示 citation 与 star，但不假装新项目拥有相同的指标积累时间。
+
+| Agent | 发布时间 | 平台 | 主要能力 | 证据 | 引用数 | GitHub stars | 审计 |
+|---|---:|---|---|---|---:|---:|---|
+{% for row in emerging -%}
+| [{{ row.name|md }}]({{ row.code.url }}){% if row.paper %}<br><sub>[论文]({{ row.paper.url }}) · {{ row.paper.venue|md }}</sub>{% endif %} | {{ row.release.date }} | {{ row.platforms|join(", ") }} | {{ row.summary.zh|md }} | {{ row.evidence_links }} | {% if row.citations is none %}—{% else %}{{ row.citations|intfmt }}{% endif %} | {{ row.stars|intfmt }}{% if row.code.stars_scope == "family-level" %}<sup>family</sup>{% endif %} | {{ row.audit.status }}<br><sub>{{ row.audit.date }}</sub> |
+{% endfor %}
+
+<sup>family</sup> 同一仓库包含多个已收录 Agent 代际，因此 star 是 family-level 指标，不能归因于某一个版本。
+
+<details>
+<summary><strong>运行时审计细节与局限</strong></summary>
+
+| Agent | 感知 | 动作 | 恢复类型 | 可运行路径 | 许可证 | 最近 push | 主要局限 |
+|---|---|---|---|---|---|---:|---|
+{% for row in established + emerging -%}
+| {{ row.name|md }} | {{ row.perception|join(", ")|md }} | {{ row.actions|join(", ")|md }} | **{{ row.recovery.level }}** | [entrypoint]({{ row.runnable.entrypoint_url }}) | [{{ row.license.spdx }}]({{ row.license.url }}) | {{ row.repo_pushed_at[:10] }} | {{ row.limitations.zh|md }} |
+{% endfor %}
+
+</details>
+
+## Notable / Code Pending
+
+这些论文相关性强、质量高，但只有在官方实现可公开核验后，才会进入开源 Agent 主榜；当前不排名、不计数。
+
+| 工作 | Venue | 状态 | 待定原因 |
+|---|---|---|---|
+{% for item in notable -%}
+| [{{ item.name }}]({{ item.paper_url }}) | {{ item.venue }} | {{ item.status }} | {{ item.reason_zh|md }} |
+{% endfor %}
+
+## 公开仓库待资格确认
+
+“代码公开”本身不等于满足主榜要求。下列项目需要解决许可证、实现身份或运行时完整性问题。
+
+| 项目 | 状态 | 原因 |
+|---|---|---|
+{% for item in qualification_pending -%}
+| [{{ item.name }}]({{ item.code_url }}) | {{ item.status }} | {{ item.reason_zh|md }} |
+{% endfor %}
+
+## 相关资源
+
+有用的模型、训练方法、数据集和环境会保留在这里，但**不计入主榜 Agent 数量**。
+
+| 资源 | 类别 | 范围说明 |
+|---|---|---|
+{% for item in resources -%}
+| [{{ item.name }}]({{ item.url }}) | {{ item.category }} | {{ item.note_zh|md }} |
+{% endfor %}
+
+## 快照与审计语义
+
+- **引用数：**只使用 OpenAlex。若预印本与正式发表版对应不同 OpenAlex work，快照计算引用任一版本的唯一 work 并集。
+- **Stars：**抓取时官方 GitHub 仓库的 stargazer 数。共享 monorepo 标为 family-level。
+- **links-verified：**已检查官方仓库、许可证、论文、证据和可运行路径。
+- **code-inspected：**在上述基础上进一步检查相关 Agent loop 的实现。
+- **install-smoke-tested：**实际执行文档化安装并成功完成最小启动。
+- 没有论文时显示破折号；仅在计算 Established 表排序时按零引用处理。
+
+所有历史快照保存在 [snapshots/](snapshots/)。
+
+## 本地复现
+
+~~~bash
+python -m venv .venv
+. .venv/bin/activate
+pip install -e ".[dev]"
+python scripts/catalog.py validate
+python scripts/catalog.py check
+~~~
+
+抓取新的在线快照并重新生成中英文 README：
+
+~~~bash
+GITHUB_TOKEN=... python scripts/catalog.py refresh --date YYYY-MM-DD
+python scripts/catalog.py render
+python scripts/catalog.py validate
+pytest
+~~~
+
+每月 GitHub Actions 会创建指标刷新 PR，由人工复核后合并。
+
+## 相关目录
+
+- [ZJU-REAL/Awesome-GUI-Agents](https://github.com/ZJU-REAL/Awesome-GUI-Agents) 是覆盖面很广、以论文为主的 GUI Agent 阅读列表。
+- [OSU-NLP-Group/GUI-Agents-Paper-List](https://github.com/OSU-NLP-Group/GUI-Agents-Paper-List) 提供了广泛的结构化论文覆盖和配套网站。
+
+它们都是很有价值的发现来源。本仓库采用不同的收录单位：高质量、开源、具有移动端运行闭环的 Agent，并提供带日期的 citation 与 GitHub 快照。从其他列表获得的候选链接仍会在这里独立核验。
+
+## 贡献
+
+新增 Agent 建议必须先提交 issue，而不是直接提交目录 PR，以便明确记录收录判断。对应 issue 被接受后，欢迎提交元数据纠错与工具改进。详见 [CONTRIBUTING.md](CONTRIBUTING.md)。
+
+## 许可证
+
+目录数据、文档与生成的 README 采用 [CC BY 4.0](LICENSES/CC-BY-4.0.txt)；脚本与测试采用 [MIT](LICENSES/MIT.txt)。上游项目保留各自许可证。

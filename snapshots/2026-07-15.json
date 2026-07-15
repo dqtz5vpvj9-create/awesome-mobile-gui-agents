@@ -1,0 +1,491 @@
+{
+  "citations": {
+    "androidworld-m3a": {
+      "count": 1,
+      "deduplication": "union-of-citing-work-ids",
+      "openalex_ids": [
+        "W4398836283"
+      ],
+      "works": [
+        {
+          "cited_by_count": 1,
+          "doi": "https://doi.org/10.48550/arxiv.2405.14573",
+          "id": "W4398836283",
+          "publication_date": "2024-05-23",
+          "title": "AndroidWorld: A Dynamic Benchmarking Environment for Autonomous Agents"
+        }
+      ]
+    },
+    "appagent": {
+      "count": 47,
+      "deduplication": "union-of-citing-work-ids",
+      "openalex_ids": [
+        "W4409767398",
+        "W4390136788"
+      ],
+      "works": [
+        {
+          "cited_by_count": 36,
+          "doi": "https://doi.org/10.1145/3706598.3713600",
+          "id": "W4409767398",
+          "publication_date": "2025-04-24",
+          "title": "AppAgent: Multimodal Agents as Smartphone Users"
+        },
+        {
+          "cited_by_count": 11,
+          "doi": "https://doi.org/10.48550/arxiv.2312.13771",
+          "id": "W4390136788",
+          "publication_date": "2023-12-21",
+          "title": "AppAgent: Multimodal Agents as Smartphone Users"
+        }
+      ]
+    },
+    "autodroid": {
+      "count": 88,
+      "deduplication": "union-of-citing-work-ids",
+      "openalex_ids": [
+        "W4399121418",
+        "W4386302825"
+      ],
+      "works": [
+        {
+          "cited_by_count": 76,
+          "doi": "https://doi.org/10.1145/3636534.3649379",
+          "id": "W4399121418",
+          "publication_date": "2024-05-29",
+          "title": "AutoDroid: LLM-powered Task Automation in Android"
+        },
+        {
+          "cited_by_count": 12,
+          "doi": "https://doi.org/10.48550/arxiv.2308.15272",
+          "id": "W4386302825",
+          "publication_date": "2023-08-29",
+          "title": "AutoDroid: LLM-powered Task Automation in Android"
+        }
+      ]
+    },
+    "chop": {
+      "count": 0,
+      "deduplication": "union-of-citing-work-ids",
+      "openalex_ids": [
+        "W4416085946"
+      ],
+      "works": [
+        {
+          "cited_by_count": 0,
+          "doi": null,
+          "id": "W4416085946",
+          "publication_date": "2025-03-05",
+          "title": "CHOP: Mobile Operating Assistant with Constrained High-frequency Optimized Subtask Planning"
+        }
+      ]
+    },
+    "mobile-agent-e": {
+      "count": 3,
+      "deduplication": "union-of-citing-work-ids",
+      "openalex_ids": [
+        "W4406733262"
+      ],
+      "works": [
+        {
+          "cited_by_count": 3,
+          "doi": "https://doi.org/10.48550/arxiv.2501.11733",
+          "id": "W4406733262",
+          "publication_date": "2025-01-20",
+          "title": "Mobile-Agent-E: Self-Evolving Mobile Assistant for Complex Tasks"
+        }
+      ]
+    },
+    "mobile-agent-v1": {
+      "count": 13,
+      "deduplication": "union-of-citing-work-ids",
+      "openalex_ids": [
+        "W4391376827"
+      ],
+      "works": [
+        {
+          "cited_by_count": 13,
+          "doi": "https://doi.org/10.48550/arxiv.2401.16158",
+          "id": "W4391376827",
+          "publication_date": "2024-01-29",
+          "title": "Mobile-Agent: Autonomous Multi-Modal Mobile Device Agent with Visual Perception"
+        }
+      ]
+    },
+    "mobile-agent-v2": {
+      "count": 12,
+      "deduplication": "union-of-citing-work-ids",
+      "openalex_ids": [
+        "W4415799029",
+        "W4399400219"
+      ],
+      "works": [
+        {
+          "cited_by_count": 10,
+          "doi": "https://doi.org/10.52202/079017-0088",
+          "id": "W4415799029",
+          "publication_date": "2024-01-01",
+          "title": "Mobile-Agent-v2: Mobile Device Operation Assistant with Effective Navigation via Multi-Agent Collaboration"
+        },
+        {
+          "cited_by_count": 2,
+          "doi": "https://doi.org/10.48550/arxiv.2406.01014",
+          "id": "W4399400219",
+          "publication_date": "2024-06-03",
+          "title": "Mobile-Agent-v2: Mobile Device Operation Assistant with Effective Navigation via Multi-Agent Collaboration"
+        }
+      ]
+    },
+    "mobile-agent-v3": {
+      "count": 0,
+      "deduplication": "union-of-citing-work-ids",
+      "openalex_ids": [
+        "W7077152995"
+      ],
+      "works": [
+        {
+          "cited_by_count": 0,
+          "doi": "https://doi.org/10.48550/arxiv.2508.15144",
+          "id": "W7077152995",
+          "publication_date": "2025-08-21",
+          "title": "Mobile-Agent-v3: Fundamental Agents for GUI Automation"
+        }
+      ]
+    },
+    "mobile-agent-v3-5": {
+      "count": 0,
+      "deduplication": "union-of-citing-work-ids",
+      "openalex_ids": [
+        "W7130694760",
+        "W7130762913"
+      ],
+      "works": [
+        {
+          "cited_by_count": 0,
+          "doi": "https://doi.org/10.48550/arxiv.2602.16855",
+          "id": "W7130694760",
+          "publication_date": "2026-02-15",
+          "title": "Mobile-Agent-v3.5: Multi-platform Fundamental GUI Agents"
+        },
+        {
+          "cited_by_count": 0,
+          "doi": null,
+          "id": "W7130762913",
+          "publication_date": "2026-02-15",
+          "title": "Mobile-Agent-v3.5: Multi-platform Fundamental GUI Agents"
+        }
+      ]
+    },
+    "mobile-use-minitap": {
+      "count": 0,
+      "deduplication": "union-of-citing-work-ids",
+      "openalex_ids": [
+        "W7128514075"
+      ],
+      "works": [
+        {
+          "cited_by_count": 0,
+          "doi": "https://doi.org/10.48550/arxiv.2602.07787",
+          "id": "W7128514075",
+          "publication_date": "2026-02-08",
+          "title": "Do Multi-Agents Dream of Electric Screens? Achieving Perfect Accuracy on AndroidWorld Through Task Decomposition"
+        }
+      ]
+    },
+    "mobilegpt": {
+      "count": 17,
+      "deduplication": "union-of-citing-work-ids",
+      "openalex_ids": [
+        "W4405014122",
+        "W4389470790"
+      ],
+      "works": [
+        {
+          "cited_by_count": 15,
+          "doi": "https://doi.org/10.1145/3636534.3690682",
+          "id": "W4405014122",
+          "publication_date": "2024-12-04",
+          "title": "MobileGPT: Augmenting LLM with Human-like App Memory for Mobile Task Automation"
+        },
+        {
+          "cited_by_count": 2,
+          "doi": "https://doi.org/10.48550/arxiv.2312.03003",
+          "id": "W4389470790",
+          "publication_date": "2023-12-04",
+          "title": "Explore, Select, Derive, and Recall: Augmenting LLM with Human-like Memory for Mobile Task Automation"
+        }
+      ]
+    },
+    "mobileuse-madeagents": {
+      "count": 0,
+      "deduplication": "union-of-citing-work-ids",
+      "openalex_ids": [
+        "W4414877003"
+      ],
+      "works": [
+        {
+          "cited_by_count": 0,
+          "doi": "https://doi.org/10.48550/arxiv.2507.16853",
+          "id": "W4414877003",
+          "publication_date": "2025-07-21",
+          "title": "MobileUse: A GUI Agent with Hierarchical Reflection for Autonomous Mobile Operation"
+        }
+      ]
+    },
+    "open-autoglm": {
+      "count": 1,
+      "deduplication": "union-of-citing-work-ids",
+      "openalex_ids": [
+        "W4404350148"
+      ],
+      "works": [
+        {
+          "cited_by_count": 1,
+          "doi": "https://doi.org/10.48550/arxiv.2411.00820",
+          "id": "W4404350148",
+          "publication_date": "2024-10-28",
+          "title": "AutoGLM: Autonomous Foundation Agents for GUIs"
+        }
+      ]
+    }
+  },
+  "github": {
+    "DemonDamon/AgenticX-GUIAgent": {
+      "archived": false,
+      "created_at": "2025-09-16T00:28:06Z",
+      "default_branch": "main",
+      "forks": 1,
+      "license_spdx": "MIT",
+      "open_issues": 0,
+      "pushed_at": "2026-01-15T00:12:38Z",
+      "stars": 11,
+      "url": "https://github.com/DemonDamon/AgenticX-GUIAgent",
+      "verified_entrypoint_paths": [
+        "main.py"
+      ]
+    },
+    "MadeAgents/TopoClaw": {
+      "archived": false,
+      "created_at": "2026-04-22T02:03:59Z",
+      "default_branch": "main",
+      "forks": 2,
+      "license_spdx": "Apache-2.0",
+      "open_issues": 2,
+      "pushed_at": "2026-05-12T01:58:12Z",
+      "stars": 22,
+      "url": "https://github.com/MadeAgents/TopoClaw",
+      "verified_entrypoint_paths": [
+        "TopoClaw/topoclaw/service/runtime.py"
+      ]
+    },
+    "MadeAgents/mobile-use": {
+      "archived": false,
+      "created_at": "2025-02-27T10:13:52Z",
+      "default_branch": "main",
+      "forks": 11,
+      "license_spdx": "MIT",
+      "open_issues": 11,
+      "pushed_at": "2026-07-10T09:21:13Z",
+      "stars": 167,
+      "url": "https://github.com/MadeAgents/mobile-use",
+      "verified_entrypoint_paths": [
+        "pyproject.toml"
+      ]
+    },
+    "MobileLLM/AutoDroid": {
+      "archived": false,
+      "created_at": "2023-10-23T03:32:58Z",
+      "default_branch": "newbranch",
+      "forks": 68,
+      "license_spdx": "MIT",
+      "open_issues": 16,
+      "pushed_at": "2024-03-22T14:53:47Z",
+      "stars": 480,
+      "url": "https://github.com/MobileLLM/AutoDroid",
+      "verified_entrypoint_paths": [
+        "batch_testing.py"
+      ]
+    },
+    "TencentQQGYLab/AppAgent": {
+      "archived": false,
+      "created_at": "2023-12-20T11:41:04Z",
+      "default_branch": "main",
+      "forks": 751,
+      "license_spdx": "MIT",
+      "open_issues": 95,
+      "pushed_at": "2025-03-19T11:01:38Z",
+      "stars": 6812,
+      "url": "https://github.com/TencentQQGYLab/AppAgent",
+      "verified_entrypoint_paths": [
+        "run.py"
+      ]
+    },
+    "X-PLUG/MobileAgent": {
+      "archived": false,
+      "created_at": "2024-01-26T14:17:06Z",
+      "default_branch": "main",
+      "forks": 898,
+      "license_spdx": "MIT",
+      "open_issues": 192,
+      "pushed_at": "2026-07-07T09:22:18Z",
+      "stars": 8939,
+      "url": "https://github.com/X-PLUG/MobileAgent",
+      "verified_entrypoint_paths": [
+        "Mobile-Agent-E/scripts/run_task.sh",
+        "Mobile-Agent-v1/run.py",
+        "Mobile-Agent-v2/run.py",
+        "Mobile-Agent-v3.5/mobile_use/run_gui_owl_1_5_for_mobile.py",
+        "Mobile-Agent-v3/mobile_v3/run_mobileagentv3.py"
+      ]
+    },
+    "Yuqi-Zhou/CHOP": {
+      "archived": false,
+      "created_at": "2025-02-12T09:22:07Z",
+      "default_branch": "main",
+      "forks": 0,
+      "license_spdx": "MIT",
+      "open_issues": 1,
+      "pushed_at": "2025-03-08T10:45:33Z",
+      "stars": 8,
+      "url": "https://github.com/Yuqi-Zhou/CHOP",
+      "verified_entrypoint_paths": [
+        "src/run.py"
+      ]
+    },
+    "appclawhq/AppClaw": {
+      "archived": false,
+      "created_at": "2026-03-23T09:29:45Z",
+      "default_branch": "main",
+      "forks": 17,
+      "license_spdx": "Apache-2.0",
+      "open_issues": 4,
+      "pushed_at": "2026-07-13T16:35:29Z",
+      "stars": 94,
+      "url": "https://github.com/appclawhq/AppClaw",
+      "verified_entrypoint_paths": [
+        "packages/agent/src/cli.ts"
+      ]
+    },
+    "droidrun/mobilerun": {
+      "archived": false,
+      "created_at": "2025-04-12T22:03:47Z",
+      "default_branch": "main",
+      "forks": 937,
+      "license_spdx": "MIT",
+      "open_issues": 30,
+      "pushed_at": "2026-07-06T18:32:45Z",
+      "stars": 8769,
+      "url": "https://github.com/droidrun/mobilerun",
+      "verified_entrypoint_paths": [
+        "mobilerun/cli/main.py"
+      ]
+    },
+    "erickjtorres/app-use": {
+      "archived": false,
+      "created_at": "2025-05-16T15:31:05Z",
+      "default_branch": "main",
+      "forks": 6,
+      "license_spdx": "MIT",
+      "open_issues": 0,
+      "pushed_at": "2026-07-10T18:23:47Z",
+      "stars": 69,
+      "url": "https://github.com/erickjtorres/app-use",
+      "verified_entrypoint_paths": [
+        "examples/android_app_example.py"
+      ]
+    },
+    "ghost-in-the-droid/android-agent": {
+      "archived": false,
+      "created_at": "2026-04-08T01:31:13Z",
+      "default_branch": "main",
+      "forks": 26,
+      "license_spdx": "MIT",
+      "open_issues": 6,
+      "pushed_at": "2026-07-11T22:20:45Z",
+      "stars": 240,
+      "url": "https://github.com/ghost-in-the-droid/android-agent",
+      "verified_entrypoint_paths": [
+        "run.py"
+      ]
+    },
+    "google-research/android_world": {
+      "archived": false,
+      "created_at": "2024-05-13T20:49:25Z",
+      "default_branch": "main",
+      "forks": 166,
+      "license_spdx": "Apache-2.0",
+      "open_issues": 44,
+      "pushed_at": "2026-07-10T14:43:54Z",
+      "stars": 821,
+      "url": "https://github.com/google-research/android_world",
+      "verified_entrypoint_paths": [
+        "minimal_task_runner.py"
+      ]
+    },
+    "minitap-ai/mobile-use": {
+      "archived": false,
+      "created_at": "2025-08-16T21:49:49Z",
+      "default_branch": "main",
+      "forks": 230,
+      "license_spdx": "Apache-2.0",
+      "open_issues": 3,
+      "pushed_at": "2026-07-09T14:28:16Z",
+      "stars": 2680,
+      "url": "https://github.com/minitap-ai/mobile-use",
+      "verified_entrypoint_paths": [
+        "minitap/mobile_use/main.py"
+      ]
+    },
+    "mobilegptsys/MobileGPT": {
+      "archived": false,
+      "created_at": "2024-06-13T05:10:03Z",
+      "default_branch": "main",
+      "forks": 6,
+      "license_spdx": "Apache-2.0",
+      "open_issues": 1,
+      "pushed_at": "2024-10-02T04:57:48Z",
+      "stars": 26,
+      "url": "https://github.com/mobilegptsys/MobileGPT",
+      "verified_entrypoint_paths": [
+        "Server/main.py"
+      ]
+    },
+    "web-infra-dev/midscene": {
+      "archived": false,
+      "created_at": "2024-07-23T04:03:50Z",
+      "default_branch": "main",
+      "forks": 1072,
+      "license_spdx": "MIT",
+      "open_issues": 50,
+      "pushed_at": "2026-07-15T09:30:14Z",
+      "stars": 14076,
+      "url": "https://github.com/web-infra-dev/midscene",
+      "verified_entrypoint_paths": [
+        "packages/android/src/cli.ts"
+      ]
+    },
+    "zai-org/Open-AutoGLM": {
+      "archived": false,
+      "created_at": "2025-12-08T09:23:44Z",
+      "default_branch": "main",
+      "forks": 4008,
+      "license_spdx": "Apache-2.0",
+      "open_issues": 261,
+      "pushed_at": "2026-03-06T08:38:39Z",
+      "stars": 25781,
+      "url": "https://github.com/zai-org/Open-AutoGLM",
+      "verified_entrypoint_paths": [
+        "main.py"
+      ]
+    }
+  },
+  "retrieved_at": "2026-07-15T09:34:53Z",
+  "schema_version": "1.0",
+  "snapshot_date": "2026-07-15",
+  "sources": {
+    "citation_method": "For each cataloged paper identity, count the union of OpenAlex works that cite any curated preprint or published-version work ID.",
+    "github": "https://api.github.com",
+    "openalex": "https://api.openalex.org",
+    "star_method": "Official GitHub repository stargazer count at retrieval time."
+  }
+}

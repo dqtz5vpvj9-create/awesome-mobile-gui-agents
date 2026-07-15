@@ -1,0 +1,142 @@
+<div align="center">
+
+# Awesome Mobile GUI Agents
+
+**A manually curated collection of high-quality, open-source Mobile GUI Agents.**
+
+Verified papers, official implementations, benchmark evidence, and transparent project metadata.
+
+[English](README.md) · [简体中文](README.zh-CN.md)
+
+</div>
+
+> Metrics snapshot: **{{ snapshot_date }}** (retrieved {{ retrieved_at }}). Main catalog: **{{ main_count }} agents**. This file is generated from [data/agents.yaml](data/agents.yaml); do not edit the tables by hand.
+
+## Why this list exists
+
+Mobile GUI Agent work is split across research prototypes, model releases, automation frameworks, benchmarks, and product repositories. Large general GUI-agent lists are useful for discovery, but they do not consistently answer three practical questions: Is the implementation official and open-source? Can it operate a real or emulated mobile GUI? When were its paper citations and repository stars measured?
+
+This catalog answers those questions with manually reviewed entries and reproducible snapshots. **It is not a recovery-only list.** Error detection and recovery are recorded as one capability dimension alongside planning, memory, platform coverage, perception, action interfaces, packaging, and evaluation.
+
+## Inclusion bar
+
+A main-list entry must satisfy all of the following:
+
+1. It is a complete agent or a meaningfully runnable agent loop, not only a model, dataset, training recipe, or benchmark.
+2. It operates Android, iOS, or HarmonyOS through the graphical interface on a real device, emulator, simulator, or a faithful live environment.
+3. Its official source repository is public and carries an explicit open-source software license.
+4. It has a documented installation or execution path.
+5. It provides mobile benchmark evidence or a concrete real-device demo.
+6. Its links, runnable path, license, and metadata have an audit date.
+
+See [METHODOLOGY.md](METHODOLOGY.md) for exclusions, audit levels, paper deduplication, and ordering.
+
+## Established agents
+
+Released on or before **{{ established_cutoff }}** (at least 12 months old at the snapshot). These {{ established_count }} entries are ordered by a deterministic impact score: the equal-weight mean of percentile ranks over <code>log1p(OpenAlex citations)</code> and <code>log1p(GitHub stars)</code>. The score orders the table; it is not a quality tier.
+
+| Agent | Released | Platforms | What it provides | Evidence | Citations | GitHub stars | Impact | Audit |
+|---|---:|---|---|---|---:|---:|---:|---|
+{% for row in established -%}
+| [{{ row.name|md }}]({{ row.code.url }}){% if row.paper %}<br><sub>[paper]({{ row.paper.url }}) · {{ row.paper.venue|md }}</sub>{% endif %} | {{ row.release.date }} | {{ row.platforms|join(", ") }} | {{ row.summary.en|md }} | {{ row.evidence_links }} | {% if row.citations is none %}—{% else %}{{ row.citations|intfmt }}{% endif %} | {{ row.stars|intfmt }}{% if row.code.stars_scope == "family-level" %}<sup>family</sup>{% endif %} | {{ "%.1f"|format(row.impact_score) }} | {{ row.audit.status }}<br><sub>{{ row.audit.date }}</sub> |
+{% endfor %}
+
+## Emerging agents
+
+Released after **{{ established_cutoff }}**. These {{ emerging_count }} entries are listed newest first and are intentionally **not ranked**. Citation and star counts remain visible without pretending that a young project has had the same time to accumulate them.
+
+| Agent | Released | Platforms | What it provides | Evidence | Citations | GitHub stars | Audit |
+|---|---:|---|---|---|---:|---:|---|
+{% for row in emerging -%}
+| [{{ row.name|md }}]({{ row.code.url }}){% if row.paper %}<br><sub>[paper]({{ row.paper.url }}) · {{ row.paper.venue|md }}</sub>{% endif %} | {{ row.release.date }} | {{ row.platforms|join(", ") }} | {{ row.summary.en|md }} | {{ row.evidence_links }} | {% if row.citations is none %}—{% else %}{{ row.citations|intfmt }}{% endif %} | {{ row.stars|intfmt }}{% if row.code.stars_scope == "family-level" %}<sup>family</sup>{% endif %} | {{ row.audit.status }}<br><sub>{{ row.audit.date }}</sub> |
+{% endfor %}
+
+<sup>family</sup> The repository hosts multiple cataloged agent generations, so its GitHub star count is family-level and is not attributed to one generation.
+
+<details>
+<summary><strong>Audited runtime details and limitations</strong></summary>
+
+| Agent | Perception | Actions | Recovery evidence | Runnable path | License | Last push | Main limitation |
+|---|---|---|---|---|---|---:|---|
+{% for row in established + emerging -%}
+| {{ row.name|md }} | {{ row.perception|join(", ")|md }} | {{ row.actions|join(", ")|md }} | **{{ row.recovery.level }}** — {{ row.recovery.evidence|md }} | [entrypoint]({{ row.runnable.entrypoint_url }}) | [{{ row.license.spdx }}]({{ row.license.url }}) | {{ row.repo_pushed_at[:10] }} | {{ row.limitations.en|md }} |
+{% endfor %}
+
+</details>
+
+## Notable / code pending
+
+These papers are directly relevant and high quality, but are not ranked or counted as open-source agents until an official implementation is publicly verifiable.
+
+| Work | Venue | Status | Why it is pending |
+|---|---|---|---|
+{% for item in notable -%}
+| [{{ item.name }}]({{ item.paper_url }}) | {{ item.venue }} | {{ item.status }} | {{ item.reason_en|md }} |
+{% endfor %}
+
+## Public repositories pending qualification
+
+Public code alone is not enough. These projects remain outside the main list until licensing, implementation identity, or runtime completeness is resolved.
+
+| Project | Status | Reason |
+|---|---|---|
+{% for item in qualification_pending -%}
+| [{{ item.name }}]({{ item.code_url }}) | {{ item.status }} | {{ item.reason_en|md }} |
+{% endfor %}
+
+## Associated resources
+
+Useful models, training methods, datasets, and environments are kept visible but are **not counted as main agent entries**.
+
+| Resource | Category | Scope note |
+|---|---|---|
+{% for item in resources -%}
+| [{{ item.name }}]({{ item.url }}) | {{ item.category }} | {{ item.note_en|md }} |
+{% endfor %}
+
+## Snapshot and audit semantics
+
+- **Citations:** OpenAlex only. When a preprint and published version are separate OpenAlex works, the snapshot counts the union of unique works citing either identity.
+- **Stars:** official GitHub repository stargazer count at retrieval time. Shared monorepositories are marked family-level.
+- **links-verified:** official repository, license, paper, evidence, and runnable paths were checked.
+- **code-inspected:** the above plus implementation-level inspection of the relevant agent loop.
+- **install-smoke-tested:** the documented installation and a minimal launch were executed successfully.
+- A missing paper is shown as an em dash and contributes zero citations only when computing the established-table ordering.
+
+Every historical snapshot is preserved under [snapshots/](snapshots/).
+
+## Reproduce locally
+
+~~~bash
+python -m venv .venv
+. .venv/bin/activate
+pip install -e ".[dev]"
+python scripts/catalog.py validate
+python scripts/catalog.py check
+~~~
+
+To capture a new live snapshot and regenerate both languages:
+
+~~~bash
+GITHUB_TOKEN=... python scripts/catalog.py refresh --date YYYY-MM-DD
+python scripts/catalog.py render
+python scripts/catalog.py validate
+pytest
+~~~
+
+The monthly GitHub Actions workflow opens a refresh pull request; a human reviews and merges it.
+
+## Related catalogs
+
+- [ZJU-REAL/Awesome-GUI-Agents](https://github.com/ZJU-REAL/Awesome-GUI-Agents) is a broad, paper-oriented GUI Agent reading list.
+- [OSU-NLP-Group/GUI-Agents-Paper-List](https://github.com/OSU-NLP-Group/GUI-Agents-Paper-List) provides broad structured coverage and a companion website.
+
+They are valuable discovery sources. This repository has a different unit of inclusion: high-quality open-source **mobile runtime agents**, with dated citation and GitHub snapshots. Candidate links seeded from other lists are independently re-verified here.
+
+## Contributing
+
+New-agent suggestions start as an issue, not an unsolicited catalog pull request. This keeps inclusion judgments explicit and auditable. Metadata corrections and tooling fixes are welcome after the corresponding issue is accepted. See [CONTRIBUTING.md](CONTRIBUTING.md).
+
+## Licenses
+
+Catalog data, documentation, and generated READMEs are licensed under [CC BY 4.0](LICENSES/CC-BY-4.0.txt). Scripts and tests are licensed under [MIT](LICENSES/MIT.txt). Upstream projects retain their own licenses.
