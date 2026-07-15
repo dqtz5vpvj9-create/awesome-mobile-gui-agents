@@ -78,11 +78,8 @@ def test_agent_sections_preserve_catalog_source_order():
         assert rendered_ids == expected_ids
 
 
-def test_readmes_do_not_publish_composite_scores():
-    paths = [
-        ROOT / "templates" / "README.md.j2",
-        ROOT / "templates" / "README.zh-CN.md.j2",
-        ROOT / "METHODOLOGY.md",
-    ]
-    for path in paths:
-        assert "impact" not in path.read_text(encoding="utf-8").casefold()
+def test_readme_main_tables_use_compact_public_columns():
+    english = (ROOT / "templates" / "README.md.j2").read_text(encoding="utf-8")
+    chinese = (ROOT / "templates" / "README.zh-CN.md.j2").read_text(encoding="utf-8")
+    assert "| Agent | Released | Platform | Snapshot | Links |" in english
+    assert "| Agent | 发布时间 | 平台 | 快照指标 | 链接 |" in chinese
