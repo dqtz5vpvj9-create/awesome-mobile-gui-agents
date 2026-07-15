@@ -38,7 +38,7 @@ Mobile GUI Agent 工作分散在研究原型、模型发布、自动化框架、
 | Agent | 发布时间 | 平台 | 快照指标 | 链接 |
 |---|:---:|---|---:|---|
 {% for row in established -%}
-| **{{ row.name|md }}**{% if row.paper %}<br><sub>{{ row.paper.venue|md }}</sub>{% endif %} | {{ row.release.date }} | {{ row.platforms|join(", ") }} | 引用&nbsp;{% if row.citations is none %}—{% else %}{{ row.citations|intfmt }}{% endif %}<br>Stars&nbsp;{{ row.stars|intfmt }}{% if row.code.stars_scope == "family-level" %}<sup>family</sup>{% endif %} | [代码]({{ row.code.url }}){% if row.paper %} · [论文]({{ row.paper.url }}){% endif %} · {{ row.evidence_links }} |
+| **{{ row.name|md }}**{% if row.paper %}<br><sub>{{ row.paper.venue|md }}</sub>{% endif %} | {{ row.release.date|replace("-", "&#8209;") }} | {{ row.platforms|join(", ") }} | 引用&nbsp;{% if row.citations is none %}—{% else %}{{ row.citations|intfmt }}{% endif %}<br>Stars&nbsp;{{ row.stars|intfmt }}{% if row.code.stars_scope == "family-level" %}<sup>family</sup>{% endif %} | [代码]({{ row.code.url }}){% if row.paper %} · [论文]({{ row.paper.url }}){% endif %} · {{ row.evidence_links }} |
 {% endfor %}
 
 ## Emerging Agents
@@ -48,7 +48,7 @@ Mobile GUI Agent 工作分散在研究原型、模型发布、自动化框架、
 | Agent | 发布时间 | 平台 | 快照指标 | 链接 |
 |---|:---:|---|---:|---|
 {% for row in emerging -%}
-| **{{ row.name|md }}**{% if row.paper %}<br><sub>{{ row.paper.venue|md }}</sub>{% endif %} | {{ row.release.date }} | {{ row.platforms|join(", ") }} | 引用&nbsp;{% if row.citations is none %}—{% else %}{{ row.citations|intfmt }}{% endif %}<br>Stars&nbsp;{{ row.stars|intfmt }}{% if row.code.stars_scope == "family-level" %}<sup>family</sup>{% endif %} | [代码]({{ row.code.url }}){% if row.paper %} · [论文]({{ row.paper.url }}){% endif %} · {{ row.evidence_links }} |
+| **{{ row.name|md }}**{% if row.paper %}<br><sub>{{ row.paper.venue|md }}</sub>{% endif %} | {{ row.release.date|replace("-", "&#8209;") }} | {{ row.platforms|join(", ") }} | 引用&nbsp;{% if row.citations is none %}—{% else %}{{ row.citations|intfmt }}{% endif %}<br>Stars&nbsp;{{ row.stars|intfmt }}{% if row.code.stars_scope == "family-level" %}<sup>family</sup>{% endif %} | [代码]({{ row.code.url }}){% if row.paper %} · [论文]({{ row.paper.url }}){% endif %} · {{ row.evidence_links }} |
 {% endfor %}
 
 <sup>family</sup> 同一仓库包含多个已收录 Agent 代际，因此 star 是 family-level 指标，不能归因于某一个版本。

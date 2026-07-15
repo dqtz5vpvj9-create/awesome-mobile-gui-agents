@@ -38,7 +38,7 @@ Released on or before **{{ established_cutoff }}** (at least 12 months old at th
 | Agent | Released | Platform | Snapshot | Links |
 |---|:---:|---|---:|---|
 {% for row in established -%}
-| **{{ row.name|md }}**{% if row.paper %}<br><sub>{{ row.paper.venue|md }}</sub>{% endif %} | {{ row.release.date }} | {{ row.platforms|join(", ") }} | Citations&nbsp;{% if row.citations is none %}—{% else %}{{ row.citations|intfmt }}{% endif %}<br>Stars&nbsp;{{ row.stars|intfmt }}{% if row.code.stars_scope == "family-level" %}<sup>family</sup>{% endif %} | [Code]({{ row.code.url }}){% if row.paper %} · [Paper]({{ row.paper.url }}){% endif %} · {{ row.evidence_links }} |
+| **{{ row.name|md }}**{% if row.paper %}<br><sub>{{ row.paper.venue|md }}</sub>{% endif %} | {{ row.release.date|replace("-", "&#8209;") }} | {{ row.platforms|join(", ") }} | Citations&nbsp;{% if row.citations is none %}—{% else %}{{ row.citations|intfmt }}{% endif %}<br>Stars&nbsp;{{ row.stars|intfmt }}{% if row.code.stars_scope == "family-level" %}<sup>family</sup>{% endif %} | [Code]({{ row.code.url }}){% if row.paper %} · [Paper]({{ row.paper.url }}){% endif %} · {{ row.evidence_links }} |
 {% endfor %}
 
 ## Emerging agents
@@ -48,7 +48,7 @@ Released after **{{ established_cutoff }}**. These {{ emerging_count }} entries 
 | Agent | Released | Platform | Snapshot | Links |
 |---|:---:|---|---:|---|
 {% for row in emerging -%}
-| **{{ row.name|md }}**{% if row.paper %}<br><sub>{{ row.paper.venue|md }}</sub>{% endif %} | {{ row.release.date }} | {{ row.platforms|join(", ") }} | Citations&nbsp;{% if row.citations is none %}—{% else %}{{ row.citations|intfmt }}{% endif %}<br>Stars&nbsp;{{ row.stars|intfmt }}{% if row.code.stars_scope == "family-level" %}<sup>family</sup>{% endif %} | [Code]({{ row.code.url }}){% if row.paper %} · [Paper]({{ row.paper.url }}){% endif %} · {{ row.evidence_links }} |
+| **{{ row.name|md }}**{% if row.paper %}<br><sub>{{ row.paper.venue|md }}</sub>{% endif %} | {{ row.release.date|replace("-", "&#8209;") }} | {{ row.platforms|join(", ") }} | Citations&nbsp;{% if row.citations is none %}—{% else %}{{ row.citations|intfmt }}{% endif %}<br>Stars&nbsp;{{ row.stars|intfmt }}{% if row.code.stars_scope == "family-level" %}<sup>family</sup>{% endif %} | [Code]({{ row.code.url }}){% if row.paper %} · [Paper]({{ row.paper.url }}){% endif %} · {{ row.evidence_links }} |
 {% endfor %}
 
 <sup>family</sup> The repository hosts multiple cataloged agent generations, so its GitHub star count is family-level and is not attributed to one generation.
